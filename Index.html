@@ -1914,8 +1914,8 @@ input:focus, textarea:focus {
 </head>
 <body>
 
-<div class="chand-slim">☾</div>
-<div class="ramzan-top-slim">Ramzan Kareem Coming soon</div>
+<div class="chand-slim">☾✨</div>
+<div class="ramzan-top-slim">رمضان مبارک بہت جلد آ رہا ہے </div>
   
 <!-- Notification Popups -->
 <div id="normalNotification" class="notification-popup hide">
@@ -1937,7 +1937,7 @@ input:focus, textarea:focus {
 
   <!-- Login Page -->
   <div id="loginPage" class="card">
-    <h1>Welcome 👋</h1>
+    <h1>خوش آمدید 👋</h1>
     <input type="email" id="loginEmail" placeholder="Email" />
     <div class="password-wrapper">
       <input type="password" id="loginPass" placeholder="Password" />
@@ -1977,7 +1977,7 @@ input:focus, textarea:focus {
   <div class="live-date" id="liveDate">Loading...</div>
   <div class="live-time" id="liveTime">00:00:00</div>
   <div class="live-location" id="liveLocation">
-    <span id="cityName">Detecting city...</span>
+    <span id="cityName"> city...</span>
   </div>
 </div><!-- ======== ADMIN FORCE VIDEO POPUP (Unstoppable) ======== -->
 <div id="forceVideoPopup" class="notification-popup hide" style="z-index:99999; background:rgba(0,0,0,0.98);">
@@ -1999,32 +1999,37 @@ input:focus, textarea:focus {
 </div>
   <!-- Dashboard -->
   <div id="dashboard" class="card hide">
-    <h1>Welcome <span id="displayName" style="font-weight:bold; color:#fff;"></span> 👋</h1>
+    <h1>السلام علیکم! <span id="displayName" style="font-weight:bold; color:#fff;"></span> 👋</h1>
     <img id="profilePic" src="" class="profile-pic" onclick="document.getElementById('picInput').click()" />
     <input type="file" id="picInput" accept="image/*" style="display:none" onchange="uploadProfilePic(this)" />
     <p><strong>Email:</strong> <span id="displayEmail"></span></p>
 
     <button class="small-btn" onclick="showProfile()">My Profile</button>
     <button class="small-btn" onclick="showEditProfile()">Edit Profile ✏️</button>
-    <button class="small-btn" onclick="showGroup()">Group & Updates</button>
-    <button class="small-btn" onclick="showEntertainmentChat()">Entertainment Chat 🎉</button>
+    <button class="small-btn" onclick="showGroup()">Group & Updates (روز کی معلومات) </button>
+    <button class="small-btn" onclick="showEntertainmentChat()">Entertainment Chat 💑</button>
     <!-- Ye line delete kar do -->
+    <button class="small-btn" onclick="showChillWithFriends()">Chill with Friends (دوست بنائے) 👥</button>
+    <button class="small-btn" onclick="showMyApps()">My Apps</button>
+    <button class="small-btn" onclick="showSupport()">Support (ہم سے رابطہ)</button>
+    <button class="small-btn" onclick="showComplaintHistory()">Complaint History (شکایات کی معلومات) </button>
+    
+    
     <button class="small-btn" onclick="showMovies()">Movies & Drama 🎬</button>
     <button class="small-btn" onclick="showCheckHistory()">Check History (Drama & Movie) 📋</button>
-    <button class="small-btn" onclick="showSupport()">Support (ہم سے رابطہ)</button>
-    <button class="small-btn" onclick="showComplaintHistory()">Complaint History</button>
+
+  
     <button class="small-btn" onclick="showFeedback()">Feedback & Ratings 🌟</button>
-    <button class="small-btn" onclick="showMyApps()">My Apps</button>
    
    
    
     <button class="small-btn" onclick="showTrustPage()">About & Trust 🌟</button>
     <button class="small-btn" onclick="showContact()">Contact Us 📞</button>
     <button class="small-btn" onclick="showPolicy()">Policy & Guidelines 📜</button>
-    <button class="small-btn" onclick="showChillWithFriends()">Chill with Friends 👥</button>
+    
     <button class="small-btn" onclick="showMembers()">MrCrazyTeam Members 👥</button>
     
-    <button class="small-btn" style="background:#ff4444" onclick="logout()">Logout</button>
+    <button class="small-btn" style="background:#ff4494" onclick="logout()">Logout</button>
   </div>
 
   <!-- My Profile -->
@@ -2070,7 +2075,7 @@ input:focus, textarea:focus {
   <!-- Support -->
   <div id="supportPage" class="card hide">
     <h1>Support (ہم سے رابطہ)</h1>
-    <button class="small-btn" onclick="showComplaintForm()">File Complaint</button>
+    <button class="small-btn" onclick="showComplaintForm()">File Complaint (شکایات جمع کریں) </button>
     <button class="small-btn" onclick="showLiveChat()">Live Chat with MrCrazyTeam</button>
     <div class="link" onclick="showDashboard()">← Back</div>
   </div>
@@ -2080,11 +2085,12 @@ input:focus, textarea:focus {
     <h1>File Complaint</h1>
     <input type="text" id="compName" placeholder="Your Name" readonly />
     <input type="email" id="compEmail" placeholder="Your Email" readonly />
-    <textarea id="compDesc" placeholder="Describe your problem in detail" rows="5"></textarea>
+    <textarea id="compDesc" placeholder="Describe your problem in (اپنی شکایات تفصیل سے لکھیں) " rows="5"></textarea>
 
     <div style="margin:15px 0;">
       <button type="button" onclick="document.getElementById('compImage').click()" style="width:auto; padding:10px 15px; background:rgba(255,255,255,0.2);">
-        Add Screenshot (max 5MB)
+         
+         
       </button>
       <input type="file" id="compImage" accept="image/*" style="display:none" onchange="previewImage(this)" />
       <div id="loadingText" class="loading hide">Uploading... ⏳</div>
@@ -2542,12 +2548,7 @@ input:focus, textarea:focus {
   </div>
 </div>
 
-<!-- Body ke end mein, closing </body> se pehle -->
-<div id="mrCrazyBanner">
-  <span class="spark">✨</span>
-  Powered by <strong>MrCrazyTeam</strong>
-  <span class="spark">✨</span>
-</div>
+
 
 </body>
 </html>
