@@ -162,7 +162,53 @@
       background: rgba(255,255,255,0.3);
       transform: scale(1.05);
     }
+/* Status Colors - Enhanced for Complaints History */
+.status {
+  font-size: 12px;
+  padding: 8px 15px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 10px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
 
+.status.pending { background: #ff8800; color: white; }
+.status.processing { background: #4488ff; color: white; } /* Blue */
+.status.approved { background: #00aa55; color: white; } /* Green */
+.status.rejected { background: #aa0000; color: white; } /* Red */
+
+/* Complaint History Card - Slim Style */
+.complaint-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 15px;
+  border-left: 5px solid var(--primary);
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.complaint-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(123,44,255,0.3);
+}
+
+.complaint-id { font-size: 14px; opacity: 0.8; margin-bottom: 5px; }
+.complaint-time { font-size: 12px; opacity: 0.7; text-align: right; margin-bottom: 10px; }
+.complaint-issue { font-size: 15px; line-height: 1.6; margin-bottom: 10px; }
+.complaint-reply {
+  background: rgba(0,204,136,0.2);
+  padding: 12px;
+  border-radius: 12px;
+  margin: 10px 0;
+  font-size: 14px;
+  border-left: 4px solid #00cc88;
+}
+
+.complaint-reply.none { background: rgba(255,68,68,0.1); border-left-color: #ff4444; opacity: 0.7; }
     .reaction-btn.active {
       background: var(--primary);
     }
@@ -608,7 +654,96 @@
   border-left: 4px solid var(--primary);
   font-size: 15px;
 }
+/* User Movie & Drama History - Slim Ramzan VIP (User-Only) */
+.history-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 15px 0;
+  max-height: 60vh;
+  overflow-y: auto;
+}
 
+.history-item {
+  background: rgba(11,31,33,0.95);
+  backdrop-filter: blur(20px);
+  border: 1.8px solid rgba(201,162,39,0.4);
+  border-radius: 24px;
+  padding: 16px;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  font-family: 'Amiri', serif;
+  transition: 0.3s;
+}
+
+.history-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(201,162,39,0.3);
+}
+
+.history-type {
+  font-size: 16px;
+  color: var(--ramzan-gold);
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.history-name {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.history-whatsapp {
+  font-size: 14px;
+  color: #fff8e1;
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.history-time {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.history-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.history-status.pending {
+  background: rgba(255,136,0,0.3);
+  color: #ff8800;
+}
+
+.history-status.approved {
+  background: rgba(0,204,136,0.3);
+  color: #00cc88;
+}
+
+.history-status.rejected {
+  background: rgba(255,68,68,0.3);
+  color: #ff4444;
+}
+
+/* No History Message */
+.no-history {
+  text-align: center;
+  padding: 40px 0;
+  opacity: 0.8;
+  font-size: 16px;
+  color: var(--ramzan-cream);
+}
+
+/* Mobile Fix */
+@media (max-width: 480px) {
+  .history-item { padding: 14px; }
+}
 .entertainment-reply.own {
   background: rgba(123,44,255,0.2);
   border-left-color: #00cc88;
@@ -1645,7 +1780,93 @@ input:focus, textarea:focus {
   box-shadow: 0 8px 25px rgba(0,0,0,0.4);
   font-family: 'Amiri', serif;
 }
+/* Informations Section - Slim Admin Videos */
+.info-item {
+  background: rgba(11,31,33,0.95);
+  backdrop-filter: blur(20px);
+  border: 1.8px solid rgba(201,162,39,0.4);
+  border-radius: 24px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  transition: 0.3s;
+  position: relative;
+  font-family: 'Amiri', serif;
+}
 
+.info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(201,162,39,0.3);
+  border-color: var(--ramzan-gold);
+}
+
+.info-number {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: var(--ramzan-gold);
+  color: var(--ramzan-dark);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(201,162,39,0.4);
+}
+
+.info-title {
+  font-size: 22px;
+  color: var(--ramzan-gold);
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(201,162,39,0.3);
+}
+
+.info-desc {
+  font-size: 16px;
+  color: var(--ramzan-cream);
+  line-height: 1.6;
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.info-upload {
+  font-size: 14px;
+  color: var(--ramzan-green);
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.watch-btn {
+  background: linear-gradient(135deg, #ff4444, #cc0000);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 6px 20px rgba(255,68,68,0.3);
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.watch-btn:hover {
+  transform: scale(1.05);
+  background: #cc0000;
+  box-shadow: 0 10px 30px rgba(255,68,68,0.5);
+}
+
+/* Mobile Slim Fix */
+@media (max-width: 480px) {
+  .info-item { padding: 15px; margin: 10px 0; }
+  .info-title { font-size: 20px; }
+}
 .greet-icon {
   font-size: 50px;
   margin-bottom: 10px;
@@ -1722,7 +1943,57 @@ input:focus, textarea:focus {
   transition: 0.3s;
   font-family: 'Amiri', serif;
 }
+/* Top Admin Banner - Cool Animated Slide & Glow */
+.admin-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+  color: white;
+  z-index: 10000;
+  box-shadow: 0 4px 20px rgba(255,107,107,0.5);
+  animation: slideDown 0.8s ease-out, glowPulse 3s infinite;
+  border-bottom: 3px solid rgba(255,255,255,0.3);
+}
 
+.banner-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  max-width: 480px;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner-close {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 15px;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.banner-close:hover { opacity: 1; transform: scale(1.2); }
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(255,107,107,0.5); }
+  50% { box-shadow: 0 4px 30px rgba(78,205,196,0.8); }
+}
+
+/* Mobile Fix */
+@media (max-width: 480px) {
+  .banner-content { padding: 10px 15px; font-size: 14px; }
+  .banner-close { font-size: 20px; margin-left: 10px; }
+}
 .option-btn:hover {
   background: var(--ramzan-gold);
   transform: translateY(-3px);
@@ -1913,7 +2184,19 @@ input:focus, textarea:focus {
   </style>
 </head>
 <body>
-
+  <!-- Top Animated Banner - Admin Controlled -->
+<div id="adminBanner" class="admin-banner hide">
+  <div class="banner-content">
+    <span id="bannerMsg"></span>
+    <span class="banner-close" onclick="closeBanner()">×</span>
+  </div>
+</div>
+<!-- Floating WhatsApp Button - Green Pop Style -->
+<div id="whatsappFloatBtn" class="whatsapp-float">
+  <a href="https://whatsapp.com/channel/0029VbBwFGO9Bb5s9beJ201f" target="_blank">
+    <i class="whatsapp-icon">📱</i> <!-- Ya WhatsApp icon use kar: <img src="whatsapp-icon.png" alt="WA"> -->
+  </a>
+</div>
 <div class="chand-slim">☾✨</div>
 <div class="ramzan-top-slim">رمضان مبارک بہت جلد آ رہا ہے </div>
   
@@ -2004,7 +2287,7 @@ input:focus, textarea:focus {
     <input type="file" id="picInput" accept="image/*" style="display:none" onchange="uploadProfilePic(this)" />
     <p><strong>Email:</strong> <span id="displayEmail"></span></p>
 
-    <button class="small-btn" onclick="showProfile()">My Profile</button>
+    <button class="small-btn" onclick="showProfile()">My Profile</button><button class="small-btn" onclick="showInformations()">Informations 📺</button>
     <button class="small-btn" onclick="showEditProfile()">Edit Profile ✏️</button>
     <button class="small-btn" onclick="showGroup()">Group & Updates (روز کی معلومات) </button>
     <button class="small-btn" onclick="showEntertainmentChat()">Entertainment Chat 💑</button>
@@ -2016,8 +2299,8 @@ input:focus, textarea:focus {
     
     
     <button class="small-btn" onclick="showMovies()">Movies & Drama 🎬</button>
-    <button class="small-btn" onclick="showCheckHistory()">Check History (Drama & Movie) 📋</button>
 
+<button class="small-btn" onclick="showUserMovieHistory()">Movie & Drama History 📜</button>
   
     <button class="small-btn" onclick="showFeedback()">Feedback & Ratings 🌟</button>
    
@@ -2103,7 +2386,12 @@ input:focus, textarea:focus {
     <button onclick="submitComplaint()">Submit Complaint</button>
     <div class="link" onclick="showSupport()">← Back</div>
   </div>
-  
+  <!-- Informations Section - Admin Videos List -->
+<div id="informationsPage" class="card hide">
+  <h1>Informations 📺</h1>
+  <div id="infoList" style="margin:20px 0; max-height:60vh; overflow-y:auto;"></div>
+  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
   <!-- Naya Section: Check History Page -->
 <div id="checkHistoryPage" class="card hide">
   <h1>Check History 🌟</h1>
@@ -2160,6 +2448,16 @@ input:focus, textarea:focus {
     <input type="text" id="movieReqName" placeholder="Please enter your movie name jo ap ne req ki ha" />
     <button onclick="checkMovieRequest()">Check Status</button>
     <div id="movieResult"></div>
+  </div>
+
+  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
+<!-- User Movie & Drama History - Slim Ramzan VIP (User-Only View) -->
+<div id="userMovieHistoryPage" class="card hide">
+  <h1>My Movie & Drama History 📜</h1>
+  
+  <div class="history-container">
+    <div id="userMovieHistoryList"></div>
   </div>
 
   <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
@@ -3119,7 +3417,7 @@ function selectType(type) {
   document.getElementById('movieName').focus();
 }
 
-// Submit Movie Request
+// Submit Movie Request with Monthly Limit (3 per user per month)
 function submitMovieRequest() {
   const movieName = document.getElementById('movieName').value.trim();
   const whatsapp = document.getElementById('whatsappNum').value.trim();
@@ -3134,20 +3432,42 @@ function submitMovieRequest() {
     return;
   }
   
-  // Save to Firebase for MrCrazyTeam
-  db.ref('movieRequests').push({
-    type: selectedType,
-    movieName: movieName,
-    whatsapp: whatsapp,
-    uid: currentUser.uid,
-    username: currentUser.displayName || "User",
-    timestamp: Date.now(),
-    status: "pending"
-  }).then(() => {
-    document.getElementById('requestForm').classList.add('hide');
-    document.getElementById('successSection').classList.remove('hide');
+  // First, check monthly limit
+  db.ref('movieRequests').orderByChild('uid').equalTo(currentUser.uid).once('value').then(snap => {
+    const now = new Date();
+    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).getTime();
+    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59).getTime();
+    
+    let monthlyCount = 0;
+    snap.forEach(child => {
+      const req = child.val();
+      if (req.timestamp >= startOfMonth && req.timestamp <= endOfMonth) {
+        monthlyCount++;
+      }
+    });
+    
+    if (monthlyCount >= 3) {
+      alert("Dear valued Customer, Please be informed that your current plan allows for a maximum of 3 movies & dramas per month.We kindly suggest Placing your next request in the coming month.Thank you for a continued cooperate for understanding. 📅");
+      return;
+    }
+    
+    // If under limit, save the request
+    db.ref('movieRequests').push({
+      type: selectedType,
+      movieName: movieName,
+      whatsapp: whatsapp,
+      uid: currentUser.uid,
+      username: currentUser.displayName || "User",
+      timestamp: Date.now(),
+      status: "pending"
+    }).then(() => {
+      document.getElementById('requestForm').classList.add('hide');
+      document.getElementById('successSection').classList.remove('hide');
+    }).catch(err => {
+      alert("Error: " + err.message);
+    });
   }).catch(err => {
-    alert("Error: " + err.message);
+    alert("Error checking limit: " + err.message);
   });
 }
 function openPrivateChat(friendUid, friendName) {
@@ -3255,7 +3575,53 @@ function showEntertainmentChat() {
   document.getElementById('entertainmentPage').classList.remove('hide');
   loadEntertainmentChat();
 }
+// Show User Movie History Page
+function showUserMovieHistory() {
+  hideAll();
+  document.getElementById('userMovieHistoryPage').classList.remove('hide');
+  loadUserMovieHistory();
+}
 
+// Load User's Own Movie/Drama History (Real-time, User-Only View)
+function loadUserMovieHistory() {
+  const list = document.getElementById('userMovieHistoryList');
+  list.innerHTML = '<p class="no-history">Loading history...</p>';
+
+  // Query only user's own requests
+  db.ref('movieRequests').orderByChild('uid').equalTo(currentUser.uid).on('value', snap => {
+    list.innerHTML = "";
+    if (!snap.val()) {
+      list.innerHTML = '<p class="no-history">No request history yet 📭</p>';
+      return;
+    }
+
+    const requests = [];
+    snap.forEach(child => {
+      requests.push({ key: child.key, ...child.val() });
+    });
+    requests.sort((a, b) => b.timestamp - a.timestamp); // Newest first
+
+    requests.forEach(req => {
+      const div = document.createElement('div');
+      div.className = 'history-item';
+
+      const time = new Date(req.timestamp).toLocaleString('en-US', {
+        year: 'numeric', month: 'short', day: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+      });
+
+      div.innerHTML = `
+        <div class="history-type">${req.type || 'Unknown'}</div>
+        <div class="history-name">${req.movieName}</div>
+        <div class="history-whatsapp">WhatsApp: ${req.whatsapp}</div>
+        <div class="history-time">Requested: ${time}</div>
+        <span class="history-status ${req.status || 'pending'}">${(req.status || 'pending').toUpperCase()}</span>
+      `;
+
+      list.appendChild(div);
+    });
+  });
+}
 function loadEntertainmentChat() {
   const container = document.getElementById('entertainmentContainer');
 
@@ -3437,7 +3803,51 @@ function sendEntertainmentImage(input) {
     });
   });
 }
+// Informations Section Functions
+function showInformations() {
+  hideAll();
+  document.getElementById('informationsPage').classList.remove('hide');
+  loadInformations();
+}
 
+function loadInformations() {
+  const list = document.getElementById('infoList');
+  list.innerHTML = '<p style="text-align:center; opacity:0.7; padding:40px;">Loading informations...</p>';
+
+  db.ref('informations').orderByChild('timestamp').on('value', snap => {
+    list.innerHTML = "";
+    if (!snap.val()) {
+      list.innerHTML = '<p style="text-align:center; opacity:0.7; padding:40px;">No informations added yet 📭</p>';
+      return;
+    }
+
+    const infos = [];
+    snap.forEach(child => {
+      infos.push({ key: child.key, ...child.val() });
+    });
+    infos.sort((a, b) => b.timestamp - a.timestamp); // Latest first
+
+    let counter = 1;
+    infos.forEach(info => {
+      const div = document.createElement('div');
+      div.className = 'info-item';
+
+      const watchBtn = info.youtubeLink ? 
+        `<a href="${info.youtubeLink}" target="_blank" class="watch-btn">Watch Now ▶️</a>` : 
+        '<button class="watch-btn" disabled style="background:#aaa;">No Link Available</button>';
+
+      div.innerHTML = `
+        <div class="info-number">${counter++}</div>
+        <div class="info-title">${info.title || 'No Title'}</div>
+        <div class="info-desc">${info.description || 'No Description'}</div>
+        <div class="info-upload">Uploaded by: ${info.uploadBy || 'Admin'}</div>
+        ${watchBtn}
+      `;
+
+      list.appendChild(div);
+    });
+  });
+}
 function reactEntertainment(key, emoji) {
   db.ref(`entertainmentChat/${key}/reactions/${emoji}`).transaction(c => (c || 0) + 1);
 }
@@ -3541,36 +3951,45 @@ function openEmergencyLink() {
 
 function loadComplaints() {
   const list = document.getElementById('complaintsList');
-  list.innerHTML = "<p>Loading...</p>";
-
+  list.innerHTML = "<p style='text-align:center; opacity:0.7;'>Loading complaints...</p>";
+  
   db.ref('complaints').orderByChild('uid').equalTo(currentUser.uid).on('value', snap => {
     list.innerHTML = "";
     if (!snap.val()) {
-      list.innerHTML = "<p>No complaints yet</p>";
+      list.innerHTML = "<p style='text-align:center; opacity:0.7; padding:40px;'>No complaints yet 😊</p>";
       return;
     }
-
+    
     const complaints = [];
-    snap.forEach(child => complaints.push({key: child.key, ...child.val()}));
-    complaints.sort((a,b) => b.timestamp - a.timestamp);
-
+    snap.forEach(child => complaints.push({ key: child.key, ...child.val() }));
+    complaints.sort((a, b) => b.timestamp - a.timestamp); // Newest first
+    
     complaints.forEach(c => {
       const div = document.createElement('div');
-      div.className = "card";
-      div.style.marginBottom = "15px";
+      div.className = "complaint-card"; // New slim card class
+      
+      const time = new Date(c.timestamp).toLocaleString(); // Full time
+      const reply = c.adminReply ?
+        `<div class="complaint-reply"><strong>Admin Reply:</strong> ${c.adminReply}</div>` :
+        `<div class="complaint-reply none"><i>No reply yet – wait karo! ⏳</i></div>`;
+      
+      const screenshot = c.screenshot ?
+        `<img src="${c.screenshot}" style="max-width:100%; border-radius:12px; margin:10px 0;" alt="Screenshot" />` :
+        '';
+      
       div.innerHTML = `
-        <p><strong>Complaint ID:</strong> ${c.complaintId}</p>
-        <p><strong>Issue:</strong> ${c.description}</p>
-        ${c.screenshot ? `<img src="${c.screenshot}" class="preview-img" style="max-width:100%; border-radius:12px; margin:10px 0;" />` : ''}
-        <p><span class="status ${c.status}">${c.status.toUpperCase()}</span></p>
-        ${c.mrcrazyteamReply ? `<p><strong>MrCrazyTeam Reply:</strong> ${c.mrcrazyteamReply}</p>` : '<p><i>No reply yet</i></p>'}
-        <small>Submitted: ${new Date(c.timestamp).toLocaleString()}</small>
+        <div class="complaint-id"><strong>ID:</strong> ${c.complaintId || 'CMP-' + c.key.slice(-8)}</div>
+        <div class="complaint-time"><strong>Time:</strong> ${time}</div>
+        <div class="complaint-issue"><strong>Issue:</strong> ${c.description}</div>
+        ${screenshot}
+        <div><span class="status ${c.status || 'pending'}">${(c.status || 'pending').toUpperCase()}</span></div>
+        ${reply}
       `;
+      
       list.appendChild(div);
     });
   });
 }
-
 function loadTotalUsers() {
   db.ref('users').on('value', snap => {
     const count = snap.numChildren();
@@ -3689,7 +4108,88 @@ function loadAppsList() {
     });
   });
 }
+// Top Admin Banner - Complete JS (Email/UID Custom Support)
+let bannerListener = null; // To stop listener on logout
 
+function loadAdminBanner() {
+  if (!currentUser) return; // No user, no banner
+  
+  const banner = document.getElementById('adminBanner');
+  const msgEl = document.getElementById('bannerMsg');
+  if (!banner || !msgEl) return; // HTML check
+  
+  // Stop previous listener if exists
+  if (bannerListener) bannerListener.off();
+  
+  // Check if banner was hidden recently
+  const hiddenTime = localStorage.getItem('bannerHidden');
+  if (hiddenTime && (Date.now() - parseInt(hiddenTime) < 3600000)) { // 1 hour
+    banner.classList.add('hide');
+    return;
+  }
+  
+  // Real-time listener for banners
+  bannerListener = db.ref('adminBanners').orderByChild('timestamp').limitToLast(1).on('value', snap => {
+    banner.classList.add('hide'); // Hide first
+    if (!snap.val()) return; // No banners
+    
+    let showBanner = false;
+    let bannerMsg = '';
+    
+    snap.forEach(child => {
+      const b = child.val();
+      const now = Date.now();
+      
+      // Expiry check
+      if (b.expiry && now > b.expiry) {
+        db.ref('adminBanners/' + child.key).remove(); // Auto-delete expired (admin side pe bhi)
+        return;
+      }
+      
+      // Target match: all, UID, or email (lowercase for case-insensitive)
+      const userEmail = currentUser.email ? currentUser.email.toLowerCase() : '';
+      if (b.target === 'all' || b.target === currentUser.uid || b.target.toLowerCase() === userEmail) {
+        showBanner = true;
+        bannerMsg = b.message;
+      }
+    });
+    
+    if (showBanner && bannerMsg) {
+      msgEl.textContent = bannerMsg;
+      banner.classList.remove('hide');
+    }
+  });
+}
+
+function closeBanner() {
+  document.getElementById('adminBanner').classList.add('hide');
+  localStorage.setItem('bannerHidden', Date.now()); // Hide for 1 hour
+}
+
+// Call on auth change (add this in auth.onAuthStateChanged)
+auth.onAuthStateChanged(user => {
+  if (user) {
+    currentUser = user;
+    loadUserData(user);
+    showDashboard();
+    checkNotifications();
+    loadAdminBanner(); // Banner load here
+  } else {
+    currentUser = null;
+    if (bannerListener) bannerListener.off(); // Stop listener on logout
+    showLogin();
+  }
+});
+
+// On page load, check hidden banner
+window.addEventListener('load', () => {
+  const hiddenTime = localStorage.getItem('bannerHidden');
+  if (hiddenTime && (Date.now() - parseInt(hiddenTime) < 3600000)) {
+    if (document.getElementById('adminBanner')) {
+      document.getElementById('adminBanner').classList.add('hide');
+    }
+  }
+});
 function showContact() {
   hideAll();
   document.getElementById('contactPage').classList.remove('hide');
