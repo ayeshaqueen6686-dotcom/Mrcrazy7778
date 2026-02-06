@@ -624,178 +624,128 @@
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   transition: transform 0.2s;
 }
-/* About & Trust Page - Clean & Professional */
-.trust-container {
+
+/* My Apps - Clean & Professional Grid */
+.apps-grid {
   display: grid;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
   margin: 20px 0;
 }
 
-.trust-item {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 22px;
-  text-align: center;
-  border: 1px solid rgba(123,44,255,0.3);
-  transition: 0.4s;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-}
-
-.trust-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(123,44,255,0.4);
-  border-color: var(--primary);
-}
-
-.trust-icon {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-.trust-title {
-  font-size: 20px;
-  font-weight: 700;
-  background: linear-gradient(45deg, #7b2cff, #00d4ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 12px;
-}
-
-.trust-desc {
-  font-size: 15px;
-  opacity: 0.9;
-  line-height: 1.6;
-}
-
-.trust-footer {
-  text-align: center;
-  margin: 40px 0 20px;
-  padding: 20px;
-  background: rgba(123,44,255,0.15);
-  border-radius: 20px;
-  border: 1px dashed rgba(123,44,255,0.4);
-}
-/* Apps List - Grid Style */
-#appsList {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: 18px;
-  margin: 20px 0;
-}
-
-.app-box {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  padding: 16px;
+.app-card {
+  background: rgba(11, 31, 33, 0.95);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 12px;
+  padding: 12px;
   text-align: center;
   cursor: pointer;
-  transition: 0.4s;
-  border: 1px solid rgba(106,76,255,0.3);
-}
-
-.app-box:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(106,76,255,0.4);
-  border-color: var(--primary);
-}
-
-.app-box img {
-  width: 70px;
-  height: 70px;
-  border-radius: 16px;
-  object-fit: cover;
-  border: 3px solid var(--primary);
-  margin-bottom: 10px;
-}
-
-.app-box .name {
-  font-weight: bold;
-  font-size: 15px;
-  margin-bottom: 4px;
-}
-
-.app-box .dev {
-  font-size: 13px;
-  opacity: 0.8;
-}
-
-/* Modal */
-.modal {
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
-  backdrop-filter: blur(10px);
-  z-index: 9999;
+  transition: all 0.3s;
+  height: 140px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.modal-content {
-  background: rgba(20,18,38,0.98);
-  border-radius: 24px;
-  padding: 30px;
-  max-width: 90%;
-  text-align: center;
-  border: 2px solid var(--primary);
-  box-shadow: 0 20px 50px rgba(106,76,255,0.6);
+.app-card:hover {
+  transform: translateY(-5px);
+  border-color: #c9a227;
+  box-shadow: 0 8px 20px rgba(201, 162, 39, 0.3);
 }
 
-.close-modal {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 35px;
-  cursor: pointer;
-  color: #ff4444;
+.app-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  object-fit: cover;
 }
 
-.app-detail-icon {
-  width: 120px;
-  height: 120px;
-  border-radius: 24px;
-  border: 5px solid var(--primary);
-  margin-bottom: 20px;
-}
-
-.app-detail-name {
-  font-size: 26px;
+.app-title {
+  font-size: 14px;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: #c9a227;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-.app-detail-dev {
-  font-size: 18px;
-  opacity: 0.9;
+.app-detail {
+  font-size: 11px;
+  opacity: 0.75;
+}
+
+/* Detail Page */
+.detail-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.detail-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 18px;
+  object-fit: cover;
+  border: 2px solid #c9a227;
   margin-bottom: 15px;
 }
 
-.app-detail-desc {
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 20px 0;
-  padding: 15px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
+.detail-title {
+  font-size: 22px;
+  color: #c9a227;
+  margin: 0 0 10px;
 }
 
-.download-big-btn {
-  background: linear-gradient(135deg, #00cc88, #00aa66);
-  padding: 18px 50px;
-  border-radius: 50px;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
+.detail-body {
+  background: rgba(11, 31, 33, 0.98);
+  padding: 18px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.detail-body p {
+  margin: 10px 0;
+}
+
+.detail-body strong {
+  color: #c9a227;
+}
+
+.download-btn {
+  display: block;
+  padding: 16px;
+  background: linear-gradient(135deg, #c9a227, #b5892e);
+  color: #0b1f21;
+  text-align: center;
   text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
-  box-shadow: 0 10px 30px rgba(0,204,136,0.5);
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
 }
 
-.download-big-btn:hover {
-  transform: scale(1.05);
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(201, 162, 39, 0.5);
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 20px;
+  color: #c9a227;
+  cursor: pointer;
+}
+
+.no-apps {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 16px;
+  opacity: 0.7;
 }
 .trust-footer p {
   opacity: 0.8;
@@ -1796,7 +1746,85 @@ body::before {
   letter-spacing: 1.8px;
   text-shadow: 0 0 20px rgba(201,162,39,0.5);
 }
+/* My Profile - Clean & Professional (No Photo & No Gmail) */
+.profile-card {
+  background: rgba(11,31,33,0.98);
+  border: 2px solid rgba(201,162,39,0.4);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(201,162,39,0.2);
+  margin: 20px 0;
+}
 
+.profile-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-header h2 {
+  font-size: 26px;
+  color: var(--ramzan-gold);
+  margin: 0;
+}
+
+.profile-info .info-row {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  padding: 12px;
+  background: rgba(201,162,39,0.08);
+  border-radius: 12px;
+  border: 1px dashed rgba(201,162,39,0.3);
+}
+
+.info-row strong {
+  color: var(--ramzan-gold);
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.info-row span {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.info-row input, .info-row textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: rgba(255,248,231,0.1);
+  border: 1.5px solid rgba(201,162,39,0.4);
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+}
+
+.save-btn {
+  padding: 10px 20px;
+  background: var(--ramzan-gold);
+  color: #0b1f21;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.profile-footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* Mobile adjust */
+@media (max-width: 480px) {
+  .profile-header h2 {
+    font-size: 22px;
+  }
+  .info-row {
+    padding: 10px;
+  }
+}
 /* Ultra Slim Cards */
 .container { max-width: 380px; margin: 90px auto 0; padding: 10px; }
 .card {
@@ -2436,6 +2464,203 @@ input:focus, textarea:focus {
   transition: 0.3s;
   font-family: 'Amiri', serif;
 }
+.support-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.tab-btn {
+  padding: 8px 16px;
+  background: rgba(201,162,39,0.1);
+  border: 1px solid rgba(201,162,39,0.3);
+  border-radius: 25px;
+  color: var(--ramzan-gold);
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  background: var(--ramzan-gold);
+  color: #0b1f21;
+}
+
+./* My Complaints - Behtreen Design */
+.complaints-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.complaint-card {
+  background: rgba(11,31,33,0.98);
+  border: 1px solid rgba(201,162,39,0.25);
+  border-radius: 16px;
+  padding: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.complaint-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(201,162,39,0.25);
+  border-color: var(--ramzan-gold);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.complaint-id {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--ramzan-gold);
+}
+
+.status-badge {
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status-pending { background: #ff8800; color: white; }
+.status-approved { background: #00cc88; color: white; }
+.status-rejected { background: #ff4444; color: white; }
+
+.complaint-time {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+
+.complaint-text {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.reply-box {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0,204,136,0.12);
+  border-radius: 10px;
+  border-left: 5px solid #00cc88;
+  font-size: 14px;
+}
+
+.no-data {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  border: 1px dashed rgba(201,162,39,0.3);
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.no-data small {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--ramzan-gold);
+}
+
+/* Mobile adjust */
+@media (max-width: 480px) {
+  .complaints-grid {
+    gap: 12px;
+  }
+  .complaint-card {
+    padding: 14px;
+  }
+  .complaint-id {
+    font-size: 14px;
+  }
+  .status-badge {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+/* Live Chat - Very Small & Clean */
+.live-chat-box {
+  height: 45vh;
+  overflow-y: auto;
+  background: rgba(11,31,33,0.95);
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.live-msg {
+  max-width: 78%;
+  padding: 9px 12px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.live-msg.bot { align-self: flex-start; background: #00cc88; color: white; }
+.live-msg.user { align-self: flex-end; background: #ff4444; color: white; }
+
+.live-input {
+  display: flex;
+  gap: 8px;
+}
+
+.live-input input {
+  flex: 1;
+  padding: 12px 16px;
+  background: rgba(255,248,231,0.08);
+  border: 1.5px solid rgba(201,162,39,0.3);
+  border-radius: 30px;
+  color: white;
+  font-size: 14px;
+}
+
+.live-input button {
+  width: 50px;
+  height: 50px;
+  background: var(--ramzan-gold);
+  color: #0b1f21;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Complaint History - Small Cards */
+.history-list .complaint-card {
+  background: rgba(11,31,31,0.95);
+  border: 1px solid rgba(201,162,39,0.3);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.complaint-card.pending { border-left: 5px solid #ff8800; }
+.complaint-card.approved { border-left: 5px solid #00cc88; }
+.complaint-card.rejected { border-left: 5px solid #ff4444; }
+
+.complaint-card .reply {
+  margin-top: 8px;
+  padding: 8px;
+  background: rgba(0,204,136,0.12);
+  border-radius: 8px;
+  border-left: 4px solid #00cc88;
+  font-size: 13px;
+}
 /* Top Admin Banner - Cool Animated Slide & Glow */
 .admin-banner {
   position: fixed;
@@ -2514,7 +2739,87 @@ input:focus, textarea:focus {
   font-size: 16px;
   border: 1px dashed var(--ramzan-gold);
 }
+.ramzan-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
 
+.tab-btn {
+  padding: 10px 20px;
+  background: rgba(201,162,39,0.15);
+  border: 1px solid rgba(201,162,39,0.4);
+  border-radius: 30px;
+  color: var(--ramzan-gold);
+  cursor: pointer;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  background: var(--ramzan-gold);
+  color: #0b1f21;
+}
+
+.roza-card {
+  background: rgba(11,31,33,0.98);
+  border: 2px solid var(--ramzan-gold);
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+}
+
+.roza-number {
+  font-size: 28px;
+  color: var(--ramzan-gold);
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  height: 12px;
+  background: rgba(201,162,39,0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(to right, #c9a227, #ffd700);
+  transition: width 0.6s ease;
+}
+
+.date-time p {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 8px 0;
+}
+
+.namaz-list, .sehri-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.namaz-item, .sehri-item {
+  background: rgba(11,31,33,0.95);
+  border: 1px solid rgba(201,162,39,0.3);
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city-selector select {
+  padding: 12px;
+  background: rgba(255,248,231,0.1);
+  border: 1.5px solid rgba(201,162,39,0.4);
+  border-radius: 10px;
+  color: white;
+  width: 100%;
+}
 .slim-list {
   display: flex;
   flex-direction: column;
@@ -2954,16 +3259,19 @@ input:focus, textarea:focus {
     <input type="file" id="picInput" accept="image/*" style="display:none" onchange="uploadProfilePic(this)" />
     <p><strong>Email:</strong> <span id="displayEmail"></span></p>
 
-    <button class="small-btn" onclick="showProfile()">My Profile</button><button class="small-btn" onclick="showInformations()">Informations 📺</button>
-    <button class="small-btn" onclick="showEditProfile()">Edit Profile ✏️</button>
+    <button class="small-btn" onclick="showMyProfile()">My Profile 👤</button>
+    <button class="small-btn" onclick="showRamzanSection()">Ramzan Kareem 🌙</button>
+    <button class="small-btn" onclick="showInformations()">Informations 📺</button>
+ 
+ 
     <button class="small-btn" onclick="showGroup()">Group & Updates (روز کی معلومات) </button>
     <button class="small-btn" onclick="showEntertainmentChat()">Entertainment Chat 💑</button>
     <!-- Ye line delete kar do -->
-    <button class="small-btn" onclick="showChillWithFriends()">Chill with Friends (دوست بنائے) 👥</button>
+
+
     <button class="small-btn" onclick="showMyApps()">My Apps</button>
-    <button class="small-btn" onclick="showSupport()">Support (ہم سے رابطہ)</button>
-    <button class="small-btn" onclick="showComplaintHistory()">Complaint History (شکایات کی معلومات) </button>
-    
+  <button class="small-btn" onclick="showSupportChat()">Support Chat 💬</button>
+  
     
     <button class="small-btn" onclick="showMovies()">Movies & Drama 🎬</button>
 
@@ -2977,7 +3285,7 @@ input:focus, textarea:focus {
 <button class="small-btn" onclick="showSimDetailsRequest()">SIM Details Request 📱</button>
    <button class="small-btn" onclick="showSimHistory()">SIM Requests History 📜</button>
    
-    <button class="small-btn" onclick="showTrustPage()">About & Trust 🌟</button>
+   
     <button class="small-btn" onclick="showContact()">Contact Us 📞</button>
     <button class="small-btn" onclick="showPolicy()">Policy & Guidelines 📜</button>
     <button class="small-btn" onclick="showShareFriends()">Share Friends & Earn 🌟</button>
@@ -3003,60 +3311,43 @@ input:focus, textarea:focus {
 
     <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
   </div>
-<!-- Edit Profile Page - Naya Section -->
-<div id="editProfilePage" class="card hide">
-  <h1>Edit Profile ✏️</h1>
 
-  <!-- Username Change -->
-  <input type="text" id="editUsername" placeholder="New Username" />
 
-  <!-- WhatsApp Bind -->
-  <input type="text" id="editWhatsapp" placeholder="WhatsApp Number (03XXXXXXXXX)" maxlength="11" />
-
-  <!-- Address Add -->
-  <textarea id="editAddress" placeholder="Your Full Address (City, Street, House No.)" rows="4"></textarea>
-
-  <!-- Total Old Customers -->
-  <div style="text-align:center; margin:30px 0; padding:20px; background:rgba(255,255,255,0.1); border-radius:16px;">
-    <p style="font-size:18px; opacity:0.9;">MrCrazyTeam ke Total Old Customers</p>
-    <p id="totalCustomers" style="font-size:36px; font-weight:bold; color:var(--primary); margin-top:10px;">0</p>
+<!-- Support Chat - Complete Fixed Version -->
+<div id="supportChatPage" class="card hide">
+  <h1>Support Chat 💬</h1>
+  
+  <div class="support-tabs">
+    <button class="tab-btn active" onclick="openTab('submit')">Submit Complaint</button>
+    <button class="tab-btn" onclick="openTab('live')">Live Chat</button>
+    <button class="tab-btn" onclick="openTab('history')">My Complaints</button>
   </div>
-
-  <button onclick="saveProfileChanges()">Save Changes 💾</button>
-
+  
+  <!-- Submit Complaint -->
+  <div id="submit" class="tab-content active">
+    <input type="text" id="compName" readonly placeholder="Your Name" />
+    <input type="email" id="compEmail" readonly placeholder="Your Email" />
+    <textarea id="compDesc" placeholder="Apni problem yahan likhiye..." rows="5"></textarea>
+    <button onclick="submitComplaint()">Submit Complaint</button>
+    <div id="submitResult" class="result"></div>
+  </div>
+  
+  <!-- Live Chat -->
+  <div id="live" class="tab-content">
+    <div id="liveChatBox" class="live-chat-box"></div>
+    <div class="live-input">
+      <input type="text" id="liveInput" placeholder="Type your message..." onkeydown="if(event.key==='Enter') sendLiveMessage()" />
+      <button onclick="sendLiveMessage()">Send</button>
+    </div>
+  </div>
+  
+ <!-- Complaint History Tab -->
+<div id="history" class="tab-content">
+  <h2>My Complaints</h2>
+  <div id="complaintHistoryList"></div> <!-- Yeh ID bilkul same rakhna -->
+</div>
   <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
 </div>
-  <!-- Support -->
-  <div id="supportPage" class="card hide">
-    <h1>Support (ہم سے رابطہ)</h1>
-    <button class="small-btn" onclick="showComplaintForm()">File Complaint (شکایات جمع کریں) </button>
-    <button class="small-btn" onclick="showLiveChat()">Live Chat with MrCrazyTeam</button>
-    <div class="link" onclick="showDashboard()">← Back</div>
-  </div>
-
-  <!-- File Complaint -->
-  <div id="complaintForm" class="card hide">
-    <h1>File Complaint</h1>
-    <input type="text" id="compName" placeholder="Your Name" readonly />
-    <input type="email" id="compEmail" placeholder="Your Email" readonly />
-    <textarea id="compDesc" placeholder="Describe your problem in (اپنی شکایات تفصیل سے لکھیں) " rows="5"></textarea>
-
-    <div style="margin:15px 0;">
-      <button type="button" onclick="document.getElementById('compImage').click()" style="width:auto; padding:10px 15px; background:rgba(255,255,255,0.2);">
-         
-         
-      </button>
-      <input type="file" id="compImage" accept="image/*" style="display:none" onchange="previewImage(this)" />
-      <div id="loadingText" class="loading hide">Uploading... ⏳</div>
-      <div id="imagePreview" class="preview-box hide">
-        <img id="previewImg" class="preview-img" />
-        <div class="remove-img" onclick="removeImage()">✕</div>
-      </div>
-    </div>
-
-    <button onclick="submitComplaint()">Submit Complaint</button>
-    <div class="link" onclick="showSupport()">← Back</div>
-  </div>
   <!-- Informations Section - Admin Videos List -->
 <div id="informationsPage" class="card hide">
   <h1>Informations 📺</h1>
@@ -3121,6 +3412,55 @@ input:focus, textarea:focus {
     <div id="movieResult"></div>
   </div>
 
+  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
+<!-- Ramzan Kareem Section -->
+<div id="ramzanSection" class="card hide">
+  <h1>Ramzan Kareem 🌙</h1>
+  
+  <div class="ramzan-tabs">
+    <button class="tab-btn active" onclick="openRamzanTab('roza')">Roza</button>
+    <button class="tab-btn" onclick="openRamzanTab('namaz')">Namaz Times</button>
+    <button class="tab-btn" onclick="openRamzanTab('sehri')">Sehri & Aftari</button>
+  </div>
+  
+  <!-- Roza Tab -->
+  <div id="rozaTab" class="tab-content active">
+    <div class="roza-card">
+      <div class="roza-number">Aaj <span id="todayRoza">1</span><sup>st</sup> Roza</div>
+      <div class="roza-progress">
+        <div class="progress-bar">
+          <div id="progressFill" class="fill" style="width: 10%"></div>
+        </div>
+        <p><span id="passedRoza">1</span> / <span id="totalRoza">30</span> Roza</p>
+      </div>
+      <div class="date-time">
+        <p id="currentDateUrdu"></p>
+        <p id="currentTime12"></p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Namaz Times Tab -->
+  <div id="namazTab" class="tab-content">
+    <div class="city-selector">
+      <select id="citySelect" onchange="loadNamazTimes()">
+        <option value="Lahore">Lahore</option>
+        <option value="Karachi">Karachi</option>
+        <option value="Islamabad">Islamabad</option>
+        <option value="Faisalabad">Faisalabad</option>
+        <option value="Rawalpindi">Rawalpindi</option>
+      </select>
+    </div>
+    <div id="namazTimesList" class="namaz-list"></div>
+  </div>
+  
+  <!-- Sehri Aftari Tab -->
+  <div id="sehriTab" class="tab-content">
+    <h2>Sehri & Aftari Timings</h2>
+    <div id="sehriAftariList" class="sehri-list"></div>
+  </div>
+  
   <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
 </div>
 <!-- User Movie & Drama History - Slim Ramzan VIP (User-Only View) -->
@@ -3423,66 +3763,42 @@ Thank you
 
     <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
   </div>
-<!-- Chill with Friends Main Page -->
-<div id="chillPage" class="card hide">
-  <h1>Chill with Friends 👥</h1>
-  <!-- Report User Modal -->
-<div id="reportModal" class="modal hide">
-  <div class="modal-content" style="max-width:95%;">
-    <span class="close-modal" onclick="closeReportModal()">×</span>
-    <h2>Report User ⚠️</h2>
-    <p><strong>Reporting:</strong> <span id="reportTargetName"></span></p>
-    <textarea id="reportReason" placeholder="Issue/reason detail mein likho..." rows="6" style="width:100%; padding:12px; border-radius:12px; background:rgba(255,255,255,0.1); color:white; border:none; margin:15px 0;"></textarea>
-    <button onclick="submitUserReport()" style="background:#ff4444;">Submit Report</button>
-  </div>
-</div>
-  <div class="trust-container" style="gap:15px; margin-top:20px;">
-    <button class="small-btn" onclick="showMrCrazyUsers()" style="width:100%; padding:15px; font-size:16px;">MrCrazy Users 👥</button>
-    <button class="small-btn" onclick="showFriendRequests()" style="width:100%; padding:15px; font-size:16px;">Friend Requests 📥 <span id="requestCountBadge" class="status pending hide">0</span></button>
-    <button class="small-btn" onclick="showFriendsChat()" style="width:100%; padding:15px; font-size:16px;">Friends & Chat 💬</button>
+<!-- My Profile - Clean, No Gmail & No Photo -->
+<div id="myProfilePage" class="card hide">
+  <h1>My Profile 👤</h1>
+  
+  <div class="profile-card">
+    <div class="profile-header">
+      <h2 id="profileName">Loading...</h2>
+    </div>
+    
+    <div class="profile-info">
+      <div class="info-row">
+        <strong>WhatsApp Number:</strong>
+        <span id="profileWhatsApp">Not set</span>
+        <input id="whatsappInput" type="tel" placeholder="030XXXXXXXXX" class="hide" maxlength="11" pattern="03[0-9]{9}" />
+        <button id="saveWhatsapp" class="save-btn hide" onclick="saveWhatsApp()">Save</button>
+      </div>
+      
+      <div class="info-row">
+        <strong>Address:</strong>
+        <span id="profileAddress">Not set</span>
+        <textarea id="addressInput" placeholder="Your full address" class="hide" rows="3"></textarea>
+        <button id="saveAddress" class="save-btn hide" onclick="saveAddress()">Save</button>
+      </div>
+      
+      <div class="info-row">
+        <strong>Joined:</strong>
+        <span id="joinDate">Loading...</span>
+      </div>
+    </div>
+    
+    <div class="profile-footer">
+      <p>This information is private and only visible to you.</p>
+    </div>
   </div>
   
   <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
-</div>
-
-<!-- MrCrazy Users List -->
-<div id="mrcrazyUsersPage" class="card hide">
-  <h1>MrCrazy Users 👥</h1>
-  <div id="allUsersList" style="margin-top:20px;"></div>
-  <div class="link" onclick="showChillWithFriends()">← Back</div>
-</div>
-
-<!-- Friend Requests -->
-<div id="friendRequestsPage" class="card hide">
-  <h1>Friend Requests 📥</h1>
-  <div id="incomingRequests"></div>
-  <div id="outgoingRequests" style="margin-top:30px;">
-    <h3>Sent Requests</h3>
-    <div id="sentRequestsList"></div>
-  </div>
-  <div class="link" onclick="showChillWithFriends()">← Back</div>
-</div>
-
-<!-- Friends & Private Chat -->
-<div id="friendsChatPage" class="card hide">
-  <h1>My Friends 💬</h1>
-  <div id="friendsList" style="margin:20px 0;"></div>
-  <div class="link" onclick="showChillWithFriends()">← Back</div>
-</div>
-
-<!-- Private Chat Window -->
-<div id="privateChatModal" class="modal hide">
-  <div class="modal-content" style="max-width:95%; height:90vh; display:flex; flex-direction:column;">
-    <div style="display:flex; justify-content:space-between; align-items:center; padding:10px; border-bottom:1px solid rgba(255,255,255,0.2);">
-      <h2 id="chatWithUser"></h2>
-      <span class="close-modal" onclick="closePrivateChat()">×</span>
-    </div>
-    <div id="privateMessages" class="entertainment-container" style="flex:1; overflow-y:auto;"></div>
-    <div class="chat-input" style="padding:10px; background:rgba(0,0,0,0.3);">
-      <input type="text" id="privateMsgInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter') sendPrivateMessage()" />
-      <button onclick="sendPrivateMessage()">Send</button>
-    </div>
-  </div>
 </div>
  <!-- New Mobile-First Entertainment Chat -->
 <div id="entertainmentPage" class="card hide">
@@ -3558,78 +3874,36 @@ Thank you
     <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
   </div>
 
-  <!-- My Apps - Fixed Full List + Details on Click -->
-  <div id="myAppsPage" class="card hide">
-    <h1>My Apps 📱</h1>
-    <div id="appsList"></div>
-    <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+<!-- My Apps - Slim Grid -->
+<div id="myAppsPage" class="card hide">
+  <h1>My Apps</h1>
+  
+  <div id="appsGrid" class="apps-grid"></div>
+  
+  <div id="noApps" class="no-apps hide">
+    Abhi koi app available nahi hai
   </div>
-
-  <!-- App Details Modal -->
-  <div id="appDetailsModal" class="modal hide">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeModal()">×</span>
-      <div id="appDetails"></div>
-    </div>
+  
+  <div class="back-link" onclick="showDashboard()">← Back</div>
+</div>
+<!-- App Detail Page -->
+<div id="appDetailPage" class="card hide">
+  <div class="detail-header">
+    <img id="detailIcon" class="detail-icon" src="" alt="Icon">
+    <h2 id="detailTitle"></h2>
   </div>
-
-  <!-- Complaint History -->
-  <div id="historyPage" class="card hide">
-    <h1>Complaint History</h1>
-    <div id="complaintsList"></div>
-    <div class="link" onclick="showDashboard()">← Back</div>
+  
+  <div class="detail-body">
+    <p><strong>Developer:</strong> <span id="detailDev"></span></p>
+    <p><strong>Size:</strong> <span id="detailSize"></span></p>
+    <p id="detailDesc"></p>
   </div>
-
-  <!-- Live Chat - Fixed Left/Right -->
-  <div id="chatPage" class="card hide">
-    <h1>Live Chat with MrCrazyTeam 💬</h1>
-    <div id="chatContainer" class="chat-container"></div>
-    <div class="chat-input">
-      <button onclick="document.getElementById('chatImage').click()">📷</button>
-      <input type="text" id="chatMsg" placeholder="Type your message..." onkeydown="if(event.key==='Enter') sendChatMessage()" />
-      <button onclick="sendChatMessage()">Send</button>
-    </div>
-    <input type="file" id="chatImage" accept="image/*" style="display:none" onchange="sendChatImage(this)" />
-    <div class="link" onclick="showSupport()">← Back</div>
-  </div>
-
-  <!-- About & Trust Page -->
-  <div id="trustPage" class="card hide">
-    <h1>About & Trust 🌟</h1>
-
-    <div class="trust-container">
-      <div class="trust-item">
-        <div class="trust-icon">🔒</div>
-        <div class="trust-title">100% Password Safe</div>
-        <div class="trust-desc">We never ask for your passwords or store them. Your account is fully secure with Firebase Authentication.</div>
-      </div>
-
-      <div class="trust-item">
-        <div class="trust-icon">📧</div>
-        <div class="trust-title">Real Support</div>
-        <div class="trust-desc">Live Chat with Admin available 24/7. Real humans, real help – no bots!</div>
-      </div>
-
-      <div class="trust-item">
-        <div class="trust-icon">🛡️</div>
-        <div class="trust-title">Safe & Secure</div>
-        <div class="trust-desc">All data encrypted. Screenshot & recording blocked. Your privacy is our priority.</div>
-      </div>
-
-      <div class="trust-item">
-        <div class="trust-icon">💬</div>
-        <div class="trust-title">Community First</div>
-        <div class="trust-desc">Entertainment Chat, Group Updates, Feedback – everything made for real users by real team.</div>
-      </div>
-    </div>
-
-    <div class="trust-footer">
-      <p>Made with ❤️ by</p>
-      <h3>MRCRAZYTEAM</h3>
-    </div>
-
-    <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
-  </div>
+  
+  <a id="downloadBtn" href="#" target="_blank" class="download-btn">
+    Download Now
+  </a>
+  
+  <div class="back-link" onclick="showMyApps()">← Back to My Apps</div>
 </div>
 
 
@@ -3776,79 +4050,6 @@ function loadProfile() {
     document.getElementById('bigPic').src = picUrl;
   });
 }
-// Show Edit Profile Page
-function showEditProfile() {
-  hideAll();
-  document.getElementById('editProfilePage').classList.remove('hide');
-  loadEditProfileData();
-  loadTotalCustomers();
-}
-
-// Load Current Data in Edit Fields
-function loadEditProfileData() {
-  db.ref('users/' + currentUser.uid).once('value').then(snap => {
-    const data = snap.val() || {};
-    document.getElementById('editUsername').value = data.username || "";
-    document.getElementById('editWhatsapp').value = data.whatsapp || "";
-    document.getElementById('editAddress').value = data.address || "";
-  });
-}
-
-// Load Total Customers (Total Registered Users)
-function loadTotalCustomers() {
-  db.ref('users').on('value', snap => {
-    const count = snap.numChildren();
-    document.getElementById('totalCustomers').textContent = count;
-  });
-}
-// Show Team Members Section
-function showMembers() {
-  hideAll();
-  document.getElementById('membersPage').classList.remove('hide');
-}
-// Save Changes
-function saveProfileChanges() {
-  const newUsername = document.getElementById('editUsername').value.trim();
-  const whatsapp = document.getElementById('editWhatsapp').value.trim();
-  const address = document.getElementById('editAddress').value.trim();
-
-  if (!newUsername) {
-    return alert("Username khali nahi ho sakta!");
-  }
-
-  if (whatsapp && (whatsapp.length !== 11 || !whatsapp.startsWith('03'))) {
-    return alert("Valid WhatsApp number daalen (03XXXXXXXXX)");
-  }
-
-  db.ref('users/' + currentUser.uid).update({
-    username: newUsername,
-    whatsapp: whatsapp,
-    address: address
-  }).then(() => {
-    alert("Profile successfully updated! 🔥");
-    
-    // Dashboard pe username update ho jaye
-    loadUserData(currentUser);
-    
-    // Agar chahte ho auth displayName bhi update ho
-    // currentUser.updateProfile({ displayName: newUsername });
-  }).catch(err => {
-    alert("Error: " + err.message);
-  });
-}
-function uploadProfilePic(input) {
-  const file = input.files[0];
-  if (!file) return;
-  if (file.size > 5 * 1024 * 1024) return alert("Image must be under 5MB!");
-
-  const ref = storage.ref('profile_pics/' + currentUser.uid);
-  ref.put(file).then(() => {
-    ref.getDownloadURL().then(url => {
-      db.ref('users/' + currentUser.uid).update({ photoURL: url });
-      alert("Profile picture updated! 🔥");
-    });
-  });
-}
 
 function showPolicy() {
   hideAll();
@@ -3870,18 +4071,7 @@ function previewImage(input) {
 }
 
 let entertainmentReplyingTo = null;
-// Chill with Friends Features
-function showChillWithFriends() {
-  hideAll();
-  document.getElementById('chillPage').classList.remove('hide');
-  updateRequestBadge();
-}
-
-function showMrCrazyUsers() {
-  hideAll();
-  document.getElementById('mrcrazyUsersPage').classList.remove('hide');
-  loadAllUsers();
-}
+// 
 // Show Check History Section
 function showCheckHistory() {
   hideAll();
@@ -4028,186 +4218,7 @@ function checkMovieRequest() {
     </div>
   `;
 }
-function showFriendRequests() {
-  hideAll();
-  document.getElementById('friendRequestsPage').classList.remove('hide');
-  loadFriendRequests();
-}
 
-function showFriendsChat() {
-  hideAll();
-  document.getElementById('friendsChatPage').classList.remove('hide');
-  loadFriendsList();
-}
-
-function loadAllUsers() {
-  const list = document.getElementById('allUsersList');
-  list.innerHTML = "<p>Loading users...</p>";
-  
-  db.ref('users').once('value').then(snap => {
-    list.innerHTML = "";
-    snap.forEach(userSnap => {
-      const user = userSnap.val();
-      const uid = userSnap.key;
-      
-      if (uid === currentUser.uid) return;
-      
-      db.ref(`friends/${currentUser.uid}/${uid}`).once('value').then(friendSnap => {
-        if (friendSnap.exists()) return;
-        
-        db.ref(`friendRequests/${uid}/${currentUser.uid}`).once('value').then(reqSnap => {
-          const hasSent = reqSnap.exists();
-          
-          const div = document.createElement('div');
-          div.className = "friend-item";
-          
-          const pic = user.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.username || 'U')}&background=6a4cff&color=fff&size=128`;
-          
-          div.innerHTML = `
-            <div style="display:flex; align-items:center; gap:15px;">
-              <img src="${pic}" style="width:50px; height:50px; border-radius:50%; border:3px solid var(--primary);">
-              <strong style="font-size:18px;">${user.username || 'User'}</strong>
-            </div>
-            <button ${hasSent ? 'style="background:#ff8800;" onclick="cancelFriendRequest(\''+uid+'\')"' : 'onclick="sendFriendRequest(\''+uid+'\')"'}>
-              ${hasSent ? 'Cancel' : 'Add Friend'}
-            </button>
-          `;
-          list.appendChild(div);
-        });
-      });
-    });
-  });
-}
-
-// Send Friend Request
-function sendFriendRequest(uid) {
-  const data = {
-    from: currentUser.uid,
-    fromName: currentUser.displayName || "User",
-    timestamp: Date.now()
-  };
-  db.ref(`friendRequests/${uid}/${currentUser.uid}`).set(data).then(() => {
-    alert("Friend request sent!");
-    loadAllUsers();
-  });
-}function updateRatingDisplay() {
-  document.querySelectorAll('.star-large').forEach((star, index) => {
-    if (index < currentRating) {
-      star.classList.add('active');
-    } else {
-      star.classList.remove('active');
-    }
-  });
-
-  const texts = ["", "Poor", "Fair", "Good", "Great", "Excellent!"];
-  document.getElementById('ratingTextLarge').textContent = texts[currentRating] || "Tap a star to rate";
-}
-
-// Cancel Request
-function cancelFriendRequest(uid) {
-  db.ref(`friendRequests/${uid}/${currentUser.uid}`).remove().then(() => {
-    alert("Request cancelled");
-    loadAllUsers();
-  });
-}
-
-// Load Friend Requests
-function loadFriendRequests() {
-  const incoming = document.getElementById('incomingRequests');
-  const sent = document.getElementById('sentRequestsList');
-  incoming.innerHTML = "<h3>Incoming Requests</h3>";
-  sent.innerHTML = "";
-
-  // Incoming
-  db.ref(`friendRequests/${currentUser.uid}`).on('value', snap => {
-    incoming.innerHTML = "<h3>Incoming Requests</h3>";
-    if (!snap.val()) {
-      incoming.innerHTML += "<p>No new requests</p>";
-    }
-    snap.forEach(req => {
-      const r = req.val();
-      const fromUid = req.key;
-      db.ref('users/' + fromUid).once('value').then(u => {
-        const user = u.val();
-        const div = document.createElement('div');
-        div.className = "request-item";
-        div.innerHTML = `
-          <strong>${user.username}</strong> sent you a friend request<br>
-          <small>${new Date(r.timestamp).toLocaleString()}</small><br>
-          <button onclick="acceptRequest('${fromUid}')" style="background:#00aa55;">Accept</button>
-          <button onclick="rejectRequest('${fromUid}')" style="background:#aa0000;">Reject</button>
-        `;
-        incoming.appendChild(div);
-      });
-    });
-  });
-
-  // Outgoing
-  db.ref('users').once('value').then(users => {
-    users.forEach(userSnap => {
-      const uid = userSnap.key;
-      if (uid === currentUser.uid) return;
-      db.ref(`friendRequests/${uid}/${currentUser.uid}`).once('value').then(req => {
-        if (req.exists()) {
-          const user = userSnap.val();
-          const div = document.createElement('div');
-          div.className = "request-item";
-          div.innerHTML = `<strong>${user.username}</strong> ← You sent request`;
-          sent.appendChild(div);
-        }
-      });
-    });
-  });
-}
-
-function acceptRequest(fromUid) {
-  const myUid = currentUser.uid;
-  db.ref(`friends/${myUid}/${fromUid}`).set({ timestamp: Date.now() });
-  db.ref(`friends/${fromUid}/${myUid}`).set({ timestamp: Date.now() });
-  db.ref(`friendRequests/${myUid}/${fromUid}`).remove();
-  alert("Now you are friends! 🎉");
-  loadFriendRequests();
-}
-
-function rejectRequest(fromUid) {
-  db.ref(`friendRequests/${currentUser.uid}/${fromUid}`).remove();
-  alert("Request rejected");
-}
-
-// Load Friends List
-let currentChatFriend = null;
-
-function loadFriendsList() {
-  const list = document.getElementById('friendsList');
-  list.innerHTML = "<p>Loading friends...</p>";
-
-  db.ref(`friends/${currentUser.uid}`).once('value').then(snap => {
-    list.innerHTML = "";
-    if (!snap.val()) {
-      list.innerHTML = "<p>No friends yet 😢<br>Add from MrCrazy Users!</p>";
-      return;
-    }
-
-    snap.forEach(friend => {
-      const friendUid = friend.key;
-      db.ref('users/' + friendUid).once('value').then(u => {
-        const user = u.val();
-        const div = document.createElement('div');
-        div.className = "friend-item";
-        div.style.cursor = "pointer";
-        div.onclick = () => openPrivateChat(friendUid, user.username || "User");
-        div.innerHTML = `
-          <div>
-            <strong>${user.username || 'User'}</strong><br>
-            <small>Last seen: few minutes ago</small>
-          </div>
-          <span>💬</span>
-        `;
-        list.appendChild(div);
-      });
-    });
-  });
-}
 // Show Movies & Drama Section
 function showMovies() {
   hideAll();
@@ -4851,7 +4862,96 @@ function sendEntertainmentMessage() {
     input.value = "";
   });
 }
+function showMyProfile() {
+  hideAll();
+  document.getElementById('myProfilePage').classList.remove('hide');
+  loadMyProfileData();
+}
 
+function loadMyProfileData() {
+  if (!currentUser) {
+    document.getElementById('profileName').textContent = "Not logged in";
+    return;
+  }
+  
+  // Name from Auth
+  document.getElementById('profileName').textContent = currentUser.displayName || "User";
+  
+  // Join Date from Auth
+  const creationTime = currentUser.metadata?.creationTime;
+  document.getElementById('joinDate').textContent = creationTime ?
+    new Date(creationTime).toLocaleDateString('en-PK', { year: 'numeric', month: 'long', day: 'numeric' }) :
+    "N/A";
+  
+  // Load WhatsApp & Address from Database
+  db.ref('users/' + currentUser.uid).once('value').then(snap => {
+    const data = snap.val() || {};
+    
+    // WhatsApp
+    const waSpan = document.getElementById('profileWhatsApp');
+    const waInput = document.getElementById('whatsappInput');
+    const waSave = document.getElementById('saveWhatsapp');
+    
+    if (data.whatsapp) {
+      waSpan.textContent = data.whatsapp;
+      waInput.classList.add('hide');
+      waSave.classList.add('hide');
+    } else {
+      waSpan.textContent = "Not set";
+      waInput.classList.remove('hide');
+      waSave.classList.remove('hide');
+    }
+    
+    // Address
+    const addrSpan = document.getElementById('profileAddress');
+    const addrInput = document.getElementById('addressInput');
+    const addrSave = document.getElementById('saveAddress');
+    
+    if (data.address) {
+      addrSpan.textContent = data.address;
+      addrInput.classList.add('hide');
+      addrSave.classList.add('hide');
+    } else {
+      addrSpan.textContent = "Not set";
+      addrInput.classList.remove('hide');
+      addrSave.classList.remove('hide');
+    }
+  }).catch(err => {
+    console.error("Profile load error:", err);
+  });
+}
+
+// Save WhatsApp Number
+function saveWhatsApp() {
+  const number = document.getElementById('whatsappInput').value.trim();
+  if (!number || number.length !== 11 || !number.startsWith('03')) {
+    alert("Valid 11-digit WhatsApp number likhen (03 se shuru)");
+    return;
+  }
+  
+  db.ref('users/' + currentUser.uid).update({
+    whatsapp: number
+  }).then(() => {
+    alert("WhatsApp number save ho gaya!");
+    loadMyProfileData(); // Refresh profile
+  }).catch(err => alert("Error: " + err.message));
+}
+
+// Save Address
+function saveAddress() {
+  const address = document.getElementById('addressInput').value.trim();
+  if (!address) {
+    alert("Address likhiye");
+    return;
+  }
+  
+  db.ref('users/' + currentUser.uid).update({
+    address: address
+  }).then(() => {
+    alert("Address save ho gaya!");
+    loadMyProfileData(); // Refresh
+  }).catch(err => alert("Error: " + err.message));
+}
 function sendEntertainmentImage(input) {
   const file = input.files[0];
   if (!file || file.size > 5*1024*1024) {
@@ -5096,44 +5196,130 @@ function openEmergencyLink() {
   }
 }
 
-function loadComplaints() {
-  const list = document.getElementById('complaintsList');
-  list.innerHTML = "<p style='text-align:center; opacity:0.7;'>Loading complaints...</p>";
+function showSupportChat() {
+  hideAll();
+  document.getElementById('supportChatPage').classList.remove('hide');
+  openTab('submit');
+}
+
+function openTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  
+  document.getElementById(tab).classList.add('active');
+  document.querySelector(`button[onclick="openTab('${tab}')"]`).classList.add('active');
+  
+  if (tab === 'submit') {
+    document.getElementById('compName').value = currentUser.displayName || "User";
+    document.getElementById('compEmail').value = currentUser.email || "";
+  }
+  if (tab === 'live') {
+    loadLiveChat();
+  }
+  if (tab === 'history') {
+    loadComplaintHistory();
+  }
+}
+
+// Submit Complaint
+function submitComplaint() {
+  const desc = document.getElementById('compDesc').value.trim();
+  const result = document.getElementById('submitResult');
+  
+  if (!desc) {
+    result.innerHTML = '<div class="result error">Problem likhiye!</div>';
+    return;
+  }
+  
+  const ref = db.ref('complaints').push();
+  const compId = "CMP-" + ref.key.slice(-8).toUpperCase();
+  
+  ref.set({
+    uid: currentUser.uid,
+    name: currentUser.displayName || "User",
+    email: currentUser.email || "",
+    description: desc,
+    complaintId: compId,
+    status: "pending",
+    adminReply: "",
+    timestamp: Date.now()
+  }).then(() => {
+    result.innerHTML = `<div class="result success">Complaint submit ho gayi!<br>ID: <strong>${compId}</strong></div>`;
+    document.getElementById('compDesc').value = '';
+    loadComplaintHistory();
+  }).catch(err => {
+    result.innerHTML = `<div class="result error">Error: ${err.message}</div>`;
+  });
+}
+
+// Live Chat
+function loadLiveChat() {
+  const box = document.getElementById('liveChatBox');
+  box.innerHTML = '';
+  
+  db.ref('livechat').orderByChild('timestamp').on('value', snap => {
+    box.innerHTML = '';
+    if (!snap.val()) {
+      box.innerHTML = '<p style="text-align:center; opacity:0.7;">No messages yet</p>';
+      return;
+    }
+    snap.forEach(m => {
+      const msg = m.val();
+      const isAdmin = msg.name === "MrCrazyTeam" || msg.name === "Admin";
+      
+      const div = document.createElement('div');
+      div.className = `live-msg ${isAdmin ? 'bot' : 'user'}`;
+      div.textContent = msg.message;
+      box.appendChild(div);
+    });
+    box.scrollTop = box.scrollHeight;
+  });
+}
+
+function sendLiveMessage() {
+  const input = document.getElementById('liveInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+  
+  db.ref('livechat').push({
+    uid: currentUser.uid,
+    name: currentUser.displayName || "User",
+    message: msg,
+    timestamp: Date.now()
+  });
+  
+  input.value = '';
+}
+
+// Complaint History
+function loadComplaintHistory() {
+  const list = document.getElementById('complaintHistoryList');
+  if (!list) return;
+  
+  list.innerHTML = '<p>Loading...</p>';
   
   db.ref('complaints').orderByChild('uid').equalTo(currentUser.uid).on('value', snap => {
-    list.innerHTML = "";
+    list.innerHTML = '';
+    
     if (!snap.val()) {
-      list.innerHTML = "<p style='text-align:center; opacity:0.7; padding:40px;'>No complaints yet 😊</p>";
+      list.innerHTML = '<p>No complaints yet</p>';
       return;
     }
     
-    const complaints = [];
-    snap.forEach(child => complaints.push({ key: child.key, ...child.val() }));
-    complaints.sort((a, b) => b.timestamp - a.timestamp); // Newest first
-    
-    complaints.forEach(c => {
-      const div = document.createElement('div');
-      div.className = "complaint-card"; // New slim card class
+    snap.forEach(child => {
+      const c = child.val();
+      const time = new Date(c.timestamp).toLocaleString();
+      const statusClass = c.status || 'pending';
       
-      const time = new Date(c.timestamp).toLocaleString(); // Full time
-      const reply = c.adminReply ?
-        `<div class="complaint-reply"><strong>Admin Reply:</strong> ${c.adminReply}</div>` :
-        `<div class="complaint-reply none"><i>No reply yet – wait karo! ⏳</i></div>`;
-      
-      const screenshot = c.screenshot ?
-        `<img src="${c.screenshot}" style="max-width:100%; border-radius:12px; margin:10px 0;" alt="Screenshot" />` :
-        '';
-      
-      div.innerHTML = `
-        <div class="complaint-id"><strong>ID:</strong> ${c.complaintId || 'CMP-' + c.key.slice(-8)}</div>
-        <div class="complaint-time"><strong>Time:</strong> ${time}</div>
-        <div class="complaint-issue"><strong>Issue:</strong> ${c.description}</div>
-        ${screenshot}
-        <div><span class="status ${c.status || 'pending'}">${(c.status || 'pending').toUpperCase()}</span></div>
-        ${reply}
+      list.innerHTML += `
+        <div class="complaint-card ${statusClass}">
+          <p><strong>ID:</strong> ${c.complaintId}</p>
+          <p><strong>Time:</strong> ${time}</p>
+          <p><strong>Complaint:</strong> ${c.description}</p>
+          ${c.adminReply ? `<div class="reply"><strong>Reply:</strong> ${c.adminReply}</div>` : ''}
+          <p><strong>Status:</strong> ${c.status.toUpperCase()}</p>
+        </div>
       `;
-      
-      list.appendChild(div);
     });
   });
 }
@@ -5193,6 +5379,82 @@ function loadUpdates() {
       list.appendChild(div);
     });
   });
+}
+function showRamzanSection() {
+  hideAll();
+  document.getElementById('ramzanSection').classList.remove('hide');
+  openRamzanTab('roza');
+}
+
+// Tab Switch
+function openRamzanTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  
+  document.getElementById(tab + 'Tab').classList.add('active');
+  document.querySelector(`button[onclick="openRamzanTab('${tab}')"]`).classList.add('active');
+  
+  if (tab === 'roza') loadRozaCounter();
+  if (tab === 'namaz') loadNamazTimes();
+  if (tab === 'sehri') loadSehriAftari();
+}
+
+// 1. Roza Counter (Real-time)
+function loadRozaCounter() {
+  const now = new Date();
+  // Ramzan 2026 approximate start: 28 Feb 2026
+  const ramzanStart = new Date(2026, 1, 28); // Feb 28, 2026
+  const daysPassed = Math.floor((now - ramzanStart) / (1000 * 60 * 60 * 24)) + 1;
+  const totalRoza = 30;
+  const passed = Math.max(0, Math.min(daysPassed, totalRoza));
+  const percent = (passed / totalRoza) * 100;
+  
+  document.getElementById('todayRoza').textContent = passed;
+  document.getElementById('passedRoza').textContent = passed;
+  document.getElementById('totalRoza').textContent = totalRoza;
+  document.getElementById('progressFill').style.width = percent + '%';
+  
+  // Current date & time
+  document.getElementById('currentDateUrdu').textContent = now.toLocaleDateString('ur-PK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  document.getElementById('currentTime12').textContent = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+}
+
+// 2. Namaz Times (Lahore default)
+function loadNamazTimes() {
+  const city = document.getElementById('citySelect').value || 'Lahore';
+  const list = document.getElementById('namazTimesList');
+  
+  // Approximate times for Lahore (Feb 2026)
+  const times = {
+    Lahore: [
+      { name: "Fajr", time: "5:30 AM" },
+      { name: "Dhuhr", time: "12:30 PM" },
+      { name: "Asr", time: "4:00 PM" },
+      { name: "Maghrib", time: "6:10 PM" },
+      { name: "Isha", time: "7:45 PM" }
+    ]
+  };
+  
+  let html = `<p><strong>${city}</strong> - ${new Date().toLocaleDateString('en-PK')}</p>`;
+  times.Lahore.forEach(t => {
+    html += `<div class="namaz-item"><span>${t.name}</span><span>${t.time}</span></div>`;
+  });
+  list.innerHTML = html;
+}
+
+// 3. Sehri & Aftari (30 days list - sample)
+function loadSehriAftari() {
+  const list = document.getElementById('sehriAftariList');
+  list.innerHTML = '';
+  
+  for (let i = 1; i <= 30; i++) {
+    list.innerHTML += `
+      <div class="sehri-item">
+        <span><strong>Roza ${i}</strong> - ${new Date(2026, 1, 27 + i).toLocaleDateString('ur-PK', { weekday: 'long' })}</span>
+        <span>Sehri: 5:15 AM | Aftari: 6:10 PM</span>
+      </div>
+    `;
+  }
 }
 // Show Share Friends Page
 function showShareFriends() {
@@ -5263,57 +5525,83 @@ function reactToUpdate(updateKey, emoji) {
   });
 }
 
-function loadAppsList() {
-  const list = document.getElementById('appsList');
-  list.innerHTML = '<p style="text-align:center; opacity:0.7;">Loading apps...</p>';
+// Show My Apps Grid
+function showMyApps() {
+  hideAll();
+  document.getElementById('myAppsPage').classList.remove('hide');
+  loadMyAppsGrid();
+}
+
+// Load Apps Grid
+function loadMyAppsGrid() {
+  const grid = document.getElementById('appsGrid');
+  const noApps = document.getElementById('noApps');
   
-  db.ref('apps').orderByChild('timestamp').on('value', snap => {
-    list.innerHTML = "";
+  grid.innerHTML = '<p>Loading...</p>';
+  noApps.classList.add('hide');
+  
+  db.ref('apps').orderByChild('timestamp').once('value').then(snap => {
+    grid.innerHTML = '';
     
-    if (!snap.val()) {
-      list.innerHTML = '<p style="text-align:center; opacity:0.7; padding:50px;">No apps available yet</p>';
+    if (!snap.exists()) {
+      noApps.classList.remove('hide');
       return;
     }
     
-    const apps = [];
     snap.forEach(child => {
-      apps.push({ id: child.key, ...child.val() });
-    });
-    apps.sort((a, b) => b.timestamp - a.timestamp);
-    
-    apps.forEach(app => {
-      const div = document.createElement('div');
-      div.className = "app-box";
-      div.onclick = () => showAppDetails(app);
+      const app = child.val();
       
-      const icon = app.icon || `https://ui-avatars.com/api/?name=${encodeURIComponent(app.name)}&background=7b2cff&color=fff&size=256`;
-      
-      div.innerHTML = `
-        <img src="${icon}" alt="${app.name}">
-        <div class="name">${app.name}</div>
-        <div class="dev">by ${app.developer || 'MrCrazy'}</div>
+      const card = document.createElement('div');
+      card.className = 'app-card';
+      card.innerHTML = `
+        <img src="${app.icon || `https://ui-avatars.com/api/?name=${encodeURIComponent(app.name)}&background=7b2cff&color=fff&size=128`}" class="app-icon" alt="${app.name}">
+        <div class="app-title">${app.name}</div>
+        <div class="app-detail">${app.developer || 'MrCrazy'} • ${app.size || 'N/A'}</div>
       `;
-      
-      list.appendChild(div);
+      card.onclick = () => showAppDetail(app);
+      grid.appendChild(card);
     });
+  }).catch(err => {
+    grid.innerHTML = '<p>Error loading apps</p>';
   });
+}
+
+// Show App Detail Page
+function showAppDetail(app) {
+  hideAll();
+  document.getElementById('appDetailPage').classList.remove('hide');
+  
+  document.getElementById('detailIcon').src = app.icon || `https://ui-avatars.com/api/?name=${encodeURIComponent(app.name)}&background=7b2cff&color=fff&size=256`;
+  document.getElementById('detailTitle').textContent = app.name;
+  document.getElementById('detailDev').textContent = app.developer || 'MrCrazy';
+  document.getElementById('detailSize').textContent = app.size || 'N/A';
+  document.getElementById('detailDesc').textContent = app.description || 'No description available';
+  
+  const btn = document.getElementById('downloadBtn');
+  if (app.downloadLink) {
+    btn.href = app.downloadLink;
+    btn.style.display = 'block';
+  } else {
+    btn.style.display = 'none';
+  }
 }
 function showDepositFunds() {
   hideAll();
   document.getElementById('depositFundsPage').classList.remove('hide');
-  startDepositChat();
+  startDepositConversation();
 }
 
-function startDepositChat() {
+function startDepositConversation() {
   const box = document.getElementById('depositChatBox');
   box.innerHTML = '';
   
   // Auto greeting
   addBotMessage("Hey " + (currentUser.displayName || "User") + "! Welcome to Deposit Funds.");
+  
   setTimeout(() => {
     addBotMessage("Please select deposit method:");
     document.getElementById('depositMethods').classList.remove('hide');
-  }, 1500);
+  }, 1200);
 }
 
 function addBotMessage(text) {
@@ -5334,62 +5622,84 @@ function addUserMessage(text) {
   box.scrollTop = box.scrollHeight;
 }
 
-function startDeposit(method) {
+// Typing Effect (short & fast)
+function showTyping() {
+  const box = document.getElementById('depositChatBox');
+  const typing = document.createElement('div');
+  typing.className = 'bot-msg typing';
+  typing.textContent = "MrCrazyTeam is typing...";
+  typing.id = 'typingIndicator';
+  box.appendChild(typing);
+  box.scrollTop = box.scrollHeight;
+  return typing;
+}
+
+function removeTyping() {
+  const typing = document.getElementById('typingIndicator');
+  if (typing) typing.remove();
+}
+
+function startDepositMethod(method) {
   document.getElementById('depositMethods').classList.add('hide');
   addUserMessage("I selected " + method.toUpperCase());
   
-  if (method === 'jazzcash' || method === 'sadapay') {
-    setTimeout(() => {
-      addBotMessage("Typing...");
+  showTyping();
+  
+  setTimeout(() => {
+    removeTyping();
+    
+    if (method === 'jazzcash' || method === 'sadapay') {
+      addBotMessage("Account: JazzCash / Bank");
+      addBotMessage("Name: Muhammad Naeem");
+      addBotMessage("Number: 03257436319");
+      addBotMessage("Dear customer, Abhi apne JazzCash ya Bank account se oper diye gaey Number par paise send karein.");
+      addBotMessage("Paise send karne ke baad TID copy kar lein ya jis number se send kiya wo note kar lein. Nichy enter karein 📝📌");
+      
       setTimeout(() => {
-        box.innerHTML = box.innerHTML.replace(/Typing.../, '');
-        addBotMessage("Account: JazzCash / Bank");
-        addBotMessage("Name: Muhammad Naeem");
-        addBotMessage("Number: 03257436319");
-        addBotMessage("Abhi apne JazzCash ya bank account se fori iss number par paise send karen.");
-        addBotMessage("Paise send karne ke baad TID copy kar len ya jis number se send kiya wo number note kar len.");
-        
-        setTimeout(() => {
-          addBotMessage("Paise send kar diye?");
-          const btnDiv = document.createElement('div');
-          btnDiv.style.textAlign = 'center';
-          btnDiv.style.margin = '15px 0';
-          btnDiv.innerHTML = `
-            <button style="padding:10px 20px; background:#00cc88; color:white; border:none; border-radius:30px; margin:0 10px;" onclick="depositYes('${method}')">Haan, Send Kar Diye</button>
-            <button style="padding:10px 20px; background:#ff4444; color:white; border:none; border-radius:30px;" onclick="depositNo()">Nahi Abhi</button>
-          `;
-          box.appendChild(btnDiv);
-          box.scrollTop = box.scrollHeight;
-        }, 2000);
-      }, 2500);
-    }, 1000);
-  } else if (method === 'manual') {
-    addBotMessage("Manual deposit ke liye yeh form bhar den:");
-    addBotMessage("https://docs.google.com/forms/d/e/1FAIpQLScTtQmjBfvYSZS2Dbl-IekrKA7dxIlJQovhyEcHxOZooJynGw/viewform?usp=send_form");
-    addBotMessage("Form bharne ke baad hum check kar lenge. Thanks!");
-  }
+        addBotMessage("Paise send kar diye?");
+        const btnDiv = document.createElement('div');
+        btnDiv.style.textAlign = 'center';
+        btnDiv.style.margin = '15px 0';
+        btnDiv.innerHTML = `
+          <button style="padding:10px 20px; background:#00cc88; color:white; border:none; border-radius:30px; margin:0 10px;" onclick="depositYes('${method}')">Haan, Send Kar Diye</button>
+          <button style="padding:10px 20px; background:#ff4444; color:white; border:none; border-radius:30px;" onclick="depositNo()">Nahi Abhi</button>
+        `;
+        document.getElementById('depositChatBox').appendChild(btnDiv);
+        document.getElementById('depositChatBox').scrollTop = document.getElementById('depositChatBox').scrollHeight;
+      }, 1500);
+    } else if (method === 'manual') {
+      addBotMessage("Manual deposit ke liye yeh form bhar den:");
+      addBotMessage("https://docs.google.com/forms/d/e/1FAIpQLScTtQmjBfvYSZS2Dbl-IekrKA7dxIlJQovhyEcHxOZooJynGw/viewform?usp=send_form");
+      addBotMessage("Form bharne ke baad hum check kar lenge. Thanks!");
+    }
+  }, 1800); // Typing 1.8 sec tak dikhega
 }
 
 function depositYes(method) {
   addUserMessage("Haan, send kar diye");
-  addBotMessage("Great! Ab yahan TID ya jis number se paise bheje wo number likh den:");
+  showTyping();
   
-  const inputDiv = document.createElement('div');
-  inputDiv.style.margin = '15px 0';
-  inputDiv.innerHTML = `
-    <input type="text" id="depositTid" placeholder="TID ya Number" style="width:80%; padding:12px; border-radius:10px; border:1px solid var(--ramzan-gold); background:rgba(255,255,255,0.1); color:white;" />
-    <button onclick="submitTid('${method}')" style="padding:12px 20px; background:var(--ramzan-gold); color:#0b1f21; border:none; border-radius:10px; margin-left:10px;">Submit</button>
-  `;
-  document.getElementById('depositChatBox').appendChild(inputDiv);
-  document.getElementById('depositChatBox').scrollTop = document.getElementById('depositChatBox').scrollHeight;
+  setTimeout(() => {
+    removeTyping();
+    addBotMessage("Great! Ab yahan TID ya jis number se paise bheje wo number likh den:");
+    
+    const inputDiv = document.createElement('div');
+    inputDiv.style.margin = '15px 0';
+    inputDiv.innerHTML = `
+      <input type="text" id="depositTid" placeholder="TID ya Number" style="width:70%; padding:12px; border-radius:10px; border:1px solid var(--ramzan-gold); background:rgba(255,255,255,0.1); color:white;" />
+      <button onclick="submitTid('${method}')" style="padding:12px 20px; background:var(--ramzan-gold); color:#0b1f21; border:none; border-radius:10px; margin-left:10px;">Submit</button>
+    `;
+    document.getElementById('depositChatBox').appendChild(inputDiv);
+    document.getElementById('depositChatBox').scrollTop = document.getElementById('depositChatBox').scrollHeight;
+  }, 1500);
 }
 
 function depositNo() {
   addUserMessage("Nahi abhi");
-  addBotMessage("No problem! Jab send kar len to phir se try karen.");
+  addBotMessage("No problem! Jab send kar len to phir se start karen.");
   setTimeout(() => {
     document.getElementById('depositMethods').classList.remove('hide');
-  }, 2000);
+  }, 1500);
 }
 
 function submitTid(method) {
@@ -5397,43 +5707,52 @@ function submitTid(method) {
   if (!tid) return alert("TID ya number likhen!");
   
   addUserMessage(tid);
-  addBotMessage("Kitne paise send kiye? (Rs. mein likhen)");
+  showTyping();
   
-  const amountDiv = document.createElement('div');
-  amountDiv.style.margin = '15px 0';
-  amountDiv.innerHTML = `
-    <input type="number" id="depositAmount" placeholder="Amount (Rs.)" min="1" style="width:80%; padding:12px; border-radius:10px; border:1px solid var(--ramzan-gold); background:rgba(255,255,255,0.1); color:white;" />
-    <button onclick="submitDepositAmount('${method}', '${tid}')" style="padding:12px 20px; background:var(--ramzan-gold); color:#0b1f21; border:none; border-radius:10px; margin-left:10px;">Submit</button>
-  `;
-  document.getElementById('depositChatBox').appendChild(amountDiv);
-  document.getElementById('depositChatBox').scrollTop = document.getElementById('depositChatBox').scrollHeight;
+  setTimeout(() => {
+    removeTyping();
+    addBotMessage("Kitne paise send kiye? (Rs. mein likhen)");
+    
+    const amountDiv = document.createElement('div');
+    amountDiv.style.margin = '15px 0';
+    amountDiv.innerHTML = `
+      <input type="number" id="depositAmount" placeholder="Amount (Rs.)" min="1" style="width:70%; padding:12px; border-radius:10px; border:1px solid var(--ramzan-gold); background:rgba(255,255,255,0.1); color:white;" />
+      <button onclick="submitFinalAmount('${method}', '${tid}')" style="padding:12px 20px; background:var(--ramzan-gold); color:#0b1f21; border:none; border-radius:10px; margin-left:10px;">Submit</button>
+    `;
+    document.getElementById('depositChatBox').appendChild(amountDiv);
+    document.getElementById('depositChatBox').scrollTop = document.getElementById('depositChatBox').scrollHeight;
+  }, 1500);
 }
 
-function submitDepositAmount(method, tid) {
+function submitFinalAmount(method, tid) {
   const amount = parseFloat(document.getElementById('depositAmount').value);
   if (isNaN(amount) || amount <= 0) return alert("Valid amount likhen!");
   
   addUserMessage(amount + " Rs.");
-  addBotMessage("Aapki request pending mein chali gayi hai.");
-  addBotMessage("3 hours ke andar balance add ho jayega InshaAllah. Wait karen.");
+  showTyping();
   
-  // Save request in Firebase
-  db.ref('depositRequests').push({
-    uid: currentUser.uid,
-    username: currentUser.displayName || "User",
-    method: method,
-    tid: tid,
-    amount: amount,
-    status: "pending",
-    timestamp: Date.now()
-  });
-  
-  // Clear chat after submit
   setTimeout(() => {
-    document.getElementById('depositChatBox').innerHTML = '';
-    addBotMessage("Thanks for deposit request! Agar aur help chahiye to phir se start karen.");
-    document.getElementById('depositMethods').classList.remove('hide');
-  }, 4000);
+    removeTyping();
+    addBotMessage("Aapki request pending mein chali gayi hai.");
+    addBotMessage("3 hours ke andar balance add ho jayega InshaAllah. Wait karen.");
+    
+    // Save to Firebase
+    db.ref('depositRequests').push({
+      uid: currentUser.uid,
+      username: currentUser.displayName || "User",
+      method: method,
+      tid: tid,
+      amount: amount,
+      status: "pending",
+      timestamp: Date.now()
+    });
+    
+    setTimeout(() => {
+      document.getElementById('depositChatBox').innerHTML = '';
+      addBotMessage("Thanks for deposit request! Agar aur help chahiye to phir se start karen.");
+      document.getElementById('depositMethods').classList.remove('hide');
+    }, 3000);
+  }, 1500);
 }
 // Show SIM History Page
 function showSimHistory() {
