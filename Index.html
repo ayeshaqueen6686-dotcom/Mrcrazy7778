@@ -317,7 +317,72 @@
 #simDetailsPage button:hover::after {
   opacity: 1;
 }
+/* Small Green WhatsApp Floating Button - Clean & Animated */
+#whatsappFloatBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(37, 213, 102, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  animation: waFloat 3s infinite ease-in-out;
+}
 
+#whatsappFloatBtn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 25px rgba(37, 213, 102, 0.8);
+  animation: none;
+}
+
+.wa-icon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.wa-icon {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Light floating + pulse animation */
+@keyframes waFloat {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 6px 15px rgba(37,213,102,0.5);
+  }
+  50% {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(37,213,102,0.7);
+  }
+}
+
+/* Mobile pe chhota adjust */
+@media (max-width: 480px) {
+  #whatsappFloatBtn {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+  .wa-icon {
+    font-size: 18px;
+  }
+}
 /* Result Message */
 #simResult {
   margin-top: 25px;
@@ -2007,7 +2072,275 @@ input:focus, textarea:focus {
   transform: scale(1.05);
   box-shadow: 0 12px 30px rgba(37,213,102,0.6);
 }
+/* New Mobile-First Entertainment Chat - WhatsApp Style */
+.ent-chat-container {
+  height: 55vh; /* Mobile pe acha fit */
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 15px 10px;
+  background: rgba(11,31,33,0.95);
+  border-radius: 16px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ramzan-gold) transparent;
+}
 
+.ent-msg {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 15px;
+  line-height: 1.4;
+  position: relative;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.ent-msg.own {
+  align-self: flex-end;
+  background: linear-gradient(135deg, var(--ramzan-green), #0a7a66);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.ent-msg.other {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.12);
+  color: var(--ramzan-cream);
+  border-bottom-left-radius: 4px;
+}
+
+.ent-msg-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.ent-msg-pic {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--ramzan-gold);
+}
+
+.ent-msg-username {
+  font-weight: 600;
+  color: var(--ramzan-gold);
+}
+
+.ent-msg-text {
+  font-size: 15px;
+}
+
+.ent-msg img {
+  max-width: 220px;
+  border-radius: 12px;
+  margin-top: 8px;
+  display: block;
+}
+
+.ent-msg-time {
+  font-size: 11px;
+  opacity: 0.7;
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Input Bar - Fixed Bottom Style */
+.ent-input-bar {
+  position: sticky;
+  bottom: 0;
+  background: rgba(11,31,33,0.98);
+  backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(201,162,39,0.3);
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.ent-attach {
+  width: 45px;
+  height: 45px;
+  background: rgba(201,162,39,0.2);
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ent-chat-input {
+  flex: 1;
+  padding: 12px 16px;
+  background: rgba(255,248,231,0.1);
+  border: 1.5px solid rgba(201,162,39,0.4);
+  border-radius: 30px;
+  color: white;
+  font-size: 15px;
+}
+
+.ent-chat-input::placeholder {
+  color: rgba(255,248,231,0.6);
+}
+
+.ent-send {
+  width: 60px;
+  height: 45px;
+  background: var(--ramzan-green);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Scrollbar Custom */
+.ent-chat-container::-webkit-scrollbar {
+  width: 6px;
+}
+.ent-chat-container::-webkit-scrollbar-thumb {
+  background: var(--ramzan-gold);
+  border-radius: 10px;
+}
+/* Social World - Slim Balance Board */
+.social-balance-board {
+  background: rgba(11,31,33,0.98);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(201,162,39,0.45);
+  border-radius: 18px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(201,162,39,0.25);
+  margin: 25px auto;
+  max-width: 380px;
+}
+
+.balance-title {
+  font-size: 18px;
+  color: var(--ramzan-gold);
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.balance-value {
+  font-size: 48px;
+  font-weight: bold;
+  color: white;
+  margin: 12px 0;
+  text-shadow: 0 0 18px rgba(201,162,39,0.5);
+}
+
+.balance-note p {
+  font-size: 15px;
+  opacity: 0.85;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.social-placeholder {
+  text-align: center;
+  padding: 30px 0;
+  opacity: 0.7;
+  font-size: 15px;
+}
+
+/* Mobile pe adjust */
+@media (max-width: 480px) {
+  .social-balance-board {
+    padding: 22px 15px;
+    margin: 20px auto;
+  }
+  .balance-value {
+    font-size: 40px;
+  }
+}
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+  .ent-chat-container { 
+    height: 50vh; 
+    padding: 10px 8px; 
+  }
+  .ent-msg { 
+    max-width: 85%; 
+    font-size: 14px; 
+    padding: 9px 12px; 
+  }
+  .ent-input-bar { 
+    padding: 10px 8px; 
+  }
+  .ent-chat-input { 
+    font-size: 14px; 
+    padding: 10px 14px; 
+  }
+  .ent-send { 
+    width: 55px; 
+  }
+}
+.deposit-chat-box {
+  height: 50vh;
+  overflow-y: auto;
+  background: rgba(11,31,33,0.95);
+  border: 1.5px solid rgba(201,162,39,0.4);
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bot-msg, .user-msg {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.bot-msg {
+  align-self: flex-start;
+  background: linear-gradient(135deg, var(--ramzan-green), #0a7a66);
+  color: white;
+}
+
+.user-msg {
+  align-self: flex-end;
+  background: rgba(255,255,255,0.12);
+  color: var(--ramzan-cream);
+}
+
+.typing {
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.deposit-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.method-btn {
+  padding: 14px;
+  background: var(--ramzan-gold);
+  color: #0b1f21;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
 .share-btn.copy {
   background: linear-gradient(135deg, var(--ramzan-gold), #b5892e);
   color: var(--ramzan-dark);
@@ -2148,7 +2481,115 @@ input:focus, textarea:focus {
   0%, 100% { box-shadow: 0 4px 20px rgba(255,107,107,0.5); }
   50% { box-shadow: 0 4px 30px rgba(78,205,196,0.8); }
 }
+.service-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 15px 0 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
 
+.tab-btn {
+  padding: 8px 16px;
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px solid rgba(201, 162, 39, 0.4);
+  border-radius: 25px;
+  color: var(--ramzan-gold);
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: var(--ramzan-gold);
+  color: #0b1f21;
+}
+
+.balance-header {
+  background: rgba(201, 162, 39, 0.15);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px dashed var(--ramzan-gold);
+}
+
+.slim-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slim-service {
+  background: rgba(11, 31, 33, 0.95);
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 14px;
+  padding: 14px;
+  cursor: pointer;
+}
+
+.slim-service:hover {
+  border-color: var(--ramzan-gold);
+  box-shadow: 0 4px 15px rgba(201, 162, 39, 0.2);
+}
+
+.slim-service h4 {
+  color: var(--ramzan-gold);
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.slim-service .price {
+  color: white;
+  font-weight: bold;
+}
+
+#serviceOrderForm {
+  background: rgba(11, 31, 33, 0.98);
+  border: 2px solid var(--ramzan-gold);
+  border-radius: 16px;
+  padding: 18px;
+  margin-top: 20px;
+}
+
+#serviceOrderForm input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: rgba(255, 248, 231, 0.08);
+  border: 1.5px solid rgba(201, 162, 39, 0.4);
+  border-radius: 10px;
+  color: white;
+}
+
+#serviceOrderForm button {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.back {
+  background: #ff8800 !important;
+  color: white;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 25px;
+  color: var(--ramzan-gold);
+  cursor: pointer;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
 /* Mobile Fix */
 @media (max-width: 480px) {
   .banner-content { padding: 10px 15px; font-size: 14px; }
@@ -2526,8 +2967,11 @@ input:focus, textarea:focus {
     
     <button class="small-btn" onclick="showMovies()">Movies & Drama 🎬</button>
 
+
 <button class="small-btn" onclick="showUserMovieHistory()">Movie & Drama History 📜</button>
-  
+  <button class="small-btn" onclick="showSocialWorld()">Social World 🌐</button>
+  <button class="small-btn" onclick="showDepositFunds()">Deposit Funds 💸</button>
+  <button class="small-btn" onclick="showSocialServices()">Social Services & Deposit 💰</button>
     <button class="small-btn" onclick="showFeedback()">Feedback & Ratings 🌟</button>
    <!-- Dashboard ke andar yeh button add kar dena -->
 <button class="small-btn" onclick="showSimDetailsRequest()">SIM Details Request 📱</button>
@@ -2792,6 +3236,69 @@ Thank you
 
   <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
 </div>
+<!-- Deposit Funds Section - Fixed Typing & Fast Messages -->
+<div id="depositFundsPage" class="card hide">
+  <h1>Deposit Funds 💸</h1>
+  
+  <div class="deposit-chat-box" id="depositChatBox"></div>
+  
+  <div class="deposit-methods hide" id="depositMethods">
+    <button class="method-btn" onclick="startDepositMethod('jazzcash')">JazzCash</button>
+    <button class="method-btn" onclick="startDepositMethod('sadapay')">SadaPay</button>
+    <button class="method-btn" onclick="startDepositMethod('manual')">Manual Add</button>
+  </div>
+  
+  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
+<!-- Fresh Social Services & Deposit Section -->
+<div id="socialServicesPage" class="card hide">
+  <h1>Social Services & Deposit 💰</h1>
+  
+  <div class="service-tabs">
+    <button class="tab-btn active" onclick="switchTab('services')">Services</button>
+    <button class="tab-btn" onclick="switchTab('deposit')">Deposit Cash</button>
+    <button class="tab-btn" onclick="switchTab('history')">History</button>
+  </div>
+  
+<!-- Services Tab -->
+<div id="services" class="tab-content active">
+  <div class="balance-header">
+    <strong>Your Balance:</strong> <span id="currentBalance">Rs. 0.00</span>
+  </div>
+  
+  <h2>Services</h2>
+  <div id="slimServicesList" class="slim-list"></div>
+  
+  <div id="serviceOrderForm" class="hide">
+    <h3 id="formServiceTitle"></h3>
+    <p id="formServiceDesc"></p>
+    <p><strong>Rate:</strong> Rs. <span id="ratePer1000">165</span> per 1000</p>
+    
+    <input type="text" id="orderLink" placeholder="Video / Post Link" />
+    <input type="number" id="orderQty" placeholder="Quantity" min="1" oninput="calcServiceTotal()" />
+    <p><strong>Total Amount:</strong> Rs. <span id="orderTotal">0.00</span></p>
+    
+    <button onclick="placeOrderWithDeduct()">Place Order</button>
+    <button class="back" onclick="hideOrderForm()">Back to List</button>
+  </div>
+</div>
+  <!-- Deposit Tab (simple placeholder – agar pehle wala chahiye to bata dena) -->
+  <div id="deposit" class="tab-content">
+    <h2>Deposit Cash</h2>
+    <p style="text-align:center; padding:40px; opacity:0.8;">
+      Deposit options jald aa rahe hain...<br>
+      Abhi JazzCash / SadaPay / Manual ke liye admin se rabta karen.
+    </p>
+  </div>
+  
+  <!-- History Tab -->
+  <div id="history" class="tab-content">
+    <h2>Your Order History</h2>
+    <div id="userHistoryList"></div>
+  </div>
+  
+  <div class="back-link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
 <!-- Share Friends Section -->
 <div id="shareFriendsPage" class="card hide">
   <h1>Share Friends 🌟</h1>
@@ -2820,6 +3327,27 @@ Thank you
     </div>
 
     <div id="shareResult" class="share-result hide"></div>
+  </div>
+
+  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
+<!-- Social World Section - Sirf Balance Dikhega -->
+<div id="socialWorldPage" class="card hide">
+  <h1>Social World 🌐</h1>
+
+  <div class="social-balance-board">
+    <div class="balance-title">Aapka Current Balance</div>
+    <div class="balance-value" id="userBalanceAmount">Rs. 0</div>
+    <div class="balance-note">
+      <p>Your total balance</p>
+      <p>To add balance, please click on the ‘Deposit Funds’ option.</p>
+    </div>
+  </div>
+
+  <div class="social-placeholder">
+    <p style="text-align:center; opacity:0.7; margin-top:30px;">
+      Zyada features jald aa rahe hain... Stay tuned! ✨
+    </p>
   </div>
 
   <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
@@ -2956,20 +3484,24 @@ Thank you
     </div>
   </div>
 </div>
-  <!-- Entertainment Chat Section -->
-  <div id="entertainmentPage" class="card hide">
-    <h1>Entertainment Chat 🎉</h1>
-    <div id="entertainmentContainer" class="entertainment-container"></div>
-    
-    <div class="chat-input">
-      <button class="attach-btn" onclick="document.getElementById('entertainmentImage').click()">📷</button>
-      <input type="text" id="entertainmentMsg" placeholder="Share something fun..." onkeydown="if(event.key==='Enter') sendEntertainmentMessage()" />
-      <button onclick="sendEntertainmentMessage()">Send</button>
-    </div>
-    <input type="file" id="entertainmentImage" accept="image/*" style="display:none" onchange="sendEntertainmentImage(this)" />
-    
-    <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+ <!-- New Mobile-First Entertainment Chat -->
+<div id="entertainmentPage" class="card hide">
+  <h1>Entertainment Chat 🎉</h1>
+  
+  <div id="entChatContainer" class="ent-chat-container">
+    <!-- Messages yahan dynamically aayenge -->
   </div>
+  
+  <div class="ent-input-bar">
+    <button class="ent-attach" onclick="document.getElementById('entImageUpload').click()">📎</button>
+    <input type="text" id="entChatInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter') sendEntMessage()" />
+    <button class="ent-send" onclick="sendEntMessage()">Send</button>
+  </div>
+  
+  <input type="file" id="entImageUpload" accept="image/*" style="display:none" onchange="sendEntImage(this)" />
+  
+  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
 
   <!-- Contact Us Section -->
   <div id="contactPage" class="card hide">
@@ -3101,7 +3633,15 @@ Thank you
 </div>
 
 
-
+<!-- Small Animated WhatsApp Floating Icon -->
+<a href="https://wa.me/9779761970136?text=Hi%20MrCrazyTeam%20Please%20help%20me!" 
+   target="_blank" 
+   id="whatsappFloatBtn" 
+   title="Help? Chat with MrCrazyTeam">
+  <div class="wa-icon-container">
+    <div class="wa-icon">WA</div>
+  </div>
+</a>
 </body>
 </html>
 <script>
@@ -3454,7 +3994,25 @@ function requestApp() {
     alert("Error: " + err.message);
   });
 }
+// Social World Page Open + Balance Load
+function showSocialWorld() {
+  hideAll();
+  document.getElementById('socialWorldPage').classList.remove('hide');
+  loadUserBalance();
+}
 
+// Real-time User Balance Load
+function loadUserBalance() {
+  if (!currentUser) {
+    document.getElementById('userBalanceAmount').textContent = "Login karo pehle";
+    return;
+  }
+
+  db.ref('users/' + currentUser.uid + '/balance').on('value', snap => {
+    const bal = snap.val() || 0;
+    document.getElementById('userBalanceAmount').textContent = `Rs. ${bal.toLocaleString('en-PK')}`;
+  });
+}
 // Check Movie Request
 function checkMovieRequest() {
   const movieName = document.getElementById('movieReqName').value.trim();
@@ -3824,10 +4382,280 @@ function updateRequestBadge() {
     }
   });
 }
+// Show New Entertainment Chat
 function showEntertainmentChat() {
   hideAll();
   document.getElementById('entertainmentPage').classList.remove('hide');
-  loadEntertainmentChat();
+  loadEntertainmentMessages();
+}
+
+// Load Messages (real-time)
+function loadEntertainmentMessages() {
+  const container = document.getElementById('entChatContainer');
+  container.innerHTML = '<p style="text-align:center; opacity:0.7; padding:40px;">Loading chat...</p>';
+  
+  db.ref('entertainmentChat').orderByChild('timestamp').on('value', snap => {
+    container.innerHTML = '';
+    
+    if (!snap.val()) {
+      container.innerHTML = '<p style="text-align:center; opacity:0.7; padding:60px;">Be the first to chat! 🎉</p>';
+      return;
+    }
+    
+    snap.forEach(msgSnap => {
+      const m = msgSnap.val();
+      const isOwn = m.uid === currentUser.uid;
+      
+      const div = document.createElement('div');
+      div.className = `ent-msg ${isOwn ? 'own' : 'other'}`;
+      
+      let content = m.image ?
+        `<img src="${m.image}" alt="Shared image" />` :
+        `<div class="ent-msg-text">${m.message || ''}</div>`;
+      
+      div.innerHTML = `
+        <div class="ent-msg-header">
+          <img src="${m.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(m.username || 'User') + '&background=7b2cff&color=fff&size=128'}" class="ent-msg-pic" />
+          <div class="ent-msg-username">${m.username || 'User'}</div>
+        </div>
+        ${content}
+        <div class="ent-msg-time">${new Date(m.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+      `;
+      
+      container.appendChild(div);
+    });
+    
+    // Auto scroll to bottom
+    container.scrollTop = container.scrollHeight;
+  });
+}
+
+// Send Text Message
+function sendEntMessage() {
+  const input = document.getElementById('entChatInput');
+  const msg = input.value.trim();
+  if (!msg) return;
+  
+  db.ref('users/' + currentUser.uid).once('value').then(snap => {
+    const u = snap.val() || {};
+    db.ref('entertainmentChat').push({
+      uid: currentUser.uid,
+      username: u.username || "User",
+      photoURL: u.photoURL || "",
+      message: msg,
+      timestamp: Date.now()
+    });
+    input.value = "";
+  });
+}
+
+// Send Image
+function sendEntImage(input) {
+  const file = input.files[0];
+  if (!file || file.size > 5 * 1024 * 1024) {
+    alert("Max 5MB image!");
+    return;
+  }
+  
+  db.ref('users/' + currentUser.uid).once('value').then(snap => {
+    const u = snap.val() || {};
+    const ref = storage.ref('ent_images/' + Date.now() + '_' + currentUser.uid);
+    ref.put(file).then(() => {
+      ref.getDownloadURL().then(url => {
+        db.ref('entertainmentChat').push({
+          uid: currentUser.uid,
+          username: u.username || "User",
+          photoURL: u.photoURL || "",
+          image: url,
+          timestamp: Date.now()
+        });
+      });
+    });
+  });
+  input.value = "";
+}
+function showSocialServices() {
+  hideAll();
+  document.getElementById('socialServicesPage').classList.remove('hide');
+  switchTab('services');
+  loadBalance();
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+  document.querySelector(`.tab-btn[onclick="switchTab('${tab}')"]`).classList.add('active');
+  
+  if (tab === 'services') loadServicesSlim();
+}
+
+function loadBalance() {
+  db.ref('users/' + currentUser.uid + '/balance').on('value', snap => {
+    let bal = snap.val() || 0;
+    document.getElementById('currentBalance').textContent = `Rs. ${bal.toLocaleString('en-PK')}`;
+  });
+}
+
+// ====================
+// SERVICES SECTION - FRESH JS (Exact Proportion - No Minimum Unit)
+// ====================
+
+let currentSvcKey = null;
+let currentSvcData = null;
+
+// 1. Services Slim List Load (sirf name + price dikhega)
+function loadServicesSlim() {
+  const list = document.getElementById('slimServicesList');
+  if (!list) return;
+  
+  list.innerHTML = '<p>Loading services...</p>';
+  
+  db.ref('socialServices').once('value').then(snap => {
+    list.innerHTML = '';
+    
+    if (!snap.exists()) {
+      list.innerHTML = '<p>No services available right now</p>';
+      return;
+    }
+    
+    snap.forEach(child => {
+      const s = child.val();
+      const key = child.key;
+      
+      const div = document.createElement('div');
+      div.className = 'slim-service';
+      div.innerHTML = `
+        <h4>${s.name || 'Service'}</h4>
+        <div class="price">Rs. ${s.price || 165} per 1000</div>
+      `;
+      div.onclick = () => openServiceOrderForm(key, s);
+      list.appendChild(div);
+    });
+  }).catch(err => {
+    list.innerHTML = '<p>Error loading services</p>';
+    console.error("Services load error:", err);
+  });
+}
+
+// 2. Open Order Form
+function openServiceOrderForm(key, svc) {
+  currentSvcKey = key;
+  currentSvcData = svc;
+  
+  // Hide list, show form
+  document.getElementById('slimServicesList').classList.add('hide');
+  document.getElementById('serviceOrderForm').classList.remove('hide');
+  
+  // Fill form data
+  document.getElementById('formServiceTitle').textContent = svc.name || 'Service';
+  document.getElementById('formServiceDesc').textContent = svc.description || 'No description';
+  
+  // Reset inputs
+  document.getElementById('orderLink').value = '';
+  document.getElementById('orderQty').value = '';
+  document.getElementById('orderTotal').textContent = '0.00';
+}
+
+// 3. Real-time Total Calculate (Exact - Decimal + Round to 2 places)
+function calcServiceTotal() {
+  const qtyInput = document.getElementById('orderQty');
+  const totalSpan = document.getElementById('orderTotal');
+  
+  let qty = parseInt(qtyInput.value) || 0;
+  if (qty < 1) {
+    totalSpan.textContent = '0.00';
+    return;
+  }
+  
+  // Admin set price per 1000 (fallback 165)
+  let ratePer1000 = currentSvcData?.price || 165;
+  
+  // Exact calculation
+  let exact = (qty / 1000) * ratePer1000;
+  
+  // 2 decimal places (jaise 82.50, 60.23)
+  totalSpan.textContent = exact.toFixed(2);
+}
+
+// 4. Place Order + Exact Balance Deduct
+function placeOrderWithDeduct() {
+  const linkInput = document.getElementById('orderLink');
+  const qtyInput = document.getElementById('orderQty');
+  const totalSpan = document.getElementById('orderTotal');
+  
+  let link = linkInput.value.trim();
+  let qty = parseInt(qtyInput.value) || 0;
+  
+  if (!link || qty < 1) {
+    alert("Video/Post link aur Quantity daalen!");
+    return;
+  }
+  
+  let ratePer1000 = currentSvcData?.price || 165;
+  let exactTotal = (qty / 1000) * ratePer1000;
+  
+  if (exactTotal < 0.01) {
+    alert("Minimum charge Rs. 0.01 se zyada honi chahiye!");
+    return;
+  }
+  
+  // Check balance
+  db.ref('users/' + currentUser.uid + '/balance').once('value').then(snap => {
+    let currentBal = parseFloat(snap.val()) || 0;
+    
+    if (currentBal < exactTotal) {
+      alert(`Balance kam hai!\nAapke paas: Rs. ${currentBal.toFixed(2)}\nTotal needed: Rs. ${exactTotal.toFixed(2)}\nRecharge karen.`);
+      return;
+    }
+    
+    // Deduct exact amount
+    db.ref('users/' + currentUser.uid).update({
+      balance: currentBal - exactTotal
+    }).then(() => {
+      // Save order
+      db.ref('serviceOrders').push({
+        uid: currentUser.uid,
+        username: currentUser.displayName || "User",
+        serviceKey: currentSvcKey,
+        serviceName: currentSvcData.name || "Service",
+        link: link,
+        quantity: qty,
+        totalPrice: exactTotal,
+        status: "pending",
+        timestamp: Date.now()
+      }).then(() => {
+        alert(`Order submit ho gaya!\nQty: ${qty}\nTotal: Rs. ${exactTotal.toFixed(2)}\nBalance se kaat liye gaye.`);
+        hideOrderForm();
+      }).catch(err => {
+        alert("Order save error: " + err.message);
+      });
+    }).catch(err => {
+      alert("Balance deduct error: " + err.message);
+    });
+  }).catch(err => {
+    alert("Balance check error: " + err.message);
+  });
+}
+
+// Back to list
+function hideOrderForm() {
+  document.getElementById('serviceOrderForm').classList.add('hide');
+  document.getElementById('slimServicesList').classList.remove('hide');
+}
+
+// Load balance in real-time
+function loadBalance() {
+  if (!currentUser) return;
+  
+  db.ref('users/' + currentUser.uid + '/balance').on('value', snap => {
+    let bal = parseFloat(snap.val()) || 0;
+    document.getElementById('currentBalance').textContent = `Rs. ${bal.toFixed(2)}`;
+  });
+}
+function backToServicesList() {
+  document.getElementById('serviceOrderForm').classList.add('hide');
+  document.getElementById('slimServicesList').classList.remove('hide');
 }
 // Show User Movie History Page
 function showUserMovieHistory() {
@@ -4469,6 +5297,143 @@ function loadAppsList() {
       list.appendChild(div);
     });
   });
+}
+function showDepositFunds() {
+  hideAll();
+  document.getElementById('depositFundsPage').classList.remove('hide');
+  startDepositChat();
+}
+
+function startDepositChat() {
+  const box = document.getElementById('depositChatBox');
+  box.innerHTML = '';
+  
+  // Auto greeting
+  addBotMessage("Hey " + (currentUser.displayName || "User") + "! Welcome to Deposit Funds.");
+  setTimeout(() => {
+    addBotMessage("Please select deposit method:");
+    document.getElementById('depositMethods').classList.remove('hide');
+  }, 1500);
+}
+
+function addBotMessage(text) {
+  const box = document.getElementById('depositChatBox');
+  const div = document.createElement('div');
+  div.className = 'bot-msg';
+  div.textContent = text;
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+}
+
+function addUserMessage(text) {
+  const box = document.getElementById('depositChatBox');
+  const div = document.createElement('div');
+  div.className = 'user-msg';
+  div.textContent = text;
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+}
+
+function startDeposit(method) {
+  document.getElementById('depositMethods').classList.add('hide');
+  addUserMessage("I selected " + method.toUpperCase());
+  
+  if (method === 'jazzcash' || method === 'sadapay') {
+    setTimeout(() => {
+      addBotMessage("Typing...");
+      setTimeout(() => {
+        box.innerHTML = box.innerHTML.replace(/Typing.../, '');
+        addBotMessage("Account: JazzCash / Bank");
+        addBotMessage("Name: Muhammad Naeem");
+        addBotMessage("Number: 03257436319");
+        addBotMessage("Abhi apne JazzCash ya bank account se fori iss number par paise send karen.");
+        addBotMessage("Paise send karne ke baad TID copy kar len ya jis number se send kiya wo number note kar len.");
+        
+        setTimeout(() => {
+          addBotMessage("Paise send kar diye?");
+          const btnDiv = document.createElement('div');
+          btnDiv.style.textAlign = 'center';
+          btnDiv.style.margin = '15px 0';
+          btnDiv.innerHTML = `
+            <button style="padding:10px 20px; background:#00cc88; color:white; border:none; border-radius:30px; margin:0 10px;" onclick="depositYes('${method}')">Haan, Send Kar Diye</button>
+            <button style="padding:10px 20px; background:#ff4444; color:white; border:none; border-radius:30px;" onclick="depositNo()">Nahi Abhi</button>
+          `;
+          box.appendChild(btnDiv);
+          box.scrollTop = box.scrollHeight;
+        }, 2000);
+      }, 2500);
+    }, 1000);
+  } else if (method === 'manual') {
+    addBotMessage("Manual deposit ke liye yeh form bhar den:");
+    addBotMessage("https://docs.google.com/forms/d/e/1FAIpQLScTtQmjBfvYSZS2Dbl-IekrKA7dxIlJQovhyEcHxOZooJynGw/viewform?usp=send_form");
+    addBotMessage("Form bharne ke baad hum check kar lenge. Thanks!");
+  }
+}
+
+function depositYes(method) {
+  addUserMessage("Haan, send kar diye");
+  addBotMessage("Great! Ab yahan TID ya jis number se paise bheje wo number likh den:");
+  
+  const inputDiv = document.createElement('div');
+  inputDiv.style.margin = '15px 0';
+  inputDiv.innerHTML = `
+    <input type="text" id="depositTid" placeholder="TID ya Number" style="width:80%; padding:12px; border-radius:10px; border:1px solid var(--ramzan-gold); background:rgba(255,255,255,0.1); color:white;" />
+    <button onclick="submitTid('${method}')" style="padding:12px 20px; background:var(--ramzan-gold); color:#0b1f21; border:none; border-radius:10px; margin-left:10px;">Submit</button>
+  `;
+  document.getElementById('depositChatBox').appendChild(inputDiv);
+  document.getElementById('depositChatBox').scrollTop = document.getElementById('depositChatBox').scrollHeight;
+}
+
+function depositNo() {
+  addUserMessage("Nahi abhi");
+  addBotMessage("No problem! Jab send kar len to phir se try karen.");
+  setTimeout(() => {
+    document.getElementById('depositMethods').classList.remove('hide');
+  }, 2000);
+}
+
+function submitTid(method) {
+  const tid = document.getElementById('depositTid').value.trim();
+  if (!tid) return alert("TID ya number likhen!");
+  
+  addUserMessage(tid);
+  addBotMessage("Kitne paise send kiye? (Rs. mein likhen)");
+  
+  const amountDiv = document.createElement('div');
+  amountDiv.style.margin = '15px 0';
+  amountDiv.innerHTML = `
+    <input type="number" id="depositAmount" placeholder="Amount (Rs.)" min="1" style="width:80%; padding:12px; border-radius:10px; border:1px solid var(--ramzan-gold); background:rgba(255,255,255,0.1); color:white;" />
+    <button onclick="submitDepositAmount('${method}', '${tid}')" style="padding:12px 20px; background:var(--ramzan-gold); color:#0b1f21; border:none; border-radius:10px; margin-left:10px;">Submit</button>
+  `;
+  document.getElementById('depositChatBox').appendChild(amountDiv);
+  document.getElementById('depositChatBox').scrollTop = document.getElementById('depositChatBox').scrollHeight;
+}
+
+function submitDepositAmount(method, tid) {
+  const amount = parseFloat(document.getElementById('depositAmount').value);
+  if (isNaN(amount) || amount <= 0) return alert("Valid amount likhen!");
+  
+  addUserMessage(amount + " Rs.");
+  addBotMessage("Aapki request pending mein chali gayi hai.");
+  addBotMessage("3 hours ke andar balance add ho jayega InshaAllah. Wait karen.");
+  
+  // Save request in Firebase
+  db.ref('depositRequests').push({
+    uid: currentUser.uid,
+    username: currentUser.displayName || "User",
+    method: method,
+    tid: tid,
+    amount: amount,
+    status: "pending",
+    timestamp: Date.now()
+  });
+  
+  // Clear chat after submit
+  setTimeout(() => {
+    document.getElementById('depositChatBox').innerHTML = '';
+    addBotMessage("Thanks for deposit request! Agar aur help chahiye to phir se start karen.");
+    document.getElementById('depositMethods').classList.remove('hide');
+  }, 4000);
 }
 // Show SIM History Page
 function showSimHistory() {
