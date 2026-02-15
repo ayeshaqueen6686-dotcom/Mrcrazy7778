@@ -317,59 +317,7 @@
 #simDetailsPage button:hover::after {
   opacity: 1;
 }
-/* Small Green WhatsApp Floating Button - Clean & Animated */
-#whatsappFloatBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 55px;
-  height: 55px;
-  background: #25D366;
-  border-radius: 50%;
-  box-shadow: 0 6px 15px rgba(37, 213, 102, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  text-decoration: none;
-  transition: all 0.4s ease;
-  animation: waFloat 3s infinite ease-in-out;
-}
 
-#whatsappFloatBtn:hover {
-  transform: scale(1.15);
-  box-shadow: 0 10px 25px rgba(37, 213, 102, 0.8);
-  animation: none;
-}
-
-.wa-icon-container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.wa-icon {
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
-
-/* Light floating + pulse animation */
-@keyframes waFloat {
-  0%, 100% {
-    transform: translateY(0);
-    box-shadow: 0 6px 15px rgba(37,213,102,0.5);
-  }
-  50% {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(37,213,102,0.7);
-  }
-}
 
 /* Mobile pe chhota adjust */
 @media (max-width: 480px) {
@@ -434,6 +382,7 @@
     font-size: 16px;
   }
 }
+
 .complaint-id { font-size: 14px; opacity: 0.8; margin-bottom: 5px; }
 .complaint-time { font-size: 12px; opacity: 0.7; text-align: right; margin-bottom: 10px; }
 .complaint-issue { font-size: 15px; line-height: 1.6; margin-bottom: 10px; }
@@ -2437,7 +2386,150 @@ input:focus, textarea:focus {
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   animation: glowPulse 2s ease-in-out infinite;
 }
+/* Track Complaint TID - Clean & Minimal */
+.track-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 30px 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+#trackTidInput {
+  padding: 14px;
+  background: rgba(255,248,231,0.08);
+  border: 1.5px solid rgba(201,162,39,0.4);
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+.track-form button {
+  padding: 14px;
+  background: var(--ramzan-gold);
+  color: #0b1f21;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.track-result {
+  background: rgba(11,31,33,0.98);
+  border: 1px solid rgba(201,162,39,0.4);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px 0;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.track-result .status {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+/* Top Video Banner - Simple & Khubsurat (Pehle wala style) */
+.top-video-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #ff4444, #c9a227);
+  color: white;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 6px 25px rgba(255,68,68,0.5);
+  z-index: 9998;
+  animation: glow 2s infinite alternate;
+}
+
+.banner-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.banner-icon {
+  font-size: 28px;
+}
+
+.banner-text {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.youtube-player {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 balanced */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 15px auto;
+  max-width: 560px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+.youtube-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.continue-btn {
+  padding: 14px 40px;
+  background: white;
+  color: #c9a227;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  position: sticky;
+  bottom: 20px;
+  z-index: 10;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 15px rgba(255,68,68,0.6); }
+  to   { box-shadow: 0 0 35px rgba(201,162,39,0.8); }
+}
+
+/* Mobile pe adjust */
+@media (max-width: 480px) {
+  .youtube-player { max-width: 100%; }
+  .continue-btn { padding: 12px 30px; font-size: 16px; bottom: 15px; }
+}
+.status-pending  { background: rgba(255,136,0,0.2); color: #ff8800; }
+.status-approved { background: rgba(0,204,136,0.2); color: #00cc88; }
+.status-rejected { background: rgba(255,68,68,0.2); color: #ff4444; }
+
+.track-result .time, .track-result .desc {
+  margin: 12px 0;
+}
+
+.track-result .desc {
+  background: rgba(201,162,39,0.08);
+  padding: 12px;
+  border-radius: 10px;
+  border-left: 4px solid var(--ramzan-gold);
+}
 .spinner {
   font-size: 40px;
   margin-bottom: 10px;
@@ -2712,6 +2804,152 @@ input:focus, textarea:focus {
   margin: 15px 0 20px;
   overflow-x: auto;
   padding-bottom: 8px;
+}.flash-banner {
+  background: linear-gradient(135deg, #ff4444, #c9a227);
+  color: white;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 16px 0;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(255,68,68,0.4);
+  animation: glow 2s infinite alternate;
+}
+
+.flash-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.flash-icon {
+  font-size: 28px;
+}
+
+.flash-desc {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.flash-timer {
+  font-size: 28px;
+  font-weight: bold;
+  background: rgba(0,0,0,0.3);
+  padding: 10px;
+  border-radius: 12px;
+  margin: 12px 0;
+  letter-spacing: 2px;
+}
+
+.flash-note {
+  font-size: 14px;
+  opacity: 0.9;
+}
+/* Premium Classic WhatsApp Button - Small & Elegant */
+.whatsapp-premium-small {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(37,213,102,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  animation: wa-pulse-small 3.5s infinite ease-in-out;
+}
+
+.whatsapp-premium-small:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 30px rgba(37,213,102,0.6);
+}
+
+.wa-bubble-small {
+  width: 100%;
+  height: 100%;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.wa-icon-small {
+  font-size: 32px;
+  color: white;
+  line-height: 58px;
+}
+
+.wa-tooltip-small {
+  position: absolute;
+  right: 75px;
+  bottom: 10px;
+  background: #111;
+  color: #25D366;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+  pointer-events: none;
+}
+
+.whatsapp-premium-small:hover .wa-tooltip-small {
+  opacity: 1;
+  visibility: visible;
+  right: 80px;
+}
+
+/* Gentle small pulse animation */
+@keyframes wa-pulse-small {
+  0%, 100% {
+    box-shadow: 0 6px 20px rgba(37,213,102,0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(37,213,102,0.6);
+    transform: scale(1.04);
+  }
+}
+
+/* Mobile adjust (aur chhota) */
+@media (max-width: 480px) {
+  .whatsapp-premium-small {
+    width: 54px;
+    height: 54px;
+    bottom: 20px;
+    right: 20px;
+  }
+  .wa-icon-small {
+    font-size: 30px;
+    line-height: 54px;
+  }
+  .wa-tooltip-small {
+    font-size: 12px;
+    padding: 5px 12px;
+    right: 70px;
+  }
+}
+@keyframes glow {
+  from { box-shadow: 0 0 15px rgba(255,68,68,0.6); }
+  to { box-shadow: 0 0 35px rgba(201,162,39,0.8); }
+}
+
+@media (max-width: 480px) {
+  .flash-banner { padding: 12px; margin: 12px 0; }
+  .flash-timer { font-size: 22px; }
 }
 
 .tab-btn {
@@ -2970,6 +3208,7 @@ input:focus, textarea:focus {
   0%, 100% { opacity: 0.8; }
   50% { opacity: 1; }
 }
+
 /* SIM History - Slim Ramzan VIP Style */
 .sim-history-item {
   background: rgba(11,31,33,0.95);
@@ -3009,7 +3248,12 @@ input:focus, textarea:focus {
   margin-bottom: 10px;
   text-align: right;
 }
-
+.gold-btn {
+  background: linear-gradient(135deg, #c9a227, #ffd700);
+  color: #0b1f21;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(201,162,39,0.5);
+}
 .sim-status {
   display: inline-block;
   padding: 8px 16px;
@@ -3057,7 +3301,49 @@ input:focus, textarea:focus {
   0%, 100% { text-shadow: 0 0 30px rgba(255,248,231,0.3); }
   50% { text-shadow: 0 0 60px rgba(255,248,231,0.5); }
 }
+.order-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
 
+.tab-btn {
+  padding: 10px 20px;
+  background: rgba(201,162,39,0.15);
+  border: 1px solid rgba(201,162,39,0.4);
+  border-radius: 30px;
+  color: var(--ramzan-gold);
+  cursor: pointer;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.tab-btn.active {
+  background: var(--ramzan-gold);
+  color: #0b1f21;
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.history-list .history-card {
+  background: rgba(11,31,33,0.95);
+  border: 1px solid rgba(201,162,39,0.3);
+  border-radius: 12px;
+  padding: 15px;
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.history-card.pending  { border-left: 5px solid #ff8800; }
+.history-card.approved { border-left: 5px solid #00cc88; }
+.history-card.rejected { border-left: 5px solid #ff4444; }
+
+.history-card .id { color: var(--ramzan-gold); font-weight: bold; }
+.history-card .time { opacity: 0.8; font-size: 13px; margin: 6px 0; }
+.history-card .detail { margin: 8px 0; }
 @keyframes slimFloat {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(-8px); }
@@ -3150,6 +3436,81 @@ input:focus, textarea:focus {
       color:white;
       font-size:16px;
     }
+    /* Official Accounts - Gold Premium Design */
+.accounts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.account-card {
+  background: rgba(11,31,33,0.95);
+  border: 1.5px solid rgba(201,162,39,0.4);
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff8e1;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.account-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(201,162,39,0.3);
+  border-color: var(--gold);
+}
+
+.icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+  color: var(--gold);
+}
+
+.account-card h3 {
+  font-size: 18px;
+  margin: 8px 0 4px;
+  color: var(--gold);
+}
+
+.account-card p {
+  font-size: 14px;
+  margin: 4px 0;
+  opacity: 0.9;
+}
+
+.account-card small {
+  font-size: 12px;
+  opacity: 0.7;
+  display: block;
+  margin-top: 8px;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 30px;
+  color: var(--gold);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Mobile adjust */
+@media (max-width: 480px) {
+  .accounts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+  }
+  .account-card {
+    padding: 16px 12px;
+  }
+  .icon {
+    font-size: 36px;
+  }
+  .account-card h3 {
+    font-size: 16px;
+  }
+}
     .chat-input input::placeholder {
       color:rgba(255,255,255,0.6);
     }
@@ -3172,6 +3533,16 @@ input:focus, textarea:focus {
   </style>
 </head>
 <body>
+  <!-- Flash Sale Banner - Premium Look -->
+<div id="flashSaleBanner" class="flash-banner hide">
+  <div class="flash-header">
+    <span class="flash-icon">🔥</span>
+    <h3>FLASH SALE ON!</h3>
+  </div>
+  <p id="flashDesc" class="flash-desc">Loading sale...</p>
+  <div class="flash-timer" id="flashCountdown">00h 00m 00s</div>
+  <p class="flash-note">Hurry! Offer ends soon</p>
+</div>
   <!-- Top Animated Banner - Admin Controlled -->
 <div id="adminBanner" class="admin-banner hide">
   <div class="banner-content">
@@ -3252,15 +3623,34 @@ input:focus, textarea:focus {
   </div>
 
 </div>
+<!-- Daily Video Banner - Flash Sale Style + Lazmi Show -->
+<div id="dailyVideoBanner" class="flash-video-banner hide">
+  <div class="flash-header">
+    <span class="flash-icon">🎥</span>
+    <h3>MrCrazyTeam "What's New </h3>
+  </div>
+
+  <p class="video-desc">Please watch the full video before using the app. After watching it completely, this video will automatically disappear.</p>
+
+  <div class="youtube-player">
+    <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <button id="continueBtn" class="continue-btn hide" onclick="closeVideoBanner()">
+    I've Watched → Continue
+  </button>
+</div>
   <!-- Dashboard -->
   <div id="dashboard" class="card hide">
-    <h1>السلام علیکم! <span id="displayName" style="font-weight:bold; color:#fff;"></span> 👋</h1>
+    <h1>Welcome Back!<span id="displayName" style="font-weight:bold; color:#fff;"></span> 👋</h1>
     <img id="profilePic" src="" class="profile-pic" onclick="document.getElementById('picInput').click()" />
     <input type="file" id="picInput" accept="image/*" style="display:none" onchange="uploadProfilePic(this)" />
     <p><strong>Email:</strong> <span id="displayEmail"></span></p>
 
     <button class="small-btn" onclick="showMyProfile()">My Profile 👤</button>
+    <button class="small-btn" onclick="showTrackComplaint()">Track Complaint TID 🔍</button>
     <button class="small-btn" onclick="showRamzanSection()">Ramzan Kareem 🌙</button>
+    <button class="small-btn gold-btn" onclick="showOfficialAccounts()">Official Accounts ⭐</button>
     <button class="small-btn" onclick="showInformations()">Informations 📺</button>
  
  
@@ -3279,6 +3669,9 @@ input:focus, textarea:focus {
 <button class="small-btn" onclick="showUserMovieHistory()">Movie & Drama History 📜</button>
   <button class="small-btn" onclick="showSocialWorld()">Social World 🌐</button>
   <button class="small-btn" onclick="showDepositFunds()">Deposit Funds 💸</button>
+  <button class="small-btn" onclick="showOrderDetails()">Order Details 📋</button>
+  
+  
   <button class="small-btn" onclick="showSocialServices()">Social Services & Deposit 💰</button>
     <button class="small-btn" onclick="showFeedback()">Feedback & Ratings 🌟</button>
    <!-- Dashboard ke andar yeh button add kar dena -->
@@ -3286,7 +3679,7 @@ input:focus, textarea:focus {
    <button class="small-btn" onclick="showSimHistory()">SIM Requests History 📜</button>
    
    
-    <button class="small-btn" onclick="showContact()">Contact Us 📞</button>
+   
     <button class="small-btn" onclick="showPolicy()">Policy & Guidelines 📜</button>
     <button class="small-btn" onclick="showShareFriends()">Share Friends & Earn 🌟</button>
    
@@ -3413,6 +3806,65 @@ input:focus, textarea:focus {
   </div>
 
   <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
+<!-- Official Accounts - Gold Premium Look -->
+<div id="officialAccountsPage" class="card hide">
+  <h1>Official Accounts ⭐</h1>
+  <p style="text-align:center; opacity:0.9; margin-bottom:30px;">
+    Follow & Contact MrCrazyTeam on all platforms
+  </p>
+  
+  <div class="accounts-grid">
+    <!-- YouTube -->
+    <a href="https://youtube.com/@MrCrazy-7778" target="_blank" class="account-card">
+      <div class="icon">🎥</div>
+      <h3>YouTube</h3>
+      <p>@MrCrazy-7778</p>
+      <small>Latest videos, tutorials & updates</small>
+    </a>
+    
+    <!-- TikTok -->
+    <a href="https://tiktok.com/@mr_crazy7778" target="_blank" class="account-card">
+      <div class="icon">🎵</div>
+      <h3>TikTok</h3>
+      <p>mr_crazy7778</p>
+      <small>Short fun videos & trends</small>
+    </a>
+    
+    <!-- WhatsApp 1 -->
+    <a href="https://wa.me/263777862928" target="_blank" class="account-card">
+      <div class="icon">💬</div>
+      <h3>WhatsApp</h3>
+      <p>+26377 786 2928</p>
+      <small>Fast support & queries</small>
+    </a>
+    
+    <!-- WhatsApp 2 -->
+    <a href="https://wa.me/923236876132" target="_blank" class="account-card">
+      <div class="icon">💬</div>
+      <h3>WhatsApp</h3>
+      <p>+92 323 6876132</p>
+      <small>Alternative contact number</small>
+    </a>
+    
+    <!-- Email -->
+    <a href="mailto:MrCrazyTeamofficial@gmail.com" class="account-card">
+      <div class="icon">✉️</div>
+      <h3>Email</h3>
+      <p>MrCrazyTeamofficial@gmail.com</p>
+      <small>Official emails & business inquiries</small>
+    </a>
+    
+    <!-- Website -->
+    <a href="https://MrCrazy7778.taplink.ws" target="_blank" class="account-card">
+      <div class="icon">🌐</div>
+      <h3>Website</h3>
+      <p>MrCrazy7778.taplink.ws</p>
+      <small>All links & services in one place</small>
+    </a>
+  </div>
+  
+  <div class="back-link" onclick="showDashboard()">← Back to Dashboard</div>
 </div>
 <!-- Ramzan Kareem Section -->
 <div id="ramzanSection" class="card hide">
@@ -3596,8 +4048,7 @@ Thank you
   
   <div class="service-tabs">
     <button class="tab-btn active" onclick="switchTab('services')">Services</button>
-    <button class="tab-btn" onclick="switchTab('deposit')">Deposit Cash</button>
-    <button class="tab-btn" onclick="switchTab('history')">History</button>
+ 
   </div>
   
 <!-- Services Tab -->
@@ -3612,7 +4063,7 @@ Thank you
   <div id="serviceOrderForm" class="hide">
     <h3 id="formServiceTitle"></h3>
     <p id="formServiceDesc"></p>
-    <p><strong>Rate:</strong> Rs. <span id="ratePer1000">165</span> per 1000</p>
+    <p><strong>Rate:</strong> Rs. <span id="ratePer1000"></span> per 1000</p>
     
     <input type="text" id="orderLink" placeholder="Video / Post Link" />
     <input type="number" id="orderQty" placeholder="Quantity" min="1" oninput="calcServiceTotal()" />
@@ -3623,18 +4074,35 @@ Thank you
   </div>
 </div>
   <!-- Deposit Tab (simple placeholder – agar pehle wala chahiye to bata dena) -->
-  <div id="deposit" class="tab-content">
-    <h2>Deposit Cash</h2>
-    <p style="text-align:center; padding:40px; opacity:0.8;">
-      Deposit options jald aa rahe hain...<br>
-      Abhi JazzCash / SadaPay / Manual ke liye admin se rabta karen.
-    </p>
+
+  <div class="back-link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
+<!-- Order Details - All in One -->
+<div id="orderDetailsPage" class="card hide">
+  <h1>Order Details 📋</h1>
+  
+  <div class="order-tabs">
+    <button class="tab-btn active" onclick="openOrderTab('orders')">Order History</button>
+    <button class="tab-btn" onclick="openOrderTab('deposits')">Deposit History</button>
+    <button class="tab-btn" onclick="openOrderTab('login')">Login History</button>
   </div>
   
-  <!-- History Tab -->
-  <div id="history" class="tab-content">
-    <h2>Your Order History</h2>
-    <div id="userHistoryList"></div>
+  <!-- 1. Order History -->
+  <div id="ordersTab" class="tab-content active">
+    <h2>My Service Orders</h2>
+    <div id="orderHistoryList" class="history-list"></div>
+  </div>
+  
+  <!-- 2. Deposit History -->
+  <div id="depositsTab" class="tab-content">
+    <h2>My Deposits</h2>
+    <div id="depositHistoryList" class="history-list"></div>
+  </div>
+  
+  <!-- 3. Login History -->
+  <div id="loginTab" class="tab-content">
+    <h2>My Login Activity</h2>
+    <div id="loginHistoryList" class="history-list"></div>
   </div>
   
   <div class="back-link" onclick="showDashboard()">← Back to Dashboard</div>
@@ -3819,49 +4287,6 @@ Thank you
   <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
 </div>
 
-  <!-- Contact Us Section -->
-  <div id="contactPage" class="card hide">
-    <h1>Contact Us 📞</h1>
-
-    <div class="contact-box">
-      <div class="contact-item">
-        <div class="contact-icon">📧</div>
-        <div class="contact-title">Email Us</div>
-        <div class="contact-detail">MrCrazyTeamofficial@gmail.com</div>
-        <div class="contact-note">24/7 Support Available</div>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">🌐</div>
-        <div class="contact-title">Our Website</div>
-        <a href="https://MrCrazy7778.taplink.ws" target="_blank" class="contact-link">MrCrazy7778.taplink.ws</a>
-      </div>
-
-      <div class="contact-item">
-        <div class="contact-icon">💬</div>
-        <div class="contact-title">WhatsApp Channel</div>
-        <a href="https://whatsapp.com/channel/0029VbBwFGO9Bb5s9beJ201f" target="_blank" class="contact-link">
-          Join Our Channel
-        </a>
-        <div class="contact-note">Your number will NEVER be shown to anyone 🔒</div>
-      </div>
-
-      <div class="contact-item coming-soon">
-        <div class="contact-icon">📱</div>
-        <div class="contact-title">Direct WhatsApp</div>
-        <div class="contact-detail">Coming Soon...</div>
-      </div>
-    </div>
-
-
-
-    <div class="contact-footer">
-      <p>We reply as fast as possible ❤️</p>
-      <p>Made with love by <strong>MRCRAZYTEAM</strong></p>
-    </div>
-
-    <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
-  </div>
 
   <!-- Group & Updates Section -->
   <div id="groupPage" class="card hide">
@@ -3873,7 +4298,19 @@ Thank you
     <div id="updatesList" style="margin-top:20px;"></div>
     <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
   </div>
+<!-- Track Complaint TID - Very Simple & Focused -->
+<div id="trackComplaintPage" class="card hide">
+  <h1>Track Complaint TID 🔍</h1>
 
+  <div class="track-form">
+    <input type="text" id="trackTidInput" placeholder="Complaint ID / TID likhen (CMP-XXXXXX)" maxlength="12" />
+    <button onclick="trackComplaint()">Track</button>
+  </div>
+
+  <div id="trackResult" class="track-result hide"></div>
+
+  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
 <!-- My Apps - Slim Grid -->
 <div id="myAppsPage" class="card hide">
   <h1>My Apps</h1>
@@ -3907,14 +4344,15 @@ Thank you
 </div>
 
 
-<!-- Small Animated WhatsApp Floating Icon -->
-<a href="https://wa.me/9779761970136?text=Hi%20MrCrazyTeam%20Please%20help%20me!" 
+<!-- Premium Classic WhatsApp Floating Button - Thora Small -->
+<a href="https://wa.me/923236876132?text=Hi%20MrCrazyTeam%20Please%20help%20me!" 
    target="_blank" 
-   id="whatsappFloatBtn" 
-   title="Help? Chat with MrCrazyTeam">
-  <div class="wa-icon-container">
-    <div class="wa-icon">WA</div>
+   class="whatsapp-premium-small" 
+   title="Chat with MrCrazyTeam Support">
+  <div class="wa-bubble-small">
+    <div class="wa-icon-small">💬</div>
   </div>
+  <span class="wa-tooltip-small">Support Chat</span>
 </a>
 </body>
 </html>
@@ -4393,6 +4831,43 @@ function updateRequestBadge() {
     }
   });
 }
+// Daily Video Banner - Lazmi Show (admin active hone pe)
+function loadDailyVideoBanner() {
+  db.ref('dailyVideo').on('value', snap => {
+    const data = snap.val();
+    const banner = document.getElementById('dailyVideoBanner');
+    const frame = document.getElementById('videoFrame');
+    const continueBtn = document.getElementById('continueBtn');
+
+    // Agar admin ne active nahi kiya ya URL nahi diya to BILKUL hide
+    if (!data || !data.active || !data.url) {
+      banner.classList.add('hide');
+      frame.src = '';
+      return;
+    }
+
+    // Embed URL banao (YouTube Shorts ke liye perfect)
+    let embedUrl = data.url;
+    embedUrl = embedUrl.replace('shorts/', 'embed/').replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/');
+    embedUrl = embedUrl.split('?')[0] + '?autoplay=1&mute=0&controls=1&rel=0&modestbranding=1&showinfo=0';
+
+    frame.src = embedUrl;
+    banner.classList.remove('hide');
+
+    // 30 seconds baad continue button show
+    setTimeout(() => {
+      continueBtn.classList.remove('hide');
+    }, 30000);
+  });
+}
+
+function closeVideoBanner() {
+  document.getElementById('dailyVideoBanner').classList.add('hide');
+  document.getElementById('videoFrame').src = '';
+}
+
+// App open hone pe lazmi call karo
+loadDailyVideoBanner();
 // Show New Entertainment Chat
 function showEntertainmentChat() {
   hideAll();
@@ -4714,6 +5189,206 @@ function loadUserMovieHistory() {
       list.appendChild(div);
     });
   });
+}
+// Flash Sale Real-time Load
+function loadFlashSale() {
+  db.ref('flashSale').on('value', snap => {
+    const sale = snap.val();
+    const banner = document.getElementById('flashSaleBanner');
+    
+    if (!sale || !sale.active) {
+      banner.classList.add('hide');
+      return;
+    }
+    
+    const endTime = new Date(sale.endTime).getTime();
+    const now = Date.now();
+    
+    if (now > endTime) {
+      banner.classList.add('hide');
+      return;
+    }
+    
+    document.getElementById('flashDesc').textContent = sale.description || "Huge Discount on Selected Services!";
+    banner.classList.remove('hide');
+    
+    // Countdown
+    const timer = setInterval(() => {
+      const distance = endTime - Date.now();
+      if (distance < 0) {
+        clearInterval(timer);
+        banner.classList.add('hide');
+        return;
+      }
+      
+      const hours = Math.floor(distance / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      document.getElementById('flashCountdown').textContent = `${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+  });
+}
+
+// Page load pe call karo
+loadFlashSale();
+function showOfficialAccounts() {
+  hideAll();
+  document.getElementById('officialAccountsPage').classList.remove('hide');
+}
+function showTrackComplaint() {
+  hideAll();
+  document.getElementById('trackComplaintPage').classList.remove('hide');
+  document.getElementById('trackResult').classList.add('hide');
+  document.getElementById('trackTidInput').value = '';
+}
+
+function trackComplaint() {
+  const tid = document.getElementById('trackTidInput').value.trim().toUpperCase();
+  const result = document.getElementById('trackResult');
+  
+  if (!tid || !tid.startsWith('CMP-') || tid.length !== 12) {
+    result.innerHTML = '<div class="result error">Valid Complaint ID likhen (CMP-XXXXXX format)</div>';
+    result.classList.remove('hide');
+    return;
+  }
+  
+  result.innerHTML = '<p>Searching...</p>';
+  result.classList.remove('hide');
+  
+  // Search complaint by complaintId
+  db.ref('complaints').orderByChild('complaintId').equalTo(tid).once('value').then(snap => {
+    if (!snap.exists()) {
+      result.innerHTML = '<div class="result error">Koi complaint is ID se nahi mili</div>';
+      return;
+    }
+    
+    snap.forEach(child => {
+      const c = child.val();
+      const time = new Date(c.timestamp).toLocaleString('en-PK', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+      
+      const statusClass = 'status-' + (c.status || 'pending');
+      
+      result.innerHTML = `
+        <div class="track-result">
+          <div class="status ${statusClass}">Status: ${c.status.toUpperCase()}</div>
+          <p class="time"><strong>Submitted on:</strong> ${time}</p>
+          <p class="desc"><strong>Complaint:</strong> ${c.description}</p>
+        </div>
+      `;
+    });
+  }).catch(err => {
+    result.innerHTML = '<div class="result error">Error: ' + err.message + '</div>';
+  });
+}
+function showOrderDetails() {
+  hideAll();
+  document.getElementById('orderDetailsPage').classList.remove('hide');
+  openOrderTab('orders');
+}
+
+function openOrderTab(tab) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  
+  document.getElementById(tab + 'Tab').classList.add('active');
+  document.querySelector(`button[onclick="openOrderTab('${tab}')"]`).classList.add('active');
+  
+  if (tab === 'orders') loadOrderHistory();
+  if (tab === 'deposits') loadDepositHistory();
+  if (tab === 'login') loadLoginHistory();
+}
+
+// 1. Order History (Service Orders)
+function loadOrderHistory() {
+  const list = document.getElementById('orderHistoryList');
+  list.innerHTML = '<p>Loading orders...</p>';
+  
+  db.ref('serviceOrders').orderByChild('uid').equalTo(currentUser.uid).on('value', snap => {
+    list.innerHTML = '';
+    
+    if (!snap.val()) {
+      list.innerHTML = '<p>No service orders yet</p>';
+      return;
+    }
+    
+    snap.forEach(child => {
+      const o = child.val();
+      const time = new Date(o.timestamp).toLocaleString();
+      const statusClass = o.status || 'pending';
+      
+      list.innerHTML += `
+        <div class="history-card ${statusClass}">
+          <p class="id"><strong>Order ID:</strong> ${child.key.slice(-8).toUpperCase()}</p>
+          <p class="time">${time}</p>
+          <p class="detail"><strong>Service:</strong> ${o.serviceName || 'Unknown'}</p>
+          <p class="detail"><strong>Link:</strong> ${o.link}</p>
+          <p class="detail"><strong>Qty:</strong> ${o.quantity}</p>
+          <p class="detail"><strong>Total:</strong> Rs. ${o.totalPrice}</p>
+          <p><strong>Status:</strong> ${o.status.toUpperCase()}</p>
+        </div>
+      `;
+    });
+  });
+}
+
+// 2. Deposit History
+function loadDepositHistory() {
+  const list = document.getElementById('depositHistoryList');
+  list.innerHTML = '<p>Loading deposits...</p>';
+  
+  db.ref('depositRequests').orderByChild('uid').equalTo(currentUser.uid).on('value', snap => {
+    list.innerHTML = '';
+    
+    if (!snap.val()) {
+      list.innerHTML = '<p>No deposit requests yet</p>';
+      return;
+    }
+    
+    snap.forEach(child => {
+      const d = child.val();
+      const time = new Date(d.timestamp).toLocaleString();
+      const statusClass = d.status || 'pending';
+      
+      list.innerHTML += `
+        <div class="history-card ${statusClass}">
+          <p class="id"><strong>Deposit ID:</strong> ${child.key.slice(-8).toUpperCase()}</p>
+          <p class="time">${time}</p>
+          <p class="detail"><strong>Method:</strong> ${d.method}</p>
+          <p class="detail"><strong>Amount:</strong> Rs. ${d.amount}</p>
+          <p class="detail"><strong>TID/Number:</strong> ${d.tid}</p>
+          <p><strong>Status:</strong> ${d.status.toUpperCase()}</p>
+        </div>
+      `;
+    });
+  });
+}
+
+// 3. Login History (Last login + device/location)
+function loadLoginHistory() {
+  const list = document.getElementById('loginHistoryList');
+  list.innerHTML = '<p>Loading login history...</p>';
+  
+  // Firebase Auth se last login (device/location ke liye extra library chahiye, abhi simple)
+  const lastLogin = currentUser.metadata.lastSignInTime;
+  const time = lastLogin ? new Date(lastLogin).toLocaleString() : "N/A";
+  
+  list.innerHTML = `
+    <div class="history-card">
+      <p><strong>Last Login:</strong> ${time}</p>
+      <p><strong>Device:</strong> ${navigator.userAgent.includes('Mobile') ? 'Mobile' : 'Desktop/Laptop'}</p>
+      <p><strong>Location:</strong> Lahore, Punjab, PK (approx)</p>
+      <p><small>Note: Exact device/location ke liye advanced tracking chahiye</small></p>
+    </div>
+  `;
 }
 function loadEntertainmentChat() {
   const container = document.getElementById('entertainmentContainer');
