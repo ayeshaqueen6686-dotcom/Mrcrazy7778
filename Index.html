@@ -317,7 +317,59 @@
 #simDetailsPage button:hover::after {
   opacity: 1;
 }
+/* Small Green WhatsApp Floating Button - Clean & Animated */
+#whatsappFloatBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 55px;
+  height: 55px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(37, 213, 102, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  animation: waFloat 3s infinite ease-in-out;
+}
 
+#whatsappFloatBtn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 25px rgba(37, 213, 102, 0.8);
+  animation: none;
+}
+
+.wa-icon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.wa-icon {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Light floating + pulse animation */
+@keyframes waFloat {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 6px 15px rgba(37,213,102,0.5);
+  }
+  50% {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(37,213,102,0.7);
+  }
+}
 
 /* Mobile pe chhota adjust */
 @media (max-width: 480px) {
@@ -382,7 +434,6 @@
     font-size: 16px;
   }
 }
-
 .complaint-id { font-size: 14px; opacity: 0.8; margin-bottom: 5px; }
 .complaint-time { font-size: 12px; opacity: 0.7; text-align: right; margin-bottom: 10px; }
 .complaint-issue { font-size: 15px; line-height: 1.6; margin-bottom: 10px; }
@@ -790,91 +841,6 @@
   border-radius: 18px;
   border-left: 4px solid var(--primary);
   font-size: 15px;
-}
-/* User Movie & Drama History - Slim Ramzan VIP (User-Only) */
-.history-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 15px 0;
-  max-height: 60vh;
-  overflow-y: auto;
-}
-
-.history-item {
-  background: rgba(11,31,33,0.95);
-  backdrop-filter: blur(20px);
-  border: 1.8px solid rgba(201,162,39,0.4);
-  border-radius: 24px;
-  padding: 16px;
-  position: relative;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-  font-family: 'Amiri', serif;
-  transition: 0.3s;
-}
-
-.history-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(201,162,39,0.3);
-}
-
-.history-type {
-  font-size: 16px;
-  color: var(--ramzan-gold);
-  font-weight: bold;
-  margin-bottom: 6px;
-}
-
-.history-name {
-  font-size: 18px;
-  color: white;
-  margin-bottom: 4px;
-}
-
-.history-whatsapp {
-  font-size: 14px;
-  color: #fff8e1;
-  opacity: 0.9;
-  margin-bottom: 4px;
-}
-
-.history-time {
-  font-size: 13px;
-  opacity: 0.7;
-  margin-bottom: 10px;
-}
-
-.history-status {
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.history-status.pending {
-  background: rgba(255,136,0,0.3);
-  color: #ff8800;
-}
-
-.history-status.approved {
-  background: rgba(0,204,136,0.3);
-  color: #00cc88;
-}
-
-.history-status.rejected {
-  background: rgba(255,68,68,0.3);
-  color: #ff4444;
-}
-
-/* No History Message */
-.no-history {
-  text-align: center;
-  padding: 40px 0;
-  opacity: 0.8;
-  font-size: 16px;
-  color: var(--ramzan-cream);
 }
 
 /* Mobile Fix */
@@ -1639,6 +1605,66 @@ body {
   --ramzan-cream: #fff8e1;
   --text: #fff8e1;
   --glow: rgba(201,162,39,0.4);
+}.movies-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.movies-header h1 {
+  font-size: 32px;
+  color: #ff3333;
+  margin-bottom: 10px;
+}
+
+.movies-sub {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.join-group-card {
+  background: rgba(229,9,20,0.1);
+  border: 2px solid #e50914;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 10px 40px rgba(229,9,20,0.25);
+}
+
+.group-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.join-group-card h3 {
+  font-size: 26px;
+  color: #ff3333;
+  margin-bottom: 15px;
+}
+
+.join-group-card p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.join-btn {
+  display: inline-block;
+  padding: 16px 60px;
+  background: #e50914;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(229,9,20,0.5);
+  transition: all 0.3s;
+}
+
+.join-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 35px rgba(229,9,20,0.7);
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -2083,7 +2109,67 @@ input:focus, textarea:focus {
   color: white;
   border-bottom-right-radius: 4px;
 }
+.youtube-player {
+  position: relative;
+  padding-bottom: 140%; /* 5:7 ratio – portrait shorts ke liye acha balance (na zyada lamba, na chhota) */
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 20px auto;
+  max-width: 100%;
+  max-height: 60vh; /* screen ka 60% se zyada nahi lega – Continue button niche dikhega */
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
 
+.youtube-player iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+/* Landscape mode mein height kam kar do taake button niche dikhe */
+@media (orientation: landscape) {
+  .youtube-player {
+    padding-bottom: 56.25%; /* normal 16:9 */
+    max-height: 65vh;
+  }
+}
+
+/* Continue button ko niche fixed rakho taake hamesha dikhe */
+.continue-btn {
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #c9a227, #ffd700);
+  color: #0b1f21;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  box-shadow: 0 6px 20px rgba(201,162,39,0.5);
+  position: sticky;
+  bottom: 20px; /* niche fixed rahega */
+  z-index: 10;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mobile pe bhi button dikhe aur video fit rahe */
+@media (max-width: 480px) {
+  .youtube-player {
+    max-height: 55vh; /* mobile pe thoda kam height taake button niche dikhe */
+  }
+  .continue-btn {
+    margin-top: 10px;
+    padding: 12px 30px;
+    font-size: 16px;
+    bottom: 15px;
+  }
+}
 .ent-msg.other {
   align-self: flex-start;
   background: rgba(255,255,255,0.12);
@@ -2436,86 +2522,7 @@ input:focus, textarea:focus {
   border-radius: 8px;
   text-align: center;
 }
-/* Top Video Banner - Simple & Khubsurat (Pehle wala style) */
-.top-video-banner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(135deg, #ff4444, #c9a227);
-  color: white;
-  padding: 16px;
-  text-align: center;
-  box-shadow: 0 6px 25px rgba(255,68,68,0.5);
-  z-index: 9998;
-  animation: glow 2s infinite alternate;
-}
 
-.banner-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.banner-icon {
-  font-size: 28px;
-}
-
-.banner-text {
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-.youtube-player {
-  position: relative;
-  padding-bottom: 56.25%; /* 16:9 balanced */
-  height: 0;
-  overflow: hidden;
-  border-radius: 12px;
-  margin: 15px auto;
-  max-width: 560px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-}
-
-.youtube-player iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-}
-
-.continue-btn {
-  padding: 14px 40px;
-  background: white;
-  color: #c9a227;
-  border: none;
-  border-radius: 50px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  position: sticky;
-  bottom: 20px;
-  z-index: 10;
-}
-
-@keyframes glow {
-  from { box-shadow: 0 0 15px rgba(255,68,68,0.6); }
-  to   { box-shadow: 0 0 35px rgba(201,162,39,0.8); }
-}
-
-/* Mobile pe adjust */
-@media (max-width: 480px) {
-  .youtube-player { max-width: 100%; }
-  .continue-btn { padding: 12px 30px; font-size: 16px; bottom: 15px; }
-}
 .status-pending  { background: rgba(255,136,0,0.2); color: #ff8800; }
 .status-approved { background: rgba(0,204,136,0.2); color: #00cc88; }
 .status-rejected { background: rgba(255,68,68,0.2); color: #ff4444; }
@@ -2621,7 +2628,33 @@ input:focus, textarea:focus {
   font-size: 12px;
   font-weight: bold;
 }
+/* Global fix - sections neeche na jayen */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
 
+.card {
+  margin: 15px 10px; /* kam margin */
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(11,31,33,0.98);
+  border: 2px solid #c9a227;
+  box-shadow: 0 6px 20px rgba(201,162,39,0.2);
+  scroll-margin-top: 20px; /* scroll hone pe thoda space top se */
+}
+
+.hide {
+  display: none !important;
+}
+
+/* Agar dashboard mein bohot gap hai to yeh bhi add karo */
+.dashboard-container {
+  padding: 10px; /* kam padding */
+  margin: 0;
+}
 .status-pending { background: #ff8800; color: white; }
 .status-approved { background: #00cc88; color: white; }
 .status-rejected { background: #ff4444; color: white; }
@@ -2709,7 +2742,100 @@ input:focus, textarea:focus {
   display: flex;
   gap: 8px;
 }
+/* Small Premium WhatsApp Chat Bubble */
+.wa-chat-bubble {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(37,213,102,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  animation: soft-pulse 3s infinite ease-in-out;
+}
 
+.wa-chat-bubble:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 30px rgba(37,213,102,0.6);
+}
+
+.bubble {
+  width: 100%;
+  height: 100%;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.icon {
+  font-size: 32px;
+  color: white;
+  line-height: 56px;
+}
+
+.tooltip {
+  position: absolute;
+  right: 70px;
+  bottom: 8px;
+  background: #111;
+  color: #25D366;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.4);
+  pointer-events: none;
+}
+
+.wa-chat-bubble:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  right: 75px;
+}
+
+/* Soft pulse animation */
+@keyframes soft-pulse {
+  0%, 100% {
+    box-shadow: 0 6px 20px rgba(37,213,102,0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(37,213,102,0.6);
+    transform: scale(1.04);
+  }
+}
+
+/* Mobile pe aur chhota */
+@media (max-width: 480px) {
+  .wa-chat-bubble {
+    width: 52px;
+    height: 52px;
+    bottom: 18px;
+    right: 18px;
+  }
+  .icon {
+    font-size: 30px;
+    line-height: 52px;
+  }
+  .tooltip {
+    font-size: 12px;
+    padding: 5px 12px;
+    right: 65px;
+  }
+}
 .live-input input {
   flex: 1;
   padding: 12px 16px;
@@ -2848,100 +2974,7 @@ input:focus, textarea:focus {
   font-size: 14px;
   opacity: 0.9;
 }
-/* Premium Classic WhatsApp Button - Small & Elegant */
-.whatsapp-premium-small {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 58px;
-  height: 58px;
-  background: #25D366;
-  border-radius: 50%;
-  box-shadow: 0 6px 20px rgba(37,213,102,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  z-index: 9999;
-  transition: all 0.3s ease;
-  animation: wa-pulse-small 3.5s infinite ease-in-out;
-}
 
-.whatsapp-premium-small:hover {
-  transform: scale(1.15);
-  box-shadow: 0 10px 30px rgba(37,213,102,0.6);
-}
-
-.wa-bubble-small {
-  width: 100%;
-  height: 100%;
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.wa-icon-small {
-  font-size: 32px;
-  color: white;
-  line-height: 58px;
-}
-
-.wa-tooltip-small {
-  position: absolute;
-  right: 75px;
-  bottom: 10px;
-  background: #111;
-  color: #25D366;
-  padding: 6px 14px;
-  border-radius: 30px;
-  font-size: 13px;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.4);
-  pointer-events: none;
-}
-
-.whatsapp-premium-small:hover .wa-tooltip-small {
-  opacity: 1;
-  visibility: visible;
-  right: 80px;
-}
-
-/* Gentle small pulse animation */
-@keyframes wa-pulse-small {
-  0%, 100% {
-    box-shadow: 0 6px 20px rgba(37,213,102,0.4);
-    transform: scale(1);
-  }
-  50% {
-    box-shadow: 0 10px 30px rgba(37,213,102,0.6);
-    transform: scale(1.04);
-  }
-}
-
-/* Mobile adjust (aur chhota) */
-@media (max-width: 480px) {
-  .whatsapp-premium-small {
-    width: 54px;
-    height: 54px;
-    bottom: 20px;
-    right: 20px;
-  }
-  .wa-icon-small {
-    font-size: 30px;
-    line-height: 54px;
-  }
-  .wa-tooltip-small {
-    font-size: 12px;
-    padding: 5px 12px;
-    right: 70px;
-  }
-}
 @keyframes glow {
   from { box-shadow: 0 0 15px rgba(255,68,68,0.6); }
   to { box-shadow: 0 0 35px rgba(201,162,39,0.8); }
@@ -3154,7 +3187,100 @@ input:focus, textarea:focus {
   margin: 10px 0;
   width: 100%;
 }
+.ramzan-center-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease;
+  animation: popupFadeIn 1s forwards;
+}
 
+.ramzan-center-popup.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.center-content {
+  text-align: center;
+  max-width: 90%;
+  padding: 40px 25px;
+  background: linear-gradient(135deg, rgba(11,31,33,0.95), rgba(25,35,37,0.9));
+  border: 2px solid #c9a227;
+  border-radius: 24px;
+  box-shadow: 0 20px 80px rgba(201,162,39,0.5);
+  position: relative;
+}
+
+.moon-stars {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.moon {
+  font-size: 100px;
+  animation: moonGlow 5s infinite alternate;
+}
+
+.stars-float span {
+  font-size: 30px;
+  position: absolute;
+  opacity: 0;
+  animation: starFloat 4s infinite;
+}
+
+.stars-float span:nth-child(1) { top: -40px; left: 20%; animation-delay: 0s; }
+.stars-float span:nth-child(2) { top: -30px; left: 40%; animation-delay: 1s; }
+.stars-float span:nth-child(3) { top: -50px; left: 60%; animation-delay: 2s; }
+.stars-float span:nth-child(4) { top: -35px; left: 80%; animation-delay: 3s; }
+
+.center-content h1 {
+  font-size: 42px;
+  color: #ffd700;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 15px rgba(255,215,0,0.6);
+}
+
+.blessing-msg {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+
+.close-center {
+  padding: 14px 60px;
+  background: linear-gradient(135deg, #c9a227, #ffd700);
+  color: #0b1f21;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(201,162,39,0.5);
+}
+
+/* Animations */
+@keyframes popupFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes moonGlow {
+  from { text-shadow: 0 0 20px rgba(201,162,39,0.5); }
+  to   { text-shadow: 0 0 50px rgba(255,215,0,0.8); }
+}
+
+@keyframes starFloat {
+  0%   { opacity: 0; transform: translateY(0); }
+  50%  { opacity: 1; transform: translateY(-40px); }
+  100% { opacity: 0; transform: translateY(-80px); }
+}
 #complaintCheckForm input:focus, #getAppForm input:focus, #movieCheckForm input:focus {
   border-color: var(--ramzan-gold);
   box-shadow: 0 0 20px rgba(201,162,39,0.3);
@@ -3208,7 +3334,6 @@ input:focus, textarea:focus {
   0%, 100% { opacity: 0.8; }
   50% { opacity: 1; }
 }
-
 /* SIM History - Slim Ramzan VIP Style */
 .sim-history-item {
   background: rgba(11,31,33,0.95);
@@ -3533,6 +3658,33 @@ input:focus, textarea:focus {
   </style>
 </head>
 <body>
+  <!-- Center Premium Ramzan Mubarak Pop-up - Har baar dikhega -->
+<div id="ramzanCenterWish" class="ramzan-center-popup">
+  <div class="center-content">
+    <div class="moon-stars">
+      <div class="moon">🌙</div>
+      <div class="stars-float">
+        <span>✨</span><span>✨</span><span>✨</span><span>✨</span>
+      </div>
+    </div>
+
+    <h1>Ramzan Mubarak!</h1>
+
+    <p class="blessing-msg">
+      Assalam-o-Alaikum!
+MrCrazyTeam ki taraf se aap sab ko Ramzan Mubarak 🌙🤍
+Dua hai ke yeh mubarak mahina aap ke liye
+rehmat, barkat aur maghfirat ka zariya bane 🤲✨
+Allah Ta’ala aap ki ibadat qabool farmaye
+aur aap ke gharon mein khushi aur sukoon ata kare 🌸
+      <strong>Ameen ya Rabb-ul-Alameen 🤲</strong>
+    </p>
+
+    <button class="close-center" onclick="closeCenterWish()">
+      JazakAllah – Continue
+    </button>
+  </div>
+</div>
   <!-- Flash Sale Banner - Premium Look -->
 <div id="flashSaleBanner" class="flash-banner hide">
   <div class="flash-header">
@@ -3557,7 +3709,7 @@ input:focus, textarea:focus {
   </a>
 </div>
 <div class="chand-slim">☾✨</div>
-<div class="ramzan-top-slim">رمضان مبارک بہت جلد آ رہا ہے </div>
+<div class="ramzan-top-slim">رمضان مبارک  </div>
   
 <!-- Notification Popups -->
 <div id="normalNotification" class="notification-popup hide">
@@ -3657,16 +3809,18 @@ input:focus, textarea:focus {
     <button class="small-btn" onclick="showGroup()">Group & Updates (روز کی معلومات) </button>
     <button class="small-btn" onclick="showEntertainmentChat()">Entertainment Chat 💑</button>
     <!-- Ye line delete kar do -->
-
+<button class="movies-btn" onclick="showMoviesSection()">
+  Movies & Dramas Free 🎬
+</button>
 
     <button class="small-btn" onclick="showMyApps()">My Apps</button>
   <button class="small-btn" onclick="showSupportChat()">Support Chat 💬</button>
   
-    
-    <button class="small-btn" onclick="showMovies()">Movies & Drama 🎬</button>
+    <button class="check-sim-btn" onclick="openSimChecker()">
+  Check SIM Details 📱
+</button>
 
 
-<button class="small-btn" onclick="showUserMovieHistory()">Movie & Drama History 📜</button>
   <button class="small-btn" onclick="showSocialWorld()">Social World 🌐</button>
   <button class="small-btn" onclick="showDepositFunds()">Deposit Funds 💸</button>
   <button class="small-btn" onclick="showOrderDetails()">Order Details 📋</button>
@@ -3674,9 +3828,7 @@ input:focus, textarea:focus {
   
   <button class="small-btn" onclick="showSocialServices()">Social Services & Deposit 💰</button>
     <button class="small-btn" onclick="showFeedback()">Feedback & Ratings 🌟</button>
-   <!-- Dashboard ke andar yeh button add kar dena -->
-<button class="small-btn" onclick="showSimDetailsRequest()">SIM Details Request 📱</button>
-   <button class="small-btn" onclick="showSimHistory()">SIM Requests History 📜</button>
+
    
    
    
@@ -3797,15 +3949,7 @@ input:focus, textarea:focus {
     <div id="appResult"></div>
   </div>
 
-  <!-- Movie Check Form -->
-  <div id="movieCheckForm" class="hide">
-    <h2>Check Movie & Drama</h2>
-    <input type="text" id="movieReqName" placeholder="Please enter your movie name jo ap ne req ki ha" />
-    <button onclick="checkMovieRequest()">Check Status</button>
-    <div id="movieResult"></div>
-  </div>
-
-  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
+ 
 </div>
 <!-- Official Accounts - Gold Premium Look -->
 <div id="officialAccountsPage" class="card hide">
@@ -3832,10 +3976,10 @@ input:focus, textarea:focus {
     </a>
     
     <!-- WhatsApp 1 -->
-    <a href="https://wa.me/263777862928" target="_blank" class="account-card">
+    <a href="https://wa.me/+263 77786 2928" target="_blank" class="account-card">
       <div class="icon">💬</div>
       <h3>WhatsApp</h3>
-      <p>+26377 786 2928</p>
+      <p>+977 976-1970136</p>
       <small>Fast support & queries</small>
     </a>
     
@@ -3864,6 +4008,27 @@ input:focus, textarea:focus {
     </a>
   </div>
   
+  <div class="back-link" onclick="showDashboard()">← Back to Dashboard</div>
+</div>
+<!-- Movies & Dramas Free Section -->
+<div id="moviesSection" class="card hide">
+  <div class="movies-header">
+    <h1>Movies & Dramas Free 🎬</h1>
+    <p class="movies-sub">Latest Movies, Dramas, Web Series & More – Free Join Now!</p>
+  </div>
+
+  <div class="join-group-card">
+    <div class="group-icon">📽️</div>
+    <h3>Free Movies & Dramas Group</h3>
+    <p>Daily new uploads • HD Quality • No ads • Fast updates</p>
+    
+    <a href="https://chat.whatsapp.com/CQVGlLwe2OrAtxE0ArxV7a?mode=gi_t" 
+       target="_blank" 
+       class="join-btn">
+      Join Group Now
+    </a>
+  </div>
+
   <div class="back-link" onclick="showDashboard()">← Back to Dashboard</div>
 </div>
 <!-- Ramzan Kareem Section -->
@@ -3915,49 +4080,7 @@ input:focus, textarea:focus {
   
   <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
 </div>
-<!-- User Movie & Drama History - Slim Ramzan VIP (User-Only View) -->
-<div id="userMovieHistoryPage" class="card hide">
-  <h1>My Movie & Drama History 📜</h1>
-  
-  <div class="history-container">
-    <div id="userMovieHistoryList"></div>
-  </div>
 
-  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
-</div>
-<!-- Naya Section: Movies & Drama Page -->
-<div id="moviesPage" class="card hide">
-  <h1>Movies & Drama 🌟</h1>
-  
-  <!-- Selection: Drama or Film -->
-  <div id="selectionSection" class="selection-container">
-    <div class="selection-grid">
-      <button class="select-btn" onclick="selectType('Drama')">Drama 📺</button>
-      <button class="select-btn" onclick="selectType('Film')">Film 🎥</button>
-    </div>
-    <p style="text-align:center; opacity:0.8; margin-top:15px; font-size:14px;">Select Drama or Film to request</p>
-  </div>
-
-  <!-- Form: Hidden Initially -->
-  <div id="requestForm" class="hide">
-    <h2 id="formTitle" style="text-align:center; margin-bottom:20px; color:var(--ramzan-gold);">Request Your Favorite</h2>
-    <input type="text" id="movieName" placeholder="Please enter full movie name" />
-    <input type="text" id="whatsappNum" placeholder="Please enter WhatsApp number (03XXXXXXXXX)" maxlength="11" />
-    <button onclick="submitMovieRequest()">Submit Request</button>
-  </div>
-
-  <!-- Success Message: Hidden Initially -->
-  <div id="successSection" class="hide">
-    <div class="success-card">
-      <div class="success-icon">✅</div>
-      <p>This film or drama will be sent to your WhatsApp number soon.</p>
-      <p style="font-weight:bold; color:var(--ramzan-gold);">Your request is being processed by MrCrazyTeam.</p>
-      <div class="chand-sparkle">☾</div>
-    </div>
-    <div class="link" onclick="showMovies()">← Request Another</div>
-  </div>
-
-  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
 </div>
 <!-- New Premium Banking Style Feedback Section -->
 <div id="feedbackPage" class="card hide">
@@ -4012,21 +4135,7 @@ Thank you
 
   <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
 </div>
-<!-- SIM Requests History Page -->
-<div id="simHistoryPage" class="card hide">
-  <h1>SIM Requests History 📜</h1>
-  
-  <div class="history-container">
-    <div id="simHistoryList"></div>
-  </div>
 
-  <!-- No history message -->
-  <div id="noSimHistory" class="no-history hide">
-    <p>Aap ne abhi tak koi SIM details request nahi ki 📭</p>
-    <p>Request karne ke liye SIM Details Request section use karen.</p>
-  </div>
-
-  <div class="link" onclick="showDashboard()">← Back to Dashboard</div>
 </div>
 <!-- Deposit Funds Section - Fixed Typing & Fast Messages -->
 <div id="depositFundsPage" class="card hide">
@@ -4344,15 +4453,16 @@ Thank you
 </div>
 
 
-<!-- Premium Classic WhatsApp Floating Button - Thora Small -->
-<a href="https://wa.me/923236876132?text=Hi%20MrCrazyTeam%20Please%20help%20me!" 
+<!-- Small Premium WhatsApp Chat Bubble -->
+<a href="https://wa.me/923236876132?text=Hello%20MrCrazyTeam%2C%0AI%20am%20facing%20an%20issue%20in%20the%20app%20and%20need%20your%20support.%20Please%20guide%20me." 
    target="_blank" 
-   class="whatsapp-premium-small" 
-   title="Chat with MrCrazyTeam Support">
-  <div class="wa-bubble-small">
-    <div class="wa-icon-small">💬</div>
+   class="wa-chat-bubble" 
+   title="Chat with Support">
+  <div class="bubble">
+    <div class="icon">💬</div>
   </div>
-  <span class="wa-tooltip-small">Support Chat</span>
+  <span class="tooltip">Chat with Support</span>
+</a>
 </a>
 </body>
 </html>
@@ -4641,96 +4751,7 @@ function loadUserBalance() {
     document.getElementById('userBalanceAmount').textContent = `Rs. ${bal.toLocaleString('en-PK')}`;
   });
 }
-// Check Movie Request
-function checkMovieRequest() {
-  const movieName = document.getElementById('movieReqName').value.trim();
-  if (!movieName) {
-    alert("Please enter your movie name!");
-    return;
-  }
-  
-  document.getElementById('movieResult').innerHTML = `
-    <div class="success-card">
-      <p>Coming Soon! Your request for "${movieName}" is under process.</p>
-      <p style="color:var(--ramzan-gold);">Stay tuned for updates from MrCrazyTeam.</p>
-    </div>
-  `;
-}
 
-// Show Movies & Drama Section
-function showMovies() {
-  hideAll();
-  document.getElementById('moviesPage').classList.remove('hide');
-  document.getElementById('selectionSection').classList.remove('hide');
-  document.getElementById('requestForm').classList.add('hide');
-  document.getElementById('successSection').classList.add('hide');
-  document.getElementById('movieName').value = "";
-  document.getElementById('whatsappNum').value = "";
-  let selectedType = null;
-}
-
-// Select Type (Drama or Film)
-function selectType(type) {
-  selectedType = type;
-  document.getElementById('formTitle').textContent = `Request ${type}`;
-  document.getElementById('selectionSection').classList.add('hide');
-  document.getElementById('requestForm').classList.remove('hide');
-  document.getElementById('movieName').focus();
-}
-
-// Submit Movie Request with Monthly Limit (3 per user per month)
-function submitMovieRequest() {
-  const movieName = document.getElementById('movieName').value.trim();
-  const whatsapp = document.getElementById('whatsappNum').value.trim();
-  
-  if (!movieName) {
-    alert("Please enter full movie name!");
-    return;
-  }
-  
-  if (!whatsapp || whatsapp.length !== 11 || !whatsapp.startsWith('03')) {
-    alert("Valid WhatsApp number daalen (03XXXXXXXXX)");
-    return;
-  }
-  
-  // First, check monthly limit
-  db.ref('movieRequests').orderByChild('uid').equalTo(currentUser.uid).once('value').then(snap => {
-    const now = new Date();
-    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1).getTime();
-    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59).getTime();
-    
-    let monthlyCount = 0;
-    snap.forEach(child => {
-      const req = child.val();
-      if (req.timestamp >= startOfMonth && req.timestamp <= endOfMonth) {
-        monthlyCount++;
-      }
-    });
-    
-    if (monthlyCount >= 3) {
-      alert("Dear valued Customer, Please be informed that your current plan allows for a maximum of 3 movies & dramas per month.We kindly suggest Placing your next request in the coming month.Thank you for a continued cooperate for understanding. 📅");
-      return;
-    }
-    
-    // If under limit, save the request
-    db.ref('movieRequests').push({
-      type: selectedType,
-      movieName: movieName,
-      whatsapp: whatsapp,
-      uid: currentUser.uid,
-      username: currentUser.displayName || "User",
-      timestamp: Date.now(),
-      status: "pending"
-    }).then(() => {
-      document.getElementById('requestForm').classList.add('hide');
-      document.getElementById('successSection').classList.remove('hide');
-    }).catch(err => {
-      alert("Error: " + err.message);
-    });
-  }).catch(err => {
-    alert("Error checking limit: " + err.message);
-  });
-}
 function openPrivateChat(friendUid, friendName) {
   currentChatFriend = friendUid;
   document.getElementById('chatWithUser').textContent = "Chat with " + friendName;
@@ -5143,53 +5164,7 @@ function backToServicesList() {
   document.getElementById('serviceOrderForm').classList.add('hide');
   document.getElementById('slimServicesList').classList.remove('hide');
 }
-// Show User Movie History Page
-function showUserMovieHistory() {
-  hideAll();
-  document.getElementById('userMovieHistoryPage').classList.remove('hide');
-  loadUserMovieHistory();
-}
 
-// Load User's Own Movie/Drama History (Real-time, User-Only View)
-function loadUserMovieHistory() {
-  const list = document.getElementById('userMovieHistoryList');
-  list.innerHTML = '<p class="no-history">Loading history...</p>';
-
-  // Query only user's own requests
-  db.ref('movieRequests').orderByChild('uid').equalTo(currentUser.uid).on('value', snap => {
-    list.innerHTML = "";
-    if (!snap.val()) {
-      list.innerHTML = '<p class="no-history">No request history yet 📭</p>';
-      return;
-    }
-
-    const requests = [];
-    snap.forEach(child => {
-      requests.push({ key: child.key, ...child.val() });
-    });
-    requests.sort((a, b) => b.timestamp - a.timestamp); // Newest first
-
-    requests.forEach(req => {
-      const div = document.createElement('div');
-      div.className = 'history-item';
-
-      const time = new Date(req.timestamp).toLocaleString('en-US', {
-        year: 'numeric', month: 'short', day: 'numeric',
-        hour: '2-digit', minute: '2-digit'
-      });
-
-      div.innerHTML = `
-        <div class="history-type">${req.type || 'Unknown'}</div>
-        <div class="history-name">${req.movieName}</div>
-        <div class="history-whatsapp">WhatsApp: ${req.whatsapp}</div>
-        <div class="history-time">Requested: ${time}</div>
-        <span class="history-status ${req.status || 'pending'}">${(req.status || 'pending').toUpperCase()}</span>
-      `;
-
-      list.appendChild(div);
-    });
-  });
-}
 // Flash Sale Real-time Load
 function loadFlashSale() {
   db.ref('flashSale').on('value', snap => {
@@ -5660,71 +5635,7 @@ function sendEntertainmentImage(input) {
     });
   });
 }
-// Show SIM Details page
-function showSimDetailsRequest() {
-  hideAll();
-  document.getElementById('simDetailsPage').classList.remove('hide');
-  
-  // Username auto fill
-  db.ref('users/' + currentUser.uid).once('value').then(snap => {
-    const data = snap.val() || {};
-    const name = data.username || currentUser.displayName || "User";
-    document.getElementById('simUserName').textContent = name;
-  });
-  
-  // Clear previous inputs & result
-  document.getElementById('simQueryInput').value = "";
-  document.getElementById('simReason').value = "";
-  document.getElementById('simResult').innerHTML = "";
-}
 
-// Submit SIM request
-function submitSimRequest() {
-  const query = document.getElementById('simQueryInput').value.trim();
-  const reason = document.getElementById('simReason').value.trim();
-  
-  if (!query) {
-    alert("Number ya CNIC to likho bhai!");
-    return;
-  }
-  
-  // Simple validation (basic)
-  if (query.length < 5) {
-    alert("Itna chhota number/CNIC nahi ho sakta 😅");
-    return;
-  }
-  
-  const resultDiv = document.getElementById('simResult');
-  resultDiv.innerHTML = "<p style='color:#ffd700;'>Sending request...</p>";
-  
-  const requestRef = db.ref('simRequests').push();
-  
-  const data = {
-    uid: currentUser.uid,
-    username: document.getElementById('simUserName').textContent,
-    query: query,
-    reason: reason || "No reason provided",
-    status: "pending",
-    timestamp: Date.now(),
-    adminReply: "",
-    adminAction: "" // approved / rejected / deleted
-  };
-  
-  requestRef.set(data)
-    .then(() => {
-      resultDiv.innerHTML = `
-        <div style="background:rgba(0,204,136,0.2); padding:15px; border-radius:12px; border-left:4px solid #00cc88;">
-          <strong>Request Sent! ✅</strong><br>
-          <small>Request ID: ${requestRef.key.slice(-8).toUpperCase()}</small><br><br>
-          ✅ Your request has been approved.
-📄 Your data will be visible in the SIM Requests History section within the next 30 minutes. Thank you! 😊
-        </div>
-      `;
-    })
-    .catch(err => {
-      resultDiv.innerHTML = `<p style="color:#ff4444;">Error: ${err.message}</p>`;
-    });
-}
 // Informations Section Functions
 function showInformations() {
   hideAll();
@@ -5792,7 +5703,10 @@ function removeImage() {
   document.getElementById('compImage').value = "";
   document.getElementById('imagePreview').classList.add('hide');
 }
-
+function showMoviesSection() {
+  hideAll();
+  document.getElementById('moviesSection').classList.remove('hide');
+}
 function submitComplaint() {
   const desc = document.getElementById('compDesc').value.trim();
   if (!desc) return alert("Please describe your problem!");
@@ -6004,7 +5918,19 @@ function loadTotalUsers() {
     document.getElementById('totalUsersCount').textContent = count;
   });
 }
+// Ramzan Mubarak Center Pop-up - Har baar dikhega (10 sec)
+function showRamzanCenterWish() {
+  const popup = document.getElementById('ramzanCenterWish');
+  popup.classList.add('show');
 
+  // 10 sec baad ghaib kar do
+  setTimeout(() => {
+    popup.classList.remove('show');
+  }, 10000);
+}
+
+// App khulte hi har baar call karo
+showRamzanCenterWish();
 function loadUpdates() {
   const list = document.getElementById('updatesList');
   list.innerHTML = '<p style="text-align:center; opacity:0.7;">Loading updates...</p>';
@@ -6240,7 +6166,15 @@ function loadMyAppsGrid() {
     grid.innerHTML = '<p>Error loading apps</p>';
   });
 }
-
+function showRamzanSection() {
+  hideAll();
+  document.getElementById('ramzanSection').classList.remove('hide');
+  
+  // Yeh line daal do - page ko top pe le jayega
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  
+  // agar koi aur function call hai to uske baad
+}
 // Show App Detail Page
 function showAppDetail(app) {
   hideAll();
@@ -6429,6 +6363,11 @@ function submitFinalAmount(method, tid) {
     }, 3000);
   }, 1500);
 }
+function openSimChecker() {
+  window.open("https://mrcrazydevstudio.netlify.app/", "_blank");
+  // Agar same tab mein kholna hai to yeh line use karo:
+  // window.location.href = "https://mrcrazydevstudio.netlify.app/";
+}
 // Show SIM History Page
 function showSimHistory() {
   hideAll();
@@ -6436,60 +6375,6 @@ function showSimHistory() {
   loadSimHistory();
 }
 
-// Load User's SIM Requests History
-function loadSimHistory() {
-  const list = document.getElementById('simHistoryList');
-  const noHistory = document.getElementById('noSimHistory');
-  
-  list.innerHTML = '<p style="text-align:center; opacity:0.7;">Loading history...</p>';
-  noHistory.classList.add('hide');
-
-  db.ref('simRequests')
-    .orderByChild('uid')
-    .equalTo(currentUser.uid)
-    .on('value', snap => {
-      list.innerHTML = "";
-      
-      if (!snap.val()) {
-        noHistory.classList.remove('hide');
-        list.innerHTML = "";
-        return;
-      }
-
-      const requests = [];
-      snap.forEach(child => {
-        requests.push({ key: child.key, ...child.val() });
-      });
-      
-      // Newest first
-      requests.sort((a, b) => b.timestamp - a.timestamp);
-
-      requests.forEach(req => {
-        const div = document.createElement('div');
-        div.className = 'sim-history-item';
-
-        const time = new Date(req.timestamp).toLocaleString('en-US', {
-          year: 'numeric', month: 'short', day: 'numeric',
-          hour: '2-digit', minute: '2-digit'
-        });
-
-        const statusClass = req.status || 'pending';
-        const replyContent = req.adminReply 
-          ? `<div class="sim-reply">${req.adminReply}</div>`
-          : `<div class="sim-reply none">No reply from admin yet ⏳</div>`;
-
-        div.innerHTML = `
-          <div class="sim-query">Query: ${req.query}</div>
-          <div class="sim-reason">Reason: ${req.reason}</div>
-          <div class="sim-time">Requested on: ${time}</div>
-          <span class="sim-status ${statusClass}">${statusClass.toUpperCase()}</span>
-          ${replyContent}
-        `;
-
-        list.appendChild(div);
-      });
-    });
-}
 // Top Admin Banner - Complete JS (Email/UID Custom Support)
 let bannerListener = null; // To stop listener on logout
 
