@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MrCrazy Digital Company</title>
+  <title>MrCrazy SERVERS</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
@@ -29,20 +29,20 @@
     .banner {
       width: 100%;
       background: linear-gradient(135deg, #000428, #004e92);
-      padding: 18px 0;
+      padding: 15px 0;
       text-align: center;
-      border-bottom: 4px solid var(--accent);
-      box-shadow: 0 8px 35px rgba(0,234,255,0.2);
-      margin-bottom: 30px;
+      border-bottom: 3px solid var(--accent);
+      box-shadow: 0 6px 25px var(--shadow);
+      margin-bottom: 25px;
     }
     .banner h1 {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       background: linear-gradient(90deg, #00eaff, #00ff9d);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       font-weight: bold;
       letter-spacing: 5px;
-      text-shadow: 0 0 30px rgba(0,255,157,0.6);
+      text-shadow: 0 0 20px rgba(0,255,157,0.5);
     }
     .container {
       width: 100%;
@@ -50,18 +50,13 @@
       text-align: center;
     }
     .profile {
-      width: 130px;
-      height: 130px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       overflow: hidden;
-      margin: 0 auto 35px;
-      border: 5px solid var(--green);
-      box-shadow: 0 0 45px rgba(0,255,157,0.6);
-      animation: glow 4s infinite alternate;
-    }
-    @keyframes glow {
-      from { box-shadow: 0 0 25px rgba(0,255,157,0.4); }
-      to { box-shadow: 0 0 60px rgba(0,255,157,0.9); }
+      margin: 0 auto 25px;
+      border: 4px solid var(--green);
+      box-shadow: 0 0 30px rgba(0,255,157,0.5);
     }
     .profile img {
       width: 100%;
@@ -69,21 +64,20 @@
       object-fit: cover;
     }
     .company-title {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       color: var(--accent);
-      margin: 20px 0 40px;
+      margin: 20px 0 35px;
       text-shadow: 0 0 15px var(--shadow);
-      font-weight: bold;
     }
     .video-wrapper {
       width: 100%;
-      max-width: 440px;
-      height: 248px;
-      margin: 0 auto 60px;
-      border-radius: 28px;
+      max-width: 420px;
+      height: 236px;
+      margin: 0 auto 50px;
+      border-radius: 24px;
       overflow: hidden;
-      border: 5px solid var(--accent);
-      box-shadow: 0 0 60px rgba(0,234,255,0.5);
+      border: 4px solid var(--accent);
+      box-shadow: 0 0 40px var(--shadow);
       pointer-events: none;
     }
     .video-box iframe {
@@ -92,17 +86,15 @@
       border: none;
     }
     .updated-text {
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       color: var(--green);
       margin: 25px 0 45px;
-      text-shadow: 0 0 20px var(--shadow);
-      font-weight: bold;
+      text-shadow: 0 0 15px var(--shadow);
     }
     .urdu-guide {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: #b0e0ff;
       margin-bottom: 20px;
-      line-height: 1.7;
     }
     .hand-pointer {
       font-size: 5rem;
@@ -115,7 +107,7 @@
       40% { transform: translateY(-25px); }
       60% { transform: translateY(-12px); }
     }
-    /* Animated Login Button */
+    /* Khubsurat Animated Login Button */
     .btn-login {
       background: linear-gradient(135deg, #00ff9d, #00c0ff);
       color: #000;
@@ -249,11 +241,11 @@
     }
 
     @media (max-width: 480px) {
-      .banner h1 { font-size: 2rem; }
+      .banner h1 { font-size: 1.9rem; }
       .profile { width: 90px; height: 90px; }
       .video-wrapper { height: 210px; }
       .pop-button { width: 60px; height: 60px; bottom: 20px; right: 20px; font-size: 1.6rem; }
-      .btn-login { padding: 16px 45px; font-size: 1.3rem; }
+      .btn-login { padding: 18px 50px; font-size: 1.4rem; }
       .btn-info { padding: 14px 35px; font-size: 1.2rem; }
     }
   </style>
@@ -292,7 +284,7 @@
     </div>
 
     <!-- Khubsurat Animated Login Button -->
-    <button class="btn-login">
+    <button class="btn-login" onclick="window.open('https://mrcrazydevstudioofficial.netlify.app/', '_blank')">
       <i class="fas fa-sign-in-alt"></i> Click Here & Login
     </button>
 
