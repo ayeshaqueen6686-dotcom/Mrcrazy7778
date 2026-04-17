@@ -7,56 +7,75 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --bg: #0b0e17;
-      --text: #e0f7ff;
-      --accent: #00eaff;
-      --green: #00ff9d;
-      --card: #141824;
-      --border: #2a3b5f;
-      --shadow: rgba(0, 255, 157, 0.35);
+      --bg: #0a0b14;
+      --surface: #11141f;
+      --text: #e0f0ff;
+      --accent: #00e5ff;
+      --green: #00ffaa;
+      --border: rgba(0, 229, 255, 0.25);
+      --shadow: rgba(0, 229, 255, 0.25);
     }
     * { margin:0; padding:0; box-sizing:border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       background: var(--bg);
       color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px 15px;
+      padding: 30px 15px;
+      line-height: 1.6;
     }
     .banner {
       width: 100%;
-      background: linear-gradient(135deg, #000428, #004e92);
-      padding: 15px 0;
+      max-width: 560px;
+      background: linear-gradient(135deg, #0f1328, #1a2238);
+      padding: 20px 0;
       text-align: center;
-      border-bottom: 3px solid var(--accent);
-      box-shadow: 0 6px 25px var(--shadow);
-      margin-bottom: 25px;
+      border: 2px solid var(--border);
+      box-shadow: 0 0 40px var(--shadow);
+      margin-bottom: 45px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+      animation: rotate 25s linear infinite;
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
     .banner h1 {
-      font-size: 2.2rem;
-      background: linear-gradient(90deg, #00eaff, #00ff9d);
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: 6px;
+      background: linear-gradient(90deg, #ffffff, var(--accent), var(--green));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-weight: bold;
-      letter-spacing: 5px;
-      text-shadow: 0 0 20px rgba(0,255,157,0.5);
+      text-shadow: 0 0 25px rgba(0,229,255,0.5);
     }
     .container {
       width: 100%;
-      max-width: 520px;
+      max-width: 460px;
       text-align: center;
     }
     .profile {
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       overflow: hidden;
-      margin: 0 auto 25px;
+      margin: 0 auto 30px;
       border: 4px solid var(--green);
-      box-shadow: 0 0 30px rgba(0,255,157,0.5);
+      box-shadow: 0 0 45px rgba(0,255,170,0.4);
     }
     .profile img {
       width: 100%;
@@ -64,189 +83,94 @@
       object-fit: cover;
     }
     .company-title {
-      font-size: 1.6rem;
+      font-size: 1.45rem;
       color: var(--accent);
-      margin: 20px 0 35px;
-      text-shadow: 0 0 15px var(--shadow);
-    }
-    .video-wrapper {
-      width: 100%;
-      max-width: 420px;
-      height: 236px;
-      margin: 0 auto 50px;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 4px solid var(--accent);
-      box-shadow: 0 0 40px var(--shadow);
-      pointer-events: none;
-    }
-    .video-box iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+      margin-bottom: 35px;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
     .updated-text {
-      font-size: 1.6rem;
+      font-size: 1.35rem;
       color: var(--green);
-      margin: 25px 0 45px;
-      text-shadow: 0 0 15px var(--shadow);
+      margin: 25px 0 12px;
+      font-weight: 600;
     }
     .urdu-guide {
-      font-size: 1.2rem;
-      color: #b0e0ff;
+      font-size: 1.05rem;
+      color: #a0c0ff;
       margin-bottom: 20px;
     }
     .hand-pointer {
-      font-size: 5rem;
-      animation: bounce 1.8s infinite;
+      font-size: 3.2rem;           /* Chhota kar diya */
+      animation: bounce 2.2s infinite ease-in-out;
       color: var(--green);
-      text-shadow: 0 0 30px rgba(0,255,157,0.7);
+      margin-bottom: 45px;
+      text-shadow: 0 0 20px var(--green);
     }
     @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-25px); }
-      60% { transform: translateY(-12px); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
     }
-    /* Khubsurat Animated Login Button */
-    .btn-login {
-      background: linear-gradient(135deg, #00ff9d, #00c0ff);
-      color: #000;
-      padding: 20px 60px;
-      font-size: 1.6rem;
-      font-weight: bold;
+    /* Buttons */
+    .btn {
+      width: 100%;
+      max-width: 420px;
+      padding: 17px 25px;
+      margin: 12px auto;
+      font-size: 1.22rem;           /* Font small kiya */
+      font-weight: 700;
       border: none;
-      border-radius: 70px;
-      box-shadow: 0 15px 45px rgba(0,255,157,0.5);
+      border-radius: 9999px;
       cursor: pointer;
-      margin: 50px auto 80px;
-      display: block;
-      transition: all 0.4s;
-      animation: pulse-btn 2s infinite;
-    }
-    .btn-login:hover {
-      transform: translateY(-8px) scale(1.08);
-      box-shadow: 0 25px 70px rgba(0,255,157,0.8);
-    }
-    @keyframes pulse-btn {
-      0%, 100% { box-shadow: 0 15px 45px rgba(0,255,157,0.5); }
-      50% { box-shadow: 0 25px 70px rgba(0,255,157,0.9); }
-    }
-    /* Green Informations Button */
-    .btn-info {
-      background: var(--green);
-      color: #000;
-      padding: 15px 40px;
-      font-size: 1.4rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 60px;
-      box-shadow: 0 10px 35px rgba(0,255,157,0.4);
-      cursor: pointer;
-      margin: 0 auto 80px;
-      display: block;
-      transition: all 0.3s;
-    }
-    .btn-info:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 50px rgba(0,255,157,0.7);
-    }
-    /* Floating Customer Care Icon - Bottom Right */
-    .pop-button {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--accent);
-      color: #000;
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 30px var(--shadow);
-      cursor: pointer;
-      z-index: 999;
-      font-size: 1.8rem;
-      animation: pulse-pop 2.5s infinite;
-      transition: all 0.3s;
+      gap: 12px;
+      transition: all 0.4s ease;
+      box-shadow: 0 10px 30px rgba(0,229,255,0.3);
     }
-    .pop-button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 15px 40px var(--shadow);
+    .btn-login {
+      background: linear-gradient(135deg, var(--green), var(--accent));
+      color: #0a0b14;
     }
-    @keyframes pulse-pop {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+    .btn-login:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(0,229,255,0.55);
     }
-    /* Pop Content for Informations & Contact */
-    .pop-content {
-      display: none;
-      background: var(--card);
-      border: 2px solid var(--green);
-      border-radius: 24px;
-      padding: 35px 25px;
-      margin: 40px auto;
-      width: 100%;
-      max-width: 520px;
-      box-shadow: 0 0 60px rgba(0,255,157,0.5);
-      animation: fadeIn 0.6s;
+    .btn-sim {
+      background: linear-gradient(135deg, #0066ff, #00aaff);
+      color: white;
     }
-    .pop-content.show {
-      display: block;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .pop-title {
-      color: var(--green);
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 2rem;
-      text-shadow: 0 0 20px rgba(0,255,157,0.6);
-    }
-    .pop-item {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin: 20px 0;
-      font-size: 1.15rem;
-      color: #b0e0ff;
-    }
-    .pop-item i {
-      font-size: 2rem;
-      color: var(--accent);
-      min-width: 45px;
-      text-align: center;
-    }
-    .urdu {
-      margin-top: 35px;
-      font-size: 1.1rem;
-      line-height: 1.9;
-      color: #a0d0ff;
-      text-align: center;
+    .btn-sim:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 45px rgba(0, 102, 255, 0.55);
     }
     .theme-toggle {
       position: fixed;
       top: 20px;
       right: 20px;
-      background: var(--card);
+      background: var(--surface);
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 12px 16px;
+      padding: 9px 16px;
       border-radius: 50px;
       cursor: pointer;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 0.9rem;
       z-index: 100;
+    }
+    .footer-note {
+      margin-top: 70px;
+      font-size: 0.95rem;
+      color: #6b8ab8;
+      text-align: center;
+      max-width: 420px;
     }
 
     @media (max-width: 480px) {
-      .banner h1 { font-size: 1.9rem; }
-      .profile { width: 90px; height: 90px; }
-      .video-wrapper { height: 210px; }
-      .pop-button { width: 60px; height: 60px; bottom: 20px; right: 20px; font-size: 1.6rem; }
-      .btn-login { padding: 18px 50px; font-size: 1.4rem; }
-      .btn-info { padding: 14px 35px; font-size: 1.2rem; }
+      .banner h1 { font-size: 1.85rem; letter-spacing: 4px; }
+      .profile { width: 105px; height: 105px; }
+      .btn { font-size: 1.15rem; padding: 15px 20px; }
     }
   </style>
 </head>
@@ -266,104 +190,29 @@
 
     <div class="company-title">MrCrazy Digital Company</div>
 
-    <div class="video-wrapper">
-      <div class="video-box">
-        <iframe 
-          src="https://www.youtube.com/embed/s30EzG-2r6A?autoplay=1&mute=1&loop=1&playlist=s30EzG-2r6A&controls=0&modestbranding=1&rel=0&iv_load_policy=3&fs=0&disablekb=1"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
+    <div class="updated-text">Website Updated</div>
+    <div class="urdu-guide">آگے بڑھنے کے لیے نیچے کلک کریں</div>
+    <div class="hand-pointer">👇</div>
 
-    <div class="updated-section">
-      <div class="updated-text">MrCrazy Website Updated</div>
-      <div class="urdu-guide">آگے بڑھنے کے لیے نیچے کلک کریں</div>
-      <div class="hand-pointer">👇</div>
-    </div>
-
-    <!-- Khubsurat Animated Login Button -->
-    <button class="btn-login" onclick="window.open('https://mrcrazydevstudioofficial.netlify.app/', '_blank')">
-      <i class="fas fa-sign-in-alt"></i> Click Here & Login
+    <!-- Login Button -->
+    <button class="btn btn-login" onclick="window.open('https://mrcrazydevstudioofficial.netlify.app/', '_blank')">
+      <i class="fas fa-sign-in-alt"></i> 
+      Click Here & Login
     </button>
 
-    <!-- Green Informations Button -->
-    <button class="btn-info" onclick="toggleInfo()">
-      <i class="fas fa-info-circle"></i> معلومات
+    <!-- New SIM Details Check Button -->
+    <button class="btn btn-sim" onclick="window.open('https://mrcrazydevstudio.netlify.app/', '_blank')">
+      <i class="fas fa-sim-card"></i> 
+      SIM DETAILS CHECK
     </button>
-
-    <!-- Informations Pop Content -->
-    <div class="pop-content" id="infoContent">
-      <div class="pop-title">معلومات برائے صارفین 📱✨</div>
-
-      <div class="pop-item">
-        <i class="fas fa-sign-in-alt"></i>
-        <span>لاگ ان کرنے کا طریقہ: اوپر دیے گئے بٹن پر کلک کریں اور ای میل + پاس ورڈ درج کریں۔</span>
-      </div>
-
-      <div class="pop-item">
-        <i class="fas fa-user-plus"></i>
-        <span>اگر اکاؤنٹ نہیں ہے تو لاگ ان پیج پر "SignUp" لکھا نظر آئے گا، اس پر کلک کریں۔ یوزر نیم، ای میل، پاس ورڈ اور کنفرم پاس ورڈ درج کرکے اکاؤنٹ بنائیں۔</span>
-      </div>
-
-      <div class="pop-item">
-        <i class="fas fa-key"></i>
-        <span>پاس ورڈ بھول گئے؟ لاگ ان پیج کے نیچے "Forget Password" کا آپشن ہے۔ اپنی جی میل درج کریں۔</span>
-      </div>
-
-      <div class="pop-item">
-        <i class="fas fa-envelope-open-text"></i>
-        <span>ای میل پر ری سیٹ لنک آئے گا → جی میل کھولیں → ۳ نقطوں پر کلک کریں → Spam فولڈر میں جائیں → لنک پر کلک کرکے نیا پاس ورڈ لگا لیں۔</span>
-      </div>
-
-      <div class="urdu">
-        تمام معلومات محفوظ طریقے سے استعمال کی جاتی ہیں۔ کوئی بھی پرائیویسی پالیسی کی خلاف ورزی نہیں کی جاتی۔ 🤝🔒
-      </div>
-    </div>
 
   </div>
 
-  <!-- Floating Customer Care Icon - Bottom Right -->
-  <div class="pop-button" onclick="toggleContact()">
-    <i class="fas fa-headset"></i>
-  </div>
-
-  <!-- Contact Us Pop Content -->
-  <div class="pop-content" id="contactContent">
-    <div class="pop-title">رابطہ کریں 📞🤝</div>
-
-    <div class="pop-item">
-      <i class="fas fa-envelope"></i>
-      <a href="mailto:MrCrazyTeamofficial@gmail.com">MrCrazyTeamofficial@gmail.com</a>
-    </div>
-
-    <div class="pop-item">
-      <i class="fab fa-whatsapp"></i>
-      <a href="https://wa.me/923236876132?text=Hello%20%E2%9C%8B%20MrCrazyTeam%20I%20need%20help.">03236876132 (پاکستان)</a>
-    </div>
-
-    <div class="pop-item">
-      <i class="fab fa-whatsapp"></i>
-      <a href="https://wa.me/263777862928?text=Hello%20%E2%9C%8B%20MrCrazyTeam%20I%20need%20help.">+263777862928</a>
-    </div>
-
-    <div class="urdu">
-      اگر آپ کو کسی بھی پریشانی کا سامنا ہو یا ایپ چلانے میں کوئی مسئلہ پیش آئے تو براہِ کرم ہم سے واٹس ایپ پر رابطہ کریں۔ 📱<br><br>
-      ہم ہر وقت یہاں موجود ہیں اور آپ کی رہنمائی کے لیے تیار ہیں۔ 🤝😊
-    </div>
+  <div class="footer-note">
+    MrCrazy Digital Company © 2026 — Secure • Professional • Premium
   </div>
 
   <script>
-    function updateTime() {
-      const now = new Date();
-      document.getElementById('liveTime').textContent = now.toLocaleTimeString('en-US', {
-        hour12: true, hour: '2-digit', minute: '2-digit', second: '2-digit'
-      });
-    }
-    setInterval(updateTime, 1000);
-    updateTime();
-
     function toggleTheme() {
       const html = document.documentElement;
       const btn = document.querySelector('.theme-toggle');
@@ -374,16 +223,6 @@
         html.setAttribute('data-theme', 'dark');
         btn.textContent = 'Light Mode';
       }
-    }
-
-    // Toggle Informations
-    function toggleInfo() {
-      document.getElementById('infoContent').classList.toggle('show');
-    }
-
-    // Toggle Contact
-    function toggleContact() {
-      document.getElementById('contactContent').classList.toggle('show');
     }
   </script>
 
