@@ -3,226 +3,216 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MrCrazy SERVERS</title>
+  <title>MrCrazy SERVERS | Premium</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
-      --bg: #0a0b14;
-      --surface: #11141f;
-      --text: #e0f0ff;
-      --accent: #00e5ff;
+      --bg: #05070a;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --accent: #00f2ff;
       --green: #00ffaa;
-      --border: rgba(0, 229, 255, 0.25);
-      --shadow: rgba(0, 229, 255, 0.25);
+      --text: #ffffff;
+      --glass-border: rgba(255, 255, 255, 0.1);
     }
-    * { margin:0; padding:0; box-sizing:border-box; }
+
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', 'Segoe UI', sans-serif; }
+
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
+      background: radial-gradient(circle at top right, #1a1a2e, #05070a);
       color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 30px 15px;
-      line-height: 1.6;
-    }
-    .banner {
-      width: 100%;
-      max-width: 560px;
-      background: linear-gradient(135deg, #0f1328, #1a2238);
-      padding: 20px 0;
-      text-align: center;
-      border: 2px solid var(--border);
-      box-shadow: 0 0 40px var(--shadow);
-      margin-bottom: 45px;
-      border-radius: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    .banner::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
-      animation: rotate 25s linear infinite;
-    }
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    .banner h1 {
-      font-size: 2.1rem;
-      font-weight: 800;
-      letter-spacing: 6px;
-      background: linear-gradient(90deg, #ffffff, var(--accent), var(--green));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 25px rgba(0,229,255,0.5);
-    }
-    .container {
-      width: 100%;
-      max-width: 460px;
-      text-align: center;
-    }
-    .profile {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 30px;
-      border: 4px solid var(--green);
-      box-shadow: 0 0 45px rgba(0,255,170,0.4);
-    }
-    .profile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .company-title {
-      font-size: 1.45rem;
-      color: var(--accent);
-      margin-bottom: 35px;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    .updated-text {
-      font-size: 1.35rem;
-      color: var(--green);
-      margin: 25px 0 12px;
-      font-weight: 600;
-    }
-    .urdu-guide {
-      font-size: 1.05rem;
-      color: #a0c0ff;
-      margin-bottom: 20px;
-    }
-    .hand-pointer {
-      font-size: 3.2rem;           /* Chhota kar diya */
-      animation: bounce 2.2s infinite ease-in-out;
-      color: var(--green);
-      margin-bottom: 45px;
-      text-shadow: 0 0 20px var(--green);
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-16px); }
-    }
-    /* Buttons */
-    .btn {
-      width: 100%;
-      max-width: 420px;
-      padding: 17px 25px;
-      margin: 12px auto;
-      font-size: 1.22rem;           /* Font small kiya */
-      font-weight: 700;
-      border: none;
-      border-radius: 9999px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 12px;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 30px rgba(0,229,255,0.3);
-    }
-    .btn-login {
-      background: linear-gradient(135deg, var(--green), var(--accent));
-      color: #0a0b14;
-    }
-    .btn-login:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(0,229,255,0.55);
-    }
-    .btn-sim {
-      background: linear-gradient(135deg, #0066ff, #00aaff);
-      color: white;
-    }
-    .btn-sim:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 18px 45px rgba(0, 102, 255, 0.55);
-    }
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 9px 16px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.9rem;
-      z-index: 100;
-    }
-    .footer-note {
-      margin-top: 70px;
-      font-size: 0.95rem;
-      color: #6b8ab8;
-      text-align: center;
-      max-width: 420px;
+      align-items: center;
+      padding: 20px;
+      overflow-x: hidden;
     }
 
-    @media (max-width: 480px) {
-      .banner h1 { font-size: 1.85rem; letter-spacing: 4px; }
-      .profile { width: 105px; height: 105px; }
-      .btn { font-size: 1.15rem; padding: 15px 20px; }
+    /* --- MAIN PAGE STYLE --- */
+    .main-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid var(--glass-border);
+      border-radius: 30px;
+      width: 100%;
+      max-width: 450px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 1;
     }
+
+    .banner-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      background: linear-gradient(to right, #fff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+    }
+
+    .profile-img {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      padding: 5px; margin-bottom: 20px;
+    }
+
+    .btn {
+      width: 100%; padding: 16px; margin-bottom: 15px;
+      border: none; border-radius: 15px; font-size: 1.1rem;
+      font-weight: 600; cursor: pointer; display: flex;
+      align-items: center; justify-content: center; gap: 12px;
+      transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .btn-primary { background: linear-gradient(135deg, var(--accent), #0072ff); color: white; }
+    .btn-secondary { background: rgba(255, 255, 255, 0.05); color: white; border: 1px solid var(--glass-border); }
+    .btn:hover { transform: scale(1.03); }
+
+    /* --- POPUP SYSTEM STYLE --- */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(10px);
+      display: flex; justify-content: center; align-items: center;
+      z-index: 9999;
+      opacity: 0; visibility: hidden;
+      transition: all 0.5s ease;
+    }
+
+    .overlay.active { opacity: 1; visibility: visible; }
+
+    .pop-card {
+      background: #11141f;
+      width: 90%; max-width: 380px;
+      padding: 35px 25px;
+      border-radius: 25px;
+      border: 1px solid var(--accent);
+      text-align: center;
+      position: relative;
+      transform: scale(0.8);
+      transition: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .overlay.active .pop-card { transform: scale(1); }
+
+    .close-btn {
+      position: absolute; top: 15px; right: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border: none; color: white; width: 35px; height: 35px;
+      border-radius: 50%; cursor: pointer;
+      display: none; align-items: center; justify-content: center;
+    }
+
+    .app-icon {
+      width: 85px; height: 85px; border-radius: 18px;
+      margin-bottom: 20px; border: 2px solid var(--accent);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .urdu-msg {
+      font-size: 1.05rem; color: #cbd5e0;
+      line-height: 1.7; margin: 20px 0;
+    }
+
+    #timer-display { color: #888; font-size: 0.85rem; margin-bottom: 10px; }
+
+    .btn-download {
+      background: linear-gradient(135deg, var(--green), #00a870);
+      color: #000; text-decoration: none;
+    }
+
+    .report-link {
+      display: block; margin-top: 15px; color: #ff4d4d;
+      text-decoration: none; font-size: 0.9rem;
+    }
+
   </style>
 </head>
 <body>
 
-  <button class="theme-toggle" onclick="toggleTheme()">Light Mode</button>
+  <!-- MAIN PAGE CONTENT -->
+  <div class="main-card">
+    <div class="banner-title">MrCrazy SERVERS</div>
+    <img src="https://i.ibb.co/zWxZwZn8/Screenshot-20260309-142655.png" class="profile-img" alt="Logo">
+    <div style="color: var(--green); margin-bottom: 25px; font-weight: bold;">Official Digital Company</div>
+    
+    <button class="btn btn-primary" onclick="window.open('https://mrcrazydevstudioofficial.netlify.app/', '_blank')">
+      <i class="fas fa-rocket"></i> Login Dashboard
+    </button>
 
-  <div class="banner">
-    <h1>MrCrazy SERVERS</h1>
+    <button class="btn btn-secondary" onclick="window.open('https://mrcrazydevstudio.netlify.app/', '_blank')">
+      <i class="fas fa-sim-card"></i> SIM Details Check
+    </button>
   </div>
 
-  <div class="container">
+  <!-- POPUP OVERLAY -->
+  <div class="overlay" id="popupOverlay">
+    <div class="pop-card">
+      <button class="close-btn" id="closeBtn" onclick="closePopup()">
+        <i class="fas fa-times"></i>
+      </button>
 
-    <div class="profile">
-      <img src="https://i.ibb.co/zWxZwZn8/Screenshot-20260309-142655.png" alt="MrCrazyTeam">
+      <img src="https://i.ibb.co/J6dcg09/Pics-Art-05-22-10-08-32.jpg" alt="App Icon" class="app-icon">
+      
+      <div style="color:var(--accent); font-weight:800; font-size:1.4rem;">MrCrazy Apps Store</div>
+      
+      <p class="urdu-msg">
+        آپکی آسانی کے لیے ہم نے ایپ بنا دی ہے، آپ ابھی ڈاؤن لوڈ پر کلک کریں اور ہماری ایپ ڈاؤن لوڈ کریں۔ آپ کے تعاون کا شکریہ۔
+      </p>
+
+      <div id="timer-display">Wait <span id="seconds">10</span>s to close</div>
+
+      <a href="https://www.mediafire.com/file/6fnu1uagz60wfqr/MrCrazy_Apps_Store_1.0.apk/file" class="btn btn-download" target="_blank">
+        <i class="fas fa-cloud-download-alt"></i> Download App
+      </a>
+
+      <a href="https://wa.me/9779761970136" class="report-link">
+        <i class="fas fa-exclamation-triangle"></i> Report Issue on WhatsApp
+      </a>
     </div>
-
-    <div class="company-title">MrCrazy Digital Company</div>
-
-    <div class="updated-text">Website Updated</div>
-    <div class="urdu-guide">آگے بڑھنے کے لیے نیچے کلک کریں</div>
-    <div class="hand-pointer">👇</div>
-
-    <!-- Login Button -->
-    <button class="btn btn-login" onclick="window.open('https://mrcrazydevstudioofficial.netlify.app/', '_blank')">
-      <i class="fas fa-sign-in-alt"></i> 
-      Click Here & Login
-    </button>
-
-    <!-- New SIM Details Check Button -->
-    <button class="btn btn-sim" onclick="window.open('https://mrcrazydevstudio.netlify.app/', '_blank')">
-      <i class="fas fa-sim-card"></i> 
-      SIM DETAILS CHECK
-    </button>
-
-  </div>
-
-  <div class="footer-note">
-    MrCrazy Digital Company © 2026 — Secure • Professional • Premium
   </div>
 
   <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const btn = document.querySelector('.theme-toggle');
-      if (html.getAttribute('data-theme') === 'dark') {
-        html.setAttribute('data-theme', 'light');
-        btn.textContent = 'Dark Mode';
-      } else {
-        html.setAttribute('data-theme', 'dark');
-        btn.textContent = 'Light Mode';
-      }
+    // Page load hone ke 1 sec baad popup dikhayein
+    window.onload = function() {
+      setTimeout(() => {
+        document.getElementById('popupOverlay').classList.add('active');
+        startCountdown();
+      }, 1000);
+    };
+
+    function startCountdown() {
+      let timeLeft = 10;
+      const secondsSpan = document.getElementById('seconds');
+      const timerText = document.getElementById('timer-display');
+      const closeBtn = document.getElementById('closeBtn');
+
+      const timer = setInterval(() => {
+        timeLeft--;
+        secondsSpan.innerText = timeLeft;
+
+        if (timeLeft <= 0) {
+          clearInterval(timer);
+          timerText.style.visibility = 'hidden';
+          closeBtn.style.display = 'flex'; // 10 sec baad close button dikhega
+        }
+      }, 1000);
+    }
+
+    function closePopup() {
+      document.getElementById('popupOverlay').classList.remove('active');
     }
   </script>
 
